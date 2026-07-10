@@ -6,33 +6,72 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Thanks | Timbr Built</title>
   <link rel="icon" href="Assets/icon-navy.png">
+  <link rel="apple-touch-icon" href="Assets/icon-navy.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container nav">
-      <a href="index.html" class="nav__brand" aria-label="Timbr Built home">
-        <img src="Assets/wordmark-black.png" alt="Timbr Built" width="150" height="26">
+  <!-- PERSISTENT CINEMATIC NAVBAR -->
+  <div class="cine-hero__bar">
+    <button class="cine-menu" data-menu-toggle aria-label="Open menu">
+      <span class="bars"><span></span><span></span><span></span></span> Menu
+    </button>
+    <a class="cine-brand" href="index.html" aria-label="Timbr Built home"><img src="Assets/wordmark-white-trim.png" alt="Timbr Built"></a>
+    <nav class="cine-hero__nav">
+      <a class="count-pill" href="services.html">Services <span class="n">4</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
-      <div class="nav__cta">
-        <a href="tel:+61484698553" class="nav__phone" data-conversion="call">0484 698 553</a>
-        <a href="index.html" class="btn btn-primary">Back to Home</a>
-      </div>
-    </div>
-  </header>
+      <a class="count-pill" href="projects.html">Projects <span class="n">12</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+      </a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
 
-  <section class="section bg-surface" style="min-height:60vh;display:flex;align-items:center">
-    <div class="container" style="max-width:40rem;text-align:center">
-      <span class="ic" style="width:64px;height:64px;border-radius:0;background:rgba(176,133,83,.14);color:var(--timber-600);display:inline-flex;align-items:center;justify-content:center;margin-bottom:1.2rem">
+  <!-- FULL-SCREEN MENU OVERLAY -->
+  <div class="menu-overlay" id="menuOverlay">
+    <img class="menu-overlay__brand" src="Assets/icon-white-mark.png" alt="" aria-hidden="true">
+    <div class="menu-overlay__top">
+      <button class="menu-overlay__close" data-menu-toggle aria-label="Close menu">
+        Close
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav class="menu-overlay__links">
+      <a class="mrow mrow--link" href="index.html">Home</a>
+      <details class="mrow mrow--group">
+        <summary class="mrow__head">Services <svg class="mrow__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="mrow__sub">
+          <a href="services.html">All services</a>
+          <a href="carpentry.html">Carpentry</a>
+          <a href="bathroom-renovations.html">Bathroom renovations</a>
+          <a href="decks-pergolas.html">Decks &amp; pergolas</a>
+          <a href="lockups-new-builds.html">Lockups &amp; new builds</a>
+        </div>
+      </details>
+      <a class="mrow mrow--link" href="projects.html">Projects</a>
+      <a class="mrow mrow--link" href="about.html">About</a>
+      <a class="mrow mrow--link" href="contact.html">Contact</a>
+    </nav>
+    <div class="menu-overlay__foot">
+      <a href="tel:+61484698553" data-conversion="call">0484 698 553</a>
+      <a href="mailto:timbrbuilt@gmail.com">timbrbuilt@gmail.com</a>
+      <span>Melbourne's Inner West, VIC</span>
+    </div>
+  </div>
+
+  <!-- CONFIRMATION HERO -->
+  <section class="page-hero" style="background:var(--navy-900);align-items:center;text-align:center">
+    <div class="container page-hero__inner" style="padding-bottom:7rem">
+      <span class="ic" style="width:66px;height:66px;background:rgba(205,166,120,.18);color:var(--timber-light);display:inline-flex;align-items:center;justify-content:center;margin-bottom:1.4rem">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="30" height="30"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
       </span>
-      <h1 class="h-display" style="margin-bottom:.8rem">Thanks, we've got your details.</h1>
-      <p class="lead" style="margin:0 auto 1.8rem">Luca will be in touch shortly to book your free on-site measure and put together a fixed written quote. Prefer to talk now? Call <strong>0484 698 553</strong>.</p>
-      <div class="cta-band"><div class="btn-row" style="margin-top:0">
-        <a href="tel:+61484698553" data-conversion="call" class="btn btn-primary btn-lg">Call Timbr Built</a>
-        <a href="projects.html" class="btn btn-ghost btn-lg">See recent work</a>
-      </div></div>
+      <h1 class="page-hero__title" style="margin-bottom:1rem">Thanks, we've got your details.</h1>
+      <p class="page-hero__lead" style="margin:0 auto 2rem">Luca will be in touch shortly to book your free on-site measure and put together a fixed written quote. Prefer to talk now? Call <strong style="color:#fff">0484 698 553</strong>.</p>
+      <div class="cta-feature__actions" style="justify-content:center">
+        <a href="tel:+61484698553" data-conversion="call" class="btn btn-light btn-lg">Call Timbr Built</a>
+        <a href="projects.html" class="btn btn-outline-light btn-lg">See recent work</a>
+      </div>
     </div>
   </section>
 
@@ -48,6 +87,11 @@
       </div>
     </div>
   </footer>
+
+  <div class="callbar">
+    <a href="tel:+61484698553" data-conversion="call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.95.68l1.5 4.5a1 1 0 01-.27 1.06L7.91 10.91a12.05 12.05 0 005.18 5.18l1.67-1.55a1 1 0 011.06-.27l4.5 1.5a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z"/></svg>Call</a>
+    <a href="contact.html" class="is-quote">Get a Quote</a>
+  </div>
 
   <script src="main.js" defer></script>
 </body>
