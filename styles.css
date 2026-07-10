@@ -590,3 +590,28 @@ body.menu-open .menu-overlay { transform: translateY(0); visibility: visible; }
   .bento__foot p { font-size: .78rem; margin-bottom: .9rem; }
   .bento__foot .btn { padding: .55rem 1rem; font-size: .78rem; }
 }
+
+/* ==========================================================================
+   Inner-page cinematic hero + editorial bits (about / services / projects)
+   ========================================================================== */
+/* centred wordmark in the persistent bar, for pages without the giant hero wordmark */
+.cine-brand { position: absolute; left: 50%; top: 1.4rem; transform: translateX(-50%); z-index: 1; display: inline-flex; }
+.cine-brand img { height: 22px; width: auto; filter: drop-shadow(0 1px 8px rgba(0,0,0,.45)); }
+
+.page-hero { position: relative; min-height: 74vh; min-height: 74svh; display: flex; align-items: flex-end; overflow: hidden; background: #2b2f33; }
+.page-hero__media { position: absolute; inset: 0; }
+.page-hero__media img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.6) contrast(.95) brightness(.85); }
+.page-hero__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.18) 42%, rgba(0,0,0,.72) 100%); }
+.page-hero__inner { position: relative; z-index: 2; width: 100%; padding-top: 8rem; padding-bottom: clamp(3rem, 7vw, 6rem); }
+.page-hero .eyebrow { color: var(--timber-light); }
+.page-hero .eyebrow::before { background: var(--timber-light); }
+.page-hero__title { font-family: Georgia, "Times New Roman", serif; color: #EFEADD; font-weight: 600; font-size: clamp(2.6rem, 6.5vw, 5.2rem); line-height: 1.03; letter-spacing: -.01em; text-wrap: balance; margin-bottom: 1.3rem; }
+.page-hero__lead { color: rgba(255,255,255,.84); font-size: clamp(1.05rem, 1.5vw, 1.25rem); line-height: 1.6; max-width: 46rem; }
+@media (max-width: 760px){ .cine-brand img { height: 20px; } .page-hero { min-height: 82vh; } }
+
+/* editorial principles / values list (serif heading | description, hairline rows) */
+.stances { border-top: 1px solid rgba(255,255,255,.14); }
+.stance { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,2fr); gap: 2.5rem; padding: 2.4rem 0; border-bottom: 1px solid rgba(255,255,255,.14); align-items: baseline; }
+.stance h3 { font-family: Georgia, "Times New Roman", serif; color: #EFEADD; font-weight: 600; font-size: clamp(1.45rem, 2.5vw, 2.05rem); letter-spacing: -.01em; }
+.stance p { color: rgba(255,255,255,.72); font-size: 1.02rem; line-height: 1.65; max-width: 52ch; }
+@media (max-width: 700px){ .stance { grid-template-columns: 1fr; gap: .55rem; padding: 1.8rem 0; } }
