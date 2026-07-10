@@ -423,7 +423,6 @@ body.menu-open .menu-overlay { transform: translateY(0); visibility: visible; }
    Full-bleed image showcase (What We Do) - dark frame, overlaid serif titles
    ========================================================================== */
 .showcase { background: var(--navy-900); padding: 5rem 0; }
-.showcase__head { padding-bottom: 2.5rem; }
 .showcase__row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
 .showpanel { position: relative; display: block; height: 600px; overflow: hidden; background: #10161d; }
 .showpanel img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
