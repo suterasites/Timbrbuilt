@@ -13,41 +13,73 @@
   <meta property="og:title" content="Contact | Timbr Built">
   <meta property="og:description" content="Get a free quote for carpentry, bathrooms, decks and new builds across Melbourne's inner west.">
   <meta property="og:url" content="https://timbrbuilt.com.au/contact.html">
-  <meta property="og:image" content="https://timbrbuilt.com.au/Assets/hero-build.jpg">
+  <meta property="og:image" content="https://timbrbuilt.com.au/Assets/deck-weatherboard.jpg">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container nav">
-      <a href="index.html" class="nav__brand" aria-label="Timbr Built home">
-        <img src="Assets/wordmark-black.png" alt="Timbr Built" width="150" height="26">
+  <!-- PERSISTENT CINEMATIC NAVBAR -->
+  <div class="cine-hero__bar">
+    <button class="cine-menu" data-menu-toggle aria-label="Open menu">
+      <span class="bars"><span></span><span></span><span></span></span> Menu
+    </button>
+    <a class="cine-brand" href="index.html" aria-label="Timbr Built home"><img src="Assets/wordmark-white-trim.png" alt="Timbr Built"></a>
+    <nav class="cine-hero__nav">
+      <a class="count-pill" href="services.html">Services <span class="n">4</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
-      <nav>
-        <ul class="nav__links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html" aria-current="page">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="nav__cta">
-        <a href="tel:+61484698553" class="nav__phone" data-conversion="call">0484 698 553</a>
-        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
-        <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-  </header>
+      <a class="count-pill" href="projects.html">Projects <span class="n">12</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+      </a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
 
-  <section class="section--tight bg-stone">
-    <div class="container">
+  <!-- FULL-SCREEN MENU OVERLAY -->
+  <div class="menu-overlay" id="menuOverlay">
+    <img class="menu-overlay__brand" src="Assets/icon-white-mark.png" alt="" aria-hidden="true">
+    <div class="menu-overlay__top">
+      <button class="menu-overlay__close" data-menu-toggle aria-label="Close menu">
+        Close
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav class="menu-overlay__links">
+      <a class="mrow mrow--link" href="index.html">Home</a>
+      <details class="mrow mrow--group">
+        <summary class="mrow__head">Services <svg class="mrow__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="mrow__sub">
+          <a href="services.html">All services</a>
+          <a href="services.html#carpentry">Carpentry</a>
+          <a href="services.html#bathrooms">Bathroom renovations</a>
+          <a href="services.html#decks">Decks &amp; pergolas</a>
+          <a href="services.html#lockups">Lockups &amp; new builds</a>
+        </div>
+      </details>
+      <a class="mrow mrow--link" href="projects.html">Projects</a>
+      <a class="mrow mrow--link" href="about.html">About</a>
+      <a class="mrow mrow--link" href="contact.html">Contact</a>
+    </nav>
+    <div class="menu-overlay__foot">
+      <a href="tel:+61484698553" data-conversion="call">0484 698 553</a>
+      <a href="mailto:timbrbuilt@gmail.com">timbrbuilt@gmail.com</a>
+      <span>Melbourne's Inner West, VIC</span>
+    </div>
+  </div>
+
+  <!-- CINEMATIC PAGE HERO -->
+  <section class="page-hero page-hero--short">
+    <div class="page-hero__media">
+      <img src="Assets/deck-weatherboard.jpg" alt="Freshly oiled hardwood deck beside a weatherboard home" fetchpriority="high" decoding="async">
+    </div>
+    <div class="container page-hero__inner">
       <span class="eyebrow">Contact</span>
-      <h1 class="h-display">Get a free quote.</h1>
-      <p class="lead">Tell us about your project and we'll book a free on-site measure, then come back with a fixed written price. Prefer to talk? Call Luca directly on 0484 698 553.</p>
+      <h1 class="page-hero__title">Get a free quote.</h1>
+      <p class="page-hero__lead">Tell us about your project and we'll book a free on-site measure, then come back with a fixed written price. Prefer to talk? Call Luca directly on 0484 698 553.</p>
     </div>
   </section>
 
+  <!-- CONTACT DETAILS + FORM -->
   <section class="section bg-surface">
     <div class="container">
       <div class="split" style="align-items:flex-start">
@@ -128,11 +160,6 @@
     </div>
   </section>
 
-  <div class="callbar">
-    <a href="tel:+61484698553" data-conversion="call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.95.68l1.5 4.5a1 1 0 01-.27 1.06L7.91 10.91a12.05 12.05 0 005.18 5.18l1.67-1.55a1 1 0 011.06-.27l4.5 1.5a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z"/></svg>Call</a>
-    <a href="#" class="is-quote" onclick="document.getElementById('name').focus();return false;">Get a Quote</a>
-  </div>
-
   <footer class="footer">
     <div class="container">
       <div class="footer__main">
@@ -169,13 +196,13 @@
         </div>
         <div class="footer__cards">
           <a class="fcard" href="contact.html">
-            <div class="fcard__thumb"><img src="Assets/bathroom-featured-sm.jpg" alt="" loading="lazy"></div>
+            <div class="fcard__thumb"><img src="Assets/bathroom-arched-cabinet-sm.jpg" alt="" loading="lazy"></div>
             <h3>Get a free quote</h3>
             <p>Tell us about your project. Free on-site measure and a fixed written price, no obligation.</p>
             <span class="fcard__btn">Request a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg></span>
           </a>
           <a class="fcard" href="projects.html">
-            <div class="fcard__thumb"><img src="Assets/deck.jpg" alt="" loading="lazy"></div>
+            <div class="fcard__thumb"><img src="Assets/bathroom-barn-door-sm.jpg" alt="" loading="lazy"></div>
             <h3>Recent work</h3>
             <p>See finished bathrooms, decks and new builds across Melbourne's inner west.</p>
             <span class="fcard__btn">View projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg></span>
@@ -192,6 +219,11 @@
       </div>
     </div>
   </footer>
+
+  <div class="callbar">
+    <a href="tel:+61484698553" data-conversion="call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.95.68l1.5 4.5a1 1 0 01-.27 1.06L7.91 10.91a12.05 12.05 0 005.18 5.18l1.67-1.55a1 1 0 011.06-.27l4.5 1.5a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z"/></svg>Call</a>
+    <a href="#" class="is-quote" onclick="document.getElementById('name').focus();return false;">Get a Quote</a>
+  </div>
 
   <script src="main.js" defer></script>
 </body>
