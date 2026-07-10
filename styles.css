@@ -619,3 +619,10 @@ body.menu-open .menu-overlay { transform: translateY(0); visibility: visible; }
 /* shorter hero for conversion pages (contact) so the form sits higher */
 .page-hero--short { min-height: 52vh; min-height: 52svh; }
 @media (max-width: 760px){ .page-hero--short { min-height: 60vh; } }
+
+/* services overview: whole feature block links to its detail page */
+.feature__media a { display: block; overflow: hidden; }
+.feature__media a img { transition: transform .5s var(--ease); }
+.feature__media a:hover img { transform: scale(1.04); }
+.feature__body h2 a { color: inherit; }
+.feature__body h2 a:hover { color: var(--timber-600); }
