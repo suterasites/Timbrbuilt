@@ -15,6 +15,31 @@
   <meta property="og:url" content="https://timbrbuilt.com.au/carpentry.html">
   <meta property="og:image" content="https://timbrbuilt.com.au/Assets/framing-arched-window.jpg">
   <link rel="stylesheet" href="styles.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DX5560F0FC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DX5560F0FC');
+  </script>
+  <!-- Sutera lead events (GA4) -->
+  <script>/* SUTERA_LEAD_EVENTS */
+  (function(){
+    function ev(n, p){ if (typeof window.gtag === 'function') { window.gtag('event', n, Object.assign({transport_type:'beacon'}, p||{})); } }
+    document.addEventListener('click', function(e){
+      var a = e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+      if (a) ev('click_to_call', { link_url: a.getAttribute('href') });
+    }, true);
+    document.addEventListener('submit', function(e){
+      var f = e.target;
+      if (!f || f.tagName !== 'FORM' || f.hasAttribute('data-no-lead')) return;
+      var action = f.getAttribute('action') || '';
+      var isLead = /formspree/i.test(action) || f.querySelector('input[type="email"], input[type="tel"], textarea');
+      if (isLead) ev('generate_lead', { form_id: f.id || f.getAttribute('name') || 'contact' });
+    }, true);
+  })();
+  </script>
 </head>
 <body>
   <!-- PERSISTENT CINEMATIC NAVBAR -->
