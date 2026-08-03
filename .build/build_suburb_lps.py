@@ -124,18 +124,90 @@ SUBURBS = [
     },
 ]
 
-# Shared FAQ. Item 0 is localised per suburb (open); the rest are the standing deck/pergola answers.
+# FAQ - matches the depth of the hub page. Items 0 and 3 are localised per suburb (0 opens);
+# the rest are the standing deck/pergola answers, kept identical to decks-pergolas.html.
 def faq_items(s):
     return [
         (f"Do you build decks and pergolas in {s['name']}?",
          f"Yes. Timbr Built is based in Melbourne's inner west and works across {s['area']}, including {s['name']} and the surrounding suburbs. Every job starts with a free on-site measure, then a fixed written quote with no obligation."),
-        ("What timber do you use for decking?",
-         "Hardwood and merbau are our go-to for Melbourne conditions. They stand up to sun, rain and the salt air near the bay, and they take an oil finish beautifully. We will talk through the options and the upkeep each one needs so you can choose with your eyes open."),
-        ("Will I get a fixed price or an estimate?",
-         "A fixed written quote. After the on-site measure we price the job up front, and that price holds from quote to handover, so there are no mid-job surprises."),
-        ("How long does a deck or pergola take?",
-         "Most residential decks and pergolas are a matter of days to a couple of weeks on site, depending on size, height and whether a permit is needed. We will give you a realistic timeline with your quote."),
+        ("How much does a deck cost?",
+         "It depends on the size, the timber you choose, the height off the ground and whether a permit is needed. Rather than guess, we give you a fixed written quote after a free on-site measure, so the price you see is the price you pay."),
+        ("What timber is best for a deck in Melbourne?",
+         "For most jobs we recommend an Australian hardwood like spotted gum or blackbutt, or merbau as a mid-range option. All three handle our weather well and take an oil finish. We will walk you through the trade-offs in cost, colour and upkeep before you decide."),
+        (f"Do I need a permit for a deck or pergola in {s['name']}?",
+         f"Sometimes. Low decks and small pergolas often do not, but height, size and boundary setbacks can trigger a building permit, and {s['council']} sets the local planning rules. We will let you know where your job sits and sort the paperwork if it is needed."),
+        ("How long will my deck take to build?",
+         "Most residential decks and pergolas are a matter of days to a couple of weeks on site once we start, depending on size and access. You will get a realistic timeline with your quote."),
+        ("Do you repair or restore old decks?",
+         "Yes. We reboard, re-level and re-oil tired decks, and repair rot, movement or a failing sub-frame. If it is worth saving we will tell you, and if it is not, we will tell you that too."),
     ]
+
+
+# Shared depth sections - identical to the decks-pergolas.html hub, so a suburb page carries the
+# same service detail. Each suburb still has its own hero, intro, serving band and two localised
+# FAQ answers, so these shared blocks are supporting content, not the whole page.
+WHAT_WE_BUILD = '''  <!-- WHAT WE BUILD -->
+  <section class="section bg-stone">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What we build</span>
+        <h2 class="h-display">Outdoor timber, done properly.</h2>
+        <p class="lead">From a compact rear deck to a full pergola over the alfresco, we build the outdoor structures that make a backyard usable.</p>
+      </div>
+      <div class="cards cards--4">
+        <div class="card"><div class="card__body">
+          <h3>Decks</h3>
+          <p>Hardwood and merbau decks on a sound sub-frame, set out for drainage and finished level with your indoor floors so inside and out flow together.</p>
+        </div></div>
+        <div class="card"><div class="card__body">
+          <h3>Pergolas &amp; verandahs</h3>
+          <p>Pergolas, verandahs and patio roofs for shade and shelter, sized and pitched to suit the house and built to handle Melbourne's wind and rain.</p>
+        </div></div>
+        <div class="card"><div class="card__body">
+          <h3>Screens &amp; privacy</h3>
+          <p>Timber privacy screens, slatted panels and balustrades that block the wrong sightlines and tidy up the edges of a deck or courtyard.</p>
+        </div></div>
+        <div class="card"><div class="card__body">
+          <h3>Repairs &amp; restoration</h3>
+          <p>Reboarding, re-levelling and re-oiling tired decks, plus repairs to rot, movement or a sub-frame that has seen better days.</p>
+        </div></div>
+      </div>
+    </div>
+  </section>'''
+
+CHOOSING_TIMBER = '''  <!-- CHOOSING TIMBER -->
+  <section class="section bg-surface">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Choosing the right timber</span>
+        <h2 class="h-display">The timber sets the look and the upkeep.</h2>
+      </div>
+      <div class="split">
+        <div>
+          <p>The timber you choose sets how the deck looks and how much upkeep it asks for. Australian hardwoods like spotted gum and blackbutt are dense, hard-wearing and take an oil finish beautifully. Merbau is a popular mid-range option, rich in colour and stable underfoot. Treated pine is the budget choice and works well painted or under a roof.</p>
+        </div>
+        <div>
+          <p>Near the bay, salt air and sun are hard on outdoor timber, so the finish matters as much as the species. We oil decks to feed the timber and slow the greying, and we will tell you honestly what each option needs year to year so there are no surprises. If you would rather not oil at all, we will talk through low-maintenance and composite alternatives too.</p>
+        </div>
+      </div>
+    </div>
+  </section>'''
+
+HOW_WE_WORK = '''  <!-- HOW WE WORK -->
+  <section class="section bg-stone">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow" style="justify-content:center">How we work</span>
+        <h2 class="h-display">From measure to handover.</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step__n">01</div><h3>Get in touch</h3><p>Tell us about your yard, the look you are after and rough timing.</p></div>
+        <div class="step"><div class="step__n">02</div><h3>Free on-site measure</h3><p>We visit, take levels, talk through timber and design, and confirm scope.</p></div>
+        <div class="step"><div class="step__n">03</div><h3>Fixed written quote</h3><p>A clear price with no mid-job surprises, and a booked start date.</p></div>
+        <div class="step"><div class="step__n">04</div><h3>Built &amp; finished</h3><p>One carpenter through to handover, oiled and the site left clean.</p></div>
+      </div>
+    </div>
+  </section>'''
 
 
 def esc(t):
@@ -389,16 +461,11 @@ def page_html(s):
     </div>
   </section>
 
-  <!-- SERVICE AREA / NEARBY -->
-  <section class="section bg-stone">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Serving {esc(s['name'])}</span>
-        <h2 class="h-display">Local, and close by.</h2>
-        <p class="lead">Timbr Built is based in Melbourne's inner west and works throughout {esc(s['area'])}, part of {esc(s['council'])}. We also build decks and pergolas in nearby {nearby_html}. If your suburb is not listed, get in touch and we will let you know.</p>
-      </div>
-    </div>
-  </section>
+{WHAT_WE_BUILD}
+
+{CHOOSING_TIMBER}
+
+{HOW_WE_WORK}
 
   <!-- FAQ -->
   <section class="section bg-navy faq-section">
@@ -409,6 +476,17 @@ def page_html(s):
       </div>
       <div class="faq">
 {faq_html}
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA / NEARBY -->
+  <section class="section bg-surface">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Serving {esc(s['name'])}</span>
+        <h2 class="h-display">Local, and close by.</h2>
+        <p class="lead">Timbr Built is based in Melbourne's inner west and works throughout {esc(s['area'])}, part of {esc(s['council'])}. We also build decks and pergolas in nearby {nearby_html}. If your suburb is not listed, get in touch and we will let you know.</p>
       </div>
     </div>
   </section>
