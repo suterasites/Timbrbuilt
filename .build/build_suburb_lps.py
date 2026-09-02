@@ -255,7 +255,9 @@ def render_nearby(nearby):
 
 def page_html(s):
     slug = s["slug"]
-    url = f"{DOMAIN}/decks-pergolas-{slug}.html"
+    # Clean URL: Cloudflare 308s .html -> extensionless, so declaring the .html
+    # form here hands Google a canonical that redirects. Site swept 2026-09-02.
+    url = f"{DOMAIN}/decks-pergolas-{slug}"
     title = f"Decks &amp; Pergolas in {esc(s['name'])} | Timbr Built"
     desc = (f"Hardwood decks and pergolas in {s['name']}, built for Melbourne weather by a local "
             f"carpenter. Free on-site measure and a fixed written quote. Call Timbr Built.")
