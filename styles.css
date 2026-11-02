@@ -16,6 +16,8 @@
   --navy-900:    #000000;
   --night:       #0D0D0D;
   --slate:       #16293A;
+  --taupe:       #6B6457;
+  --sand:        #D3CBBA;
   --navy-800:    #121212;
   --navy-600:    #333333;
   --timber:      #B08553;
@@ -676,70 +678,67 @@ a.swall__tile:focus-visible { outline: 2px solid var(--timber); outline-offset: 
 }
 
 /* ==========================================================================
-   Why Timbr Built - bento grid
+   Why Timbr Built (redesign): photo tile with a centred serif title, then
+   five flat colour cards in two columns whose middle row spans both
    ========================================================================== */
-.bento {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr 1fr;
-  grid-template-rows: repeat(3, minmax(220px, auto));
-  gap: 10px;
-  grid-template-areas:
-    "img a b"
-    "img c c"
-    "img d e";
+.reasons { padding: 29px; background: var(--night); font-family: var(--font-sans); }
+.reasons__grid {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px;
+  grid-template-rows: repeat(3, clamp(240px, 25.4vw, 366px));
 }
-.bento__img { grid-area: img; position: relative; overflow: hidden; background: var(--navy-900); min-height: 620px; }
-.bento__img > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.bento__img::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(8,13,18,.25) 0%, rgba(8,13,18,.12) 38%, rgba(8,13,18,.82) 100%); }
-.bento__title { position: absolute; z-index: 2; left: 0; right: 0; padding: 0 2rem; top: 44%; transform: translateY(-50%); text-align: center; font-family: Georgia, "Times New Roman", serif; color: #EFEADD; font-size: clamp(2.3rem, 4vw, 3.7rem); line-height: 1.02; letter-spacing: .01em; text-wrap: balance; }
-.bento__foot { position: absolute; z-index: 2; left: 2.6rem; right: 2.6rem; bottom: 2.4rem; max-width: 26rem; }
-.bento__foot h3 { color: #fff; font-size: .95rem; margin-bottom: .4rem; }
-.bento__foot p { color: rgba(255,255,255,.78); font-size: .82rem; line-height: 1.5; margin-bottom: 1.1rem; }
-.bento__foot .btn { padding: .6rem 1.2rem; font-size: .82rem; }
-
-.bento__card { position: relative; padding: 2.4rem 2.2rem; display: flex; flex-direction: column; align-items: center; text-align: center; }
-.bento__card .bento__lead, .bento__card .bento__label, .bento__card .bento__note, .bento__card .bento__list li { color: inherit; }
-.bento__label { font-size: .72rem; text-transform: uppercase; letter-spacing: .13em; opacity: .6; }
-.bento__lead { font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.02rem, 1.25vw, 1.3rem); line-height: 1.25; margin: auto 0; }
-.b-c .bento__lead { font-size: clamp(1.25rem, 1.8vw, 1.7rem); }
-.bento__note { font-size: .76rem; opacity: .8; }
-.bento__list { list-style: none; display: grid; gap: .65rem; width: 100%; margin-top: auto; padding: 0; }
-.bento__list li { position: relative; padding-left: 1.55rem; font-size: .84rem; line-height: 1.4; text-align: left; }
-.bento__list li::before { content: "\2713"; position: absolute; left: 0; top: 0; opacity: .7; }
-
-.b-a { grid-area: a; background: var(--cream); color: var(--timber-600); }
-.b-b { grid-area: b; background: var(--timber); color: #fff; }
-.b-c { grid-area: c; background: var(--navy-800); color: #EFEADD; }
-.b-d { grid-area: d; background: var(--navy-600); color: #fff; align-items: flex-start; text-align: left; }
-.b-e { grid-area: e; background: var(--stone); color: var(--navy); }
-.b-d .bento__label { text-align: left; }
-
-@media (max-width: 900px){
-  .bento {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "img img"
-      "a b"
-      "c c"
-      "d e";
-  }
-  .bento__img { min-height: 440px; }
-  .bento__card { min-height: 210px; }
-  .bento__title { padding: 0 1.5rem; }
-  .bento__foot { left: 1.6rem; right: 1.6rem; max-width: none; }
-  .bento__foot h3 { font-size: .92rem; margin-bottom: .35rem; }
-  .bento__foot p { font-size: .8rem; line-height: 1.45; margin-bottom: 1rem; }
-  .bento__foot .btn { padding: .58rem 1.1rem; font-size: .8rem; }
+.reasons__photo { position: relative; grid-column: 1 / 3; grid-row: 1 / 4; overflow: hidden; border-radius: 6px; background: #1c2023; }
+.reasons__photo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.reasons__photo::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(13,13,13,.2) 0%, rgba(13,13,13,.12) 45%, rgba(13,13,13,.74) 100%);
 }
-@media (max-width: 560px){
-  .bento { grid-template-columns: 1fr; grid-template-areas: "img" "a" "b" "c" "d" "e"; }
-  .bento__title { top: 2.2rem; bottom: auto; transform: none; text-align: center; font-size: clamp(1.9rem, 8.5vw, 2.6rem); }
-  .bento__img { min-height: 470px; }
-  .bento__card { min-height: 200px; }
-  .bento__foot h3 { font-size: .88rem; }
-  .bento__foot p { font-size: .78rem; margin-bottom: .9rem; }
-  .bento__foot .btn { padding: .55rem 1rem; font-size: .78rem; }
+.reasons__title {
+  position: absolute; z-index: 1; left: 0; right: 0; top: 50%; transform: translateY(-50%); padding: 0 2rem;
+  color: var(--cream); font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.4rem, 4.35vw, 3.9rem);
+  font-weight: 400; line-height: 1; letter-spacing: -.01em; text-align: center; text-wrap: balance;
+}
+.reasons__foot { position: absolute; z-index: 1; left: 22px; bottom: 22px; max-width: 15.5rem; }
+.reasons__foot h3 { margin-bottom: 8px; color: #fff; font-size: 15px; font-weight: 600; line-height: 1.2; letter-spacing: 0; }
+.reasons__foot p { margin-bottom: 14px; color: rgba(255,255,255,.88); font-size: 15px; line-height: 1.2; }
+.reasons__btn {
+  display: inline-flex; align-items: center; height: 37px; padding: 0 29px;
+  border: 1px solid rgba(255,255,255,.75); border-radius: 6px; color: #fff; font-size: 15px; font-weight: 600; line-height: 1;
+  transition: background-color .2s var(--ease), color .2s var(--ease);
+}
+.reasons__btn:hover { background: #fff; color: var(--night); }
+.reasons__btn:focus-visible { outline: 2px solid var(--timber-light); outline-offset: 3px; }
+
+.reasons__card { position: relative; display: flex; align-items: center; justify-content: center; padding: 3.25rem 1.6rem; border-radius: 6px; text-align: center; }
+.reasons__card--wide { grid-column: span 2; }
+.reasons__label { position: absolute; top: 26px; left: 1rem; right: 1rem; font-size: 13px; font-weight: 500; line-height: 1.2; }
+.reasons__note { position: absolute; bottom: 26px; left: 1rem; right: 1rem; font-size: 12.5px; font-weight: 600; line-height: 1.2; }
+.reasons__lead {
+  color: inherit; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.3rem, 2.1vw, 1.9rem);
+  line-height: 1.07; letter-spacing: -.01em; text-wrap: balance;
+}
+.reasons__card--list { align-items: flex-end; padding: 3.25rem 22px 14px; }
+.reasons__list { width: 100%; padding: 0; list-style: none; text-align: left; }
+.reasons__list li { position: relative; padding: 9px 0 9px 1.2rem; font-size: 12.5px; font-weight: 500; line-height: 1.3; }
+.reasons__list li + li { border-top: 1px solid rgba(255,255,255,.28); }
+.reasons__list li::before { content: "\2713"; position: absolute; left: 0; }
+.reasons__card--cream  { background: var(--cream); color: var(--timber-600); }
+.reasons__card--timber { background: var(--timber-600); color: #fff; }
+.reasons__card--slate  { background: var(--slate); color: #fff; }
+.reasons__card--taupe  { background: var(--taupe); color: #fff; }
+.reasons__card--sand   { background: var(--sand); color: #6E5A3A; }
+
+/* tablet: photo across the top, cards two-up beneath */
+@media (max-width: 1100px){
+  .reasons__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: minmax(250px, auto); }
+  .reasons__photo { grid-column: 1 / -1; grid-row: auto; min-height: 560px; }
+}
+/* phones: one column, title up top so it clears the foot */
+@media (max-width: 760px){
+  .reasons { padding: 1rem; }
+  .reasons__grid { grid-template-columns: minmax(0, 1fr); grid-auto-rows: minmax(220px, auto); }
+  .reasons__card--wide { grid-column: auto; }
+  .reasons__photo { min-height: 540px; }
+  .reasons__title { top: 2.2rem; transform: none; font-size: clamp(2.2rem, 10vw, 2.8rem); }
 }
 
 /* ==========================================================================
