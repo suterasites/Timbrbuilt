@@ -7,6 +7,7 @@
   <title>Thanks | Timbr Built</title>
   <link rel="icon" href="Assets/icon-navy.png">
   <link rel="apple-touch-icon" href="Assets/icon-navy.png">
+  <link rel="preload" as="font" href="Assets/fonts/inter-tight-latin.woff2" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DX5560F0FC"></script>
@@ -37,18 +38,21 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- PERSISTENT CINEMATIC NAVBAR -->
-  <header class="cine-hero__bar">
-    <button class="cine-menu" data-menu-toggle aria-label="Open menu">
-      <span class="bars"><span></span><span></span><span></span></span> Menu
+  <!-- TOP BAR: Menu left, wordmark centre, count pills right. Solid once the hero tabs scroll under it -->
+  <header class="topbar" data-topbar>
+    <button class="topbar__menu" data-menu-toggle aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      Menu
     </button>
-    <a class="cine-brand" href="index.html" aria-label="Timbr Built home"><img width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built"></a>
-    <nav class="cine-hero__nav">
-      <a class="count-pill" href="services.html">Services <span class="n">4</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+    <a class="topbar__brand" href="index.html" aria-label="Timbr Built home">
+      <img width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built">
+    </a>
+    <nav class="topbar__nav" aria-label="Main">
+      <a href="services.html">Services <span class="topbar__n">4</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
-      <a class="count-pill" href="projects.html">Projects <span class="n">16</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+      <a href="projects.html">Projects <span class="topbar__n">16</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -91,22 +95,30 @@
     </div>
   </div>
 
-  <!-- CONFIRMATION HERO -->
   <main id="main">
-  <section class="page-hero" style="background:var(--navy-900);align-items:center;text-align:center">
-    <div class="container page-hero__inner" style="padding-bottom:7rem">
-      <span class="ic" style="width:66px;height:66px;background:rgba(205,166,120,.18);color:var(--timber-light);display:inline-flex;align-items:center;justify-content:center;margin-bottom:1.4rem">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="30" height="30"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-      </span>
-      <h1 class="page-hero__title" style="margin-bottom:1rem">Thanks, we've got your details.</h1>
-      <p class="page-hero__lead" style="margin:0 auto 2rem">Luca will be in touch shortly to book your free on-site measure and put together a fixed written quote. Prefer to talk now? Call <strong style="color:#fff">0484 698 553</strong>.</p>
-      <div class="cta-feature__actions" style="justify-content:center">
-        <a href="tel:+61484698553" data-conversion="call" class="btn btn-light btn-lg">Call Timbr Built</a>
-        <a href="projects.html" class="btn btn-outline-light btn-lg">See recent work</a>
+  <!-- CONFIRMATION: tab strip and the message on the night ground -->
+  <section class="phero phero--plain">
+    <nav class="phero__tabs" aria-label="Explore Timbr Built" data-hero-tabs>
+      <a href="index.html">Home</a>
+      <a href="carpentry.html">Carpentry</a>
+      <a href="bathroom-renovations.html">Bathroom renovations</a>
+      <a href="decks-pergolas.html">Decks &amp; pergolas</a>
+      <a href="lockups-new-builds.html">Lockups &amp; new builds</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Free quote</a>
+    </nav>
+    <div class="phero__stage">
+      <div class="phero__intro">
+        <p class="phero__label">Quote request received</p>
+        <h1 class="phero__title">Thanks, we've got your details.</h1>
+        <p class="phero__lead">Luca will be in touch shortly to book your free on-site measure and put together a fixed written quote. Prefer to talk now? Call 0484 698 553.</p>
+        <div class="phero__actions">
+          <a class="obtn" href="tel:+61484698553" data-conversion="call">Call Timbr Built <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+          <a class="tlink" href="projects.html">See recent work</a>
+        </div>
       </div>
     </div>
   </section>
-
   </main>
 
   <footer class="footer">

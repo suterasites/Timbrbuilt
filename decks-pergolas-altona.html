@@ -116,8 +116,8 @@
   ]
 }
   </script>
+  <link rel="preload" as="font" href="Assets/fonts/inter-tight-latin.woff2" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
-  <style>.area-link{color:var(--timber);font-weight:600}.area-link:hover{text-decoration:underline}</style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DX5560F0FC"></script>
   <script>
@@ -146,18 +146,21 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <!-- PERSISTENT CINEMATIC NAVBAR -->
-  <header class="cine-hero__bar">
-    <button class="cine-menu" data-menu-toggle aria-label="Open menu">
-      <span class="bars"><span></span><span></span><span></span></span> Menu
+  <!-- TOP BAR: Menu left, wordmark centre, count pills right. Solid once the hero tabs scroll under it -->
+  <header class="topbar" data-topbar>
+    <button class="topbar__menu" data-menu-toggle aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      Menu
     </button>
-    <a class="cine-brand" href="index.html" aria-label="Timbr Built home"><img width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built"></a>
-    <nav class="cine-hero__nav">
-      <a class="count-pill" href="services.html">Services <span class="n">4</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+    <a class="topbar__brand" href="index.html" aria-label="Timbr Built home">
+      <img width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built">
+    </a>
+    <nav class="topbar__nav" aria-label="Main">
+      <a href="services.html">Services <span class="topbar__n">4</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
-      <a class="count-pill" href="projects.html">Projects <span class="n">16</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+      <a href="projects.html">Projects <span class="topbar__n">16</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -199,179 +202,163 @@
     </div>
   </div>
 
-  <!-- CINEMATIC PAGE HERO -->
   <main id="main">
-  <section class="page-hero">
-    <div class="page-hero__media">
-      <img width="1050" height="1400" src="Assets/deck-weatherboard.jpg" alt="Oiled hardwood deck beside a weatherboard home" fetchpriority="high" decoding="async">
-    </div>
-    <div class="container page-hero__inner">
-      <span class="eyebrow">Decks &amp; Pergolas &middot; Altona</span>
-      <h1 class="page-hero__title">Decks &amp; pergolas in Altona.</h1>
-      <p class="page-hero__lead">Decks and pergolas in Altona, built in hardwood to stand up to the bay weather and salt air.</p>
+  <!-- PAGE HERO: tab strip, intro on the night ground beside photo tiles -->
+  <section class="phero">
+    <nav class="phero__tabs" aria-label="Explore Timbr Built" data-hero-tabs>
+      <a href="index.html">Home</a>
+      <a href="carpentry.html">Carpentry</a>
+      <a href="bathroom-renovations.html">Bathroom renovations</a>
+      <a href="decks-pergolas.html" aria-current="true">Decks &amp; pergolas</a>
+      <a href="lockups-new-builds.html">Lockups &amp; new builds</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Free quote</a>
+    </nav>
+    <div class="phero__stage">
+      <div class="phero__intro">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/services.html">Services</a></li>
+            <li><a href="/decks-pergolas.html">Decks &amp; Pergolas</a></li>
+            <li aria-current="page">Altona</li>
+          </ol>
+        </nav>
+        <h1 class="phero__title">Decks &amp; pergolas in Altona.</h1>
+        <p class="phero__lead">Decks and pergolas in Altona, built in hardwood to stand up to the bay weather and salt air.</p>
+        <div class="phero__actions">
+          <a class="obtn" href="contact.html">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+          <a class="tlink" href="tel:+61484698553" data-conversion="call">or call 0484 698 553</a>
+        </div>
+      </div>
+      <div class="phero__cell"><img width="1050" height="1400" src="Assets/deck-weatherboard.jpg" alt="Oiled hardwood deck beside a weatherboard home" fetchpriority="high" decoding="async"></div>
+      <div class="phero__cell"><img width="1400" height="750" src="Assets/pergola-framing.jpg" alt="Timber pergola frame and deck joists under construction" loading="lazy" decoding="async"></div>
     </div>
   </section>
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/services.html">Services</a></li>
-        <li><a href="/decks-pergolas.html">Decks &amp; Pergolas</a></li>
-        <li aria-current="page">Altona</li>
-      </ol>
-    </div>
-  </nav>
 
-  <!-- LOCAL INTRO + WHAT'S INCLUDED -->
-  <section class="section bg-surface">
-    <div class="container">
-      <div class="feature">
-        <div class="feature__media"><img width="618" height="1100" src="Assets/deck.jpg" alt="Freshly oiled hardwood deck with pergola post" loading="lazy" decoding="async"></div>
-        <div class="feature__body">
-          <span class="eyebrow">Decks &amp; pergolas in Altona</span>
-          <h2>Outdoor timber, built for Altona homes</h2>
-          <p>Altona is a bayside suburb of mid-century homes and beach cottages, close enough to the water that outdoor timber has to be chosen and finished for salt air and sun. Done right, a deck here is where a lot of the year gets spent.</p>
-          <p>We build hardwood and merbau decks, pergolas and screens finished to handle coastal exposure, so they weather gracefully instead of drying out and greying off. You get a free on-site measure and a fixed written quote up front.</p>
-          <ul class="feature__list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Hardwood and merbau decking</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Pergolas, patios and verandahs</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Timber screens and privacy structures</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Oiling and finishing</li>
-          </ul>
-          <a href="contact.html" class="btn btn-primary mt-sm">Get a quote</a>
+  <!-- DETAIL: label on a hairline, serif title | photo | copy, list and button -->
+  <section class="band detail">
+    <div class="detail__row">
+      <p class="detail__label">Decks &amp; pergolas in Altona</p>
+      <h2 class="detail__title">Outdoor timber, built for Altona homes</h2>
+      <div class="detail__media"><img width="618" height="1100" src="Assets/deck.jpg" alt="Freshly oiled hardwood deck with pergola post" loading="lazy" decoding="async"></div>
+      <div class="detail__body">
+        <p>Altona is a bayside suburb of mid-century homes and beach cottages, close enough to the water that outdoor timber has to be chosen and finished for salt air and sun. Done right, a deck here is where a lot of the year gets spent.</p>
+        <p>We build hardwood and merbau decks, pergolas and screens finished to handle coastal exposure, so they weather gracefully instead of drying out and greying off. You get a free on-site measure and a fixed written quote up front.</p>
+        <ul class="detail__list">
+          <li>Hardwood and merbau decking</li>
+          <li>Pergolas, patios and verandahs</li>
+          <li>Timber screens and privacy structures</li>
+          <li>Oiling and finishing</li>
+        </ul>
+        <a class="obtn" href="contact.html">Get a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDS: flat colour cards, light to dark -->
+  <section class="band band--night svc">
+    <p class="band__label">What we build</p>
+    <div class="band__head">
+      <h2 class="band__title">Outdoor timber, done properly.</h2>
+      <p class="band__lead">From a compact rear deck to a full pergola over the alfresco, we build the outdoor structures that make a backyard usable.</p>
+    </div>
+    <ul class="svc__grid">
+      <li class="svc__card"><h3 class="svc__name">Decks</h3><p class="svc__text">Hardwood and merbau decks on a sound sub-frame, set out for drainage and finished level with your indoor floors so inside and out flow together.</p></li>
+      <li class="svc__card"><h3 class="svc__name">Pergolas &amp; verandahs</h3><p class="svc__text">Pergolas, verandahs and patio roofs for shade and shelter, sized and pitched to suit the house and built to handle Melbourne's wind and rain.</p></li>
+      <li class="svc__card"><h3 class="svc__name">Screens &amp; privacy</h3><p class="svc__text">Timber privacy screens, slatted panels and balustrades that block the wrong sightlines and tidy up the edges of a deck or courtyard.</p></li>
+      <li class="svc__card"><h3 class="svc__name">Repairs &amp; restoration</h3><p class="svc__text">Reboarding, re-levelling and re-oiling tired decks, plus repairs to rot, movement or a sub-frame that has seen better days.</p></li>
+    </ul>
+  </section>
+
+  <!-- STATEMENT: serif title beside two columns of copy -->
+  <section class="band statement">
+    <p class="band__label">Choosing the right timber</p>
+    <div class="statement__grid">
+      <h2 class="band__title">The timber sets the look and the upkeep.</h2>
+      <p>The timber you choose sets how the deck looks and how much upkeep it asks for. Australian hardwoods like spotted gum and blackbutt are dense, hard-wearing and take an oil finish beautifully. Merbau is a popular mid-range option, rich in colour and stable underfoot. Treated pine is the budget choice and works well painted or under a roof.</p>
+      <p>Near the bay, salt air and sun are hard on outdoor timber, so the finish matters as much as the species. We oil decks to feed the timber and slow the greying, and we will tell you honestly what each option needs year to year so there are no surprises. If you would rather not oil at all, we will talk through low-maintenance and composite alternatives too.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS: four tall flat cards -->
+  <section class="process band--surface">
+    <div class="process__head">
+      <h2 class="process__title">From measure to handover.</h2>
+      <div class="process__intro">
+        <p>Every job runs the same way: a free on-site measure, a fixed written price, and one qualified carpenter from the first call to handover.</p>
+        <a class="process__link" href="contact.html">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+    <ol class="process__cards">
+      <li class="process__card process__card--cream"><span class="process__n">01</span><h3 class="process__name">Get in touch</h3><p class="process__line">Tell us about your yard, the look you are after and rough timing.</p></li>
+      <li class="process__card process__card--sand"><span class="process__n">02</span><h3 class="process__name">Free on-site measure</h3><p class="process__line">We visit, take levels, talk through timber and design, and confirm scope.</p></li>
+      <li class="process__card process__card--taupe"><span class="process__n">03</span><h3 class="process__name">Fixed written quote</h3><p class="process__line">A clear price with no mid-job surprises, and a booked start date.</p></li>
+      <li class="process__card process__card--slate"><span class="process__n">04</span><h3 class="process__name">Built &amp; finished</h3><p class="process__line">One carpenter through to handover, oiled and the site left clean.</p></li>
+    </ol>
+  </section>
+
+  <!-- FAQ: sticky serif heading left, hairline accordion right -->
+  <section class="faqs band--white" id="faq">
+    <div class="faqs__grid">
+      <div class="faqs__intro">
+        <p class="faqs__label">FAQ</p>
+        <h2 class="faqs__title">Decks &amp; pergolas in Altona.</h2>
+        <p class="faqs__more">Something else? Call <a href="tel:+61484698553" data-conversion="call">0484 698 553</a> or <a href="contact.html">send a message</a>.</p>
+      </div>
+      <div class="faqs__list">
+        <details class="faqs__item" open>
+          <summary>Do you build decks and pergolas in Altona?<span class="faqs__icon" aria-hidden="true"></span></summary>
+          <div class="faqs__a"><p>Yes. Timbr Built is based in Melbourne's inner west and works across the Hobsons Bay bayside, including Altona and the surrounding suburbs. Every job starts with a free on-site measure, then a fixed written quote with no obligation.</p></div>
+        </details>
+        <details class="faqs__item">
+          <summary>How much does a deck cost?<span class="faqs__icon" aria-hidden="true"></span></summary>
+          <div class="faqs__a"><p>It depends on the size, the timber you choose, the height off the ground and whether a permit is needed. Rather than guess, we give you a fixed written quote after a free on-site measure, so the price you see is the price you pay.</p></div>
+        </details>
+        <details class="faqs__item">
+          <summary>What timber is best for a deck in Melbourne?<span class="faqs__icon" aria-hidden="true"></span></summary>
+          <div class="faqs__a"><p>For most jobs we recommend an Australian hardwood like spotted gum or blackbutt, or merbau as a mid-range option. All three handle our weather well and take an oil finish. We will walk you through the trade-offs in cost, colour and upkeep before you decide.</p></div>
+        </details>
+        <details class="faqs__item">
+          <summary>Do I need a permit for a deck or pergola in Altona?<span class="faqs__icon" aria-hidden="true"></span></summary>
+          <div class="faqs__a"><p>Sometimes. Low decks and small pergolas often do not, but height, size and boundary setbacks can trigger a building permit, and the City of Hobsons Bay sets the local planning rules. We will let you know where your job sits and sort the paperwork if it is needed.</p></div>
+        </details>
+        <details class="faqs__item">
+          <summary>How long will my deck take to build?<span class="faqs__icon" aria-hidden="true"></span></summary>
+          <div class="faqs__a"><p>Most residential decks and pergolas are a matter of days to a couple of weeks on site once we start, depending on size and access. You will get a realistic timeline with your quote.</p></div>
+        </details>
+        <details class="faqs__item">
+          <summary>Do you repair or restore old decks?<span class="faqs__icon" aria-hidden="true"></span></summary>
+          <div class="faqs__a"><p>Yes. We reboard, re-level and re-oil tired decks, and repair rot, movement or a failing sub-frame. If it is worth saving we will tell you, and if it is not, we will tell you that too.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEARBY: serif title beside the local note -->
+  <section class="band band--surface">
+    <p class="band__label">Serving Altona</p>
+    <div class="band__head">
+      <h2 class="band__title">Local, and close by.</h2>
+      <p class="band__lead">Timbr Built is based in Melbourne's inner west and works throughout the Hobsons Bay bayside, part of the City of Hobsons Bay. We also build decks and pergolas in nearby <a href="decks-pergolas-williamstown.html">Williamstown</a>, <a href="decks-pergolas-newport.html">Newport</a> and <a href="decks-pergolas-point-cook.html">Point Cook</a>. If your suburb is not listed, get in touch and we will let you know.</p>
+    </div>
+  </section>
+
+  <!-- CTA: one wide dimmed photo tile on the night ground -->
+  <section class="cta-tile">
+    <div class="cta-tile__frame">
+      <img width="1242" height="800" src="Assets/cta-deck.jpg" alt="" loading="lazy" decoding="async">
+      <div class="cta-tile__body">
+        <h2 class="cta-tile__title">Planning a deck or pergola in Altona?</h2>
+        <p class="cta-tile__text">Tell us about your yard and we will book a free on-site measure in Altona, then come back with a fixed written quote in time for summer.</p>
+        <div class="cta-tile__actions">
+          <a class="cta-tile__btn" href="contact.html">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+          <a class="cta-tile__call" href="tel:+61484698553" data-conversion="call">or call 0484 698 553</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHAT WE BUILD -->
-  <section class="section bg-stone">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">What we build</span>
-        <h2 class="h-display">Outdoor timber, done properly.</h2>
-        <p class="lead">From a compact rear deck to a full pergola over the alfresco, we build the outdoor structures that make a backyard usable.</p>
-      </div>
-      <div class="cards cards--4">
-        <div class="card"><div class="card__body">
-          <h3>Decks</h3>
-          <p>Hardwood and merbau decks on a sound sub-frame, set out for drainage and finished level with your indoor floors so inside and out flow together.</p>
-        </div></div>
-        <div class="card"><div class="card__body">
-          <h3>Pergolas &amp; verandahs</h3>
-          <p>Pergolas, verandahs and patio roofs for shade and shelter, sized and pitched to suit the house and built to handle Melbourne's wind and rain.</p>
-        </div></div>
-        <div class="card"><div class="card__body">
-          <h3>Screens &amp; privacy</h3>
-          <p>Timber privacy screens, slatted panels and balustrades that block the wrong sightlines and tidy up the edges of a deck or courtyard.</p>
-        </div></div>
-        <div class="card"><div class="card__body">
-          <h3>Repairs &amp; restoration</h3>
-          <p>Reboarding, re-levelling and re-oiling tired decks, plus repairs to rot, movement or a sub-frame that has seen better days.</p>
-        </div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHOOSING TIMBER -->
-  <section class="section bg-surface">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Choosing the right timber</span>
-        <h2 class="h-display">The timber sets the look and the upkeep.</h2>
-      </div>
-      <div class="split">
-        <div>
-          <p>The timber you choose sets how the deck looks and how much upkeep it asks for. Australian hardwoods like spotted gum and blackbutt are dense, hard-wearing and take an oil finish beautifully. Merbau is a popular mid-range option, rich in colour and stable underfoot. Treated pine is the budget choice and works well painted or under a roof.</p>
-        </div>
-        <div>
-          <p>Near the bay, salt air and sun are hard on outdoor timber, so the finish matters as much as the species. We oil decks to feed the timber and slow the greying, and we will tell you honestly what each option needs year to year so there are no surprises. If you would rather not oil at all, we will talk through low-maintenance and composite alternatives too.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW WE WORK -->
-  <section class="section bg-stone">
-    <div class="container">
-      <div class="section-head center">
-        <span class="eyebrow" style="justify-content:center">How we work</span>
-        <h2 class="h-display">From measure to handover.</h2>
-      </div>
-      <div class="steps">
-        <div class="step"><div class="step__n">01</div><h3>Get in touch</h3><p>Tell us about your yard, the look you are after and rough timing.</p></div>
-        <div class="step"><div class="step__n">02</div><h3>Free on-site measure</h3><p>We visit, take levels, talk through timber and design, and confirm scope.</p></div>
-        <div class="step"><div class="step__n">03</div><h3>Fixed written quote</h3><p>A clear price with no mid-job surprises, and a booked start date.</p></div>
-        <div class="step"><div class="step__n">04</div><h3>Built &amp; finished</h3><p>One carpenter through to handover, oiled and the site left clean.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section bg-navy faq-section">
-    <div class="container">
-      <div class="section-head center">
-        <span class="eyebrow" style="justify-content:center">FAQ</span>
-        <h2 class="h-display">Decks &amp; pergolas in Altona.</h2>
-      </div>
-      <div class="faq">
-        <details class="faq__item" open>
-          <summary>Do you build decks and pergolas in Altona?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg></summary>
-          <div class="faq__a"><p>Yes. Timbr Built is based in Melbourne's inner west and works across the Hobsons Bay bayside, including Altona and the surrounding suburbs. Every job starts with a free on-site measure, then a fixed written quote with no obligation.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>How much does a deck cost?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg></summary>
-          <div class="faq__a"><p>It depends on the size, the timber you choose, the height off the ground and whether a permit is needed. Rather than guess, we give you a fixed written quote after a free on-site measure, so the price you see is the price you pay.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>What timber is best for a deck in Melbourne?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg></summary>
-          <div class="faq__a"><p>For most jobs we recommend an Australian hardwood like spotted gum or blackbutt, or merbau as a mid-range option. All three handle our weather well and take an oil finish. We will walk you through the trade-offs in cost, colour and upkeep before you decide.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>Do I need a permit for a deck or pergola in Altona?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg></summary>
-          <div class="faq__a"><p>Sometimes. Low decks and small pergolas often do not, but height, size and boundary setbacks can trigger a building permit, and the City of Hobsons Bay sets the local planning rules. We will let you know where your job sits and sort the paperwork if it is needed.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>How long will my deck take to build?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg></summary>
-          <div class="faq__a"><p>Most residential decks and pergolas are a matter of days to a couple of weeks on site once we start, depending on size and access. You will get a realistic timeline with your quote.</p></div>
-        </details>
-        <details class="faq__item">
-          <summary>Do you repair or restore old decks?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg></summary>
-          <div class="faq__a"><p>Yes. We reboard, re-level and re-oil tired decks, and repair rot, movement or a failing sub-frame. If it is worth saving we will tell you, and if it is not, we will tell you that too.</p></div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICE AREA / NEARBY -->
-  <section class="section bg-surface">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Serving Altona</span>
-        <h2 class="h-display">Local, and close by.</h2>
-        <p class="lead">Timbr Built is based in Melbourne's inner west and works throughout the Hobsons Bay bayside, part of the City of Hobsons Bay. We also build decks and pergolas in nearby <a class="area-link" href="decks-pergolas-williamstown.html">Williamstown</a>, <a class="area-link" href="decks-pergolas-newport.html">Newport</a> and <a class="area-link" href="decks-pergolas-point-cook.html">Point Cook</a>. If your suburb is not listed, get in touch and we will let you know.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- IMAGE CTA -->
-  <section class="cta-feature-section">
-    <div class="container">
-      <div class="cta-feature">
-        <div class="cta-feature__media">
-          <img width="1400" height="750" src="Assets/pergola-framing.jpg" alt="" loading="lazy" decoding="async">
-        </div>
-        <div class="cta-feature__body">
-          <h2>Planning a deck or pergola in Altona?</h2>
-          <p>Tell us about your yard and we will book a free on-site measure in Altona, then come back with a fixed written quote in time for summer.</p>
-          <div class="cta-feature__actions">
-            <a href="contact.html" class="btn btn-light btn-lg">Get a free quote</a>
-            <a href="tel:+61484698553" data-conversion="call" class="btn cta-feature__ghost btn-lg">Talk to us</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   </main>
 
   <footer class="footer">

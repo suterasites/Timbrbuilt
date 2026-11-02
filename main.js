@@ -1,18 +1,5 @@
 /* Timbr Built - shared site scripts */
 (function () {
-  // Mobile nav toggle
-  var toggle = document.querySelector('.nav__toggle');
-  if (toggle) {
-    toggle.addEventListener('click', function () {
-      document.body.classList.toggle('nav-open');
-      var open = document.body.classList.contains('nav-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    document.querySelectorAll('.nav__links a').forEach(function (a) {
-      a.addEventListener('click', function () { document.body.classList.remove('nav-open'); });
-    });
-  }
-
   // Footer year
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
@@ -62,7 +49,7 @@
   setTimeout(loadTracking, 3000);
 })();
 
-/* Cinematic navbar: full-screen menu overlay */
+/* Menu panel: opens from the top bar, closes on a link, Escape or the veil */
 (function () {
   document.querySelectorAll('[data-menu-toggle]').forEach(function (b) {
     b.addEventListener('click', function () { document.body.classList.toggle('menu-open'); });
@@ -79,7 +66,7 @@
   });
 })();
 
-/* Home top bar: solid once the hero tab strip scrolls up under it */
+/* Top bar: solid once the hero tab strip (home or inner page) scrolls up under it */
 (function () {
   var bar = document.querySelector('[data-topbar]');
   var tabs = document.querySelector('[data-hero-tabs]');
@@ -111,3 +98,10 @@
   update();
 })();
 
+/* Hero tab strip: on phones it scrolls sideways, so bring the current page's tab into view */
+(function () {
+  var tabs = document.querySelector('.phero__tabs');
+  var cur = tabs && tabs.querySelector('[aria-current]');
+  if (!cur || tabs.scrollWidth <= tabs.clientWidth) return;
+  tabs.scrollLeft = cur.offsetLeft - (tabs.clientWidth - cur.offsetWidth) / 2;
+})();

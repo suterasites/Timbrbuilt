@@ -116,6 +116,7 @@
   ]
 }
   </script>
+  <link rel="preload" as="font" href="Assets/fonts/inter-tight-latin.woff2" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DX5560F0FC"></script>
@@ -145,18 +146,21 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <!-- PERSISTENT CINEMATIC NAVBAR -->
-  <header class="cine-hero__bar">
-    <button class="cine-menu" data-menu-toggle aria-label="Open menu">
-      <span class="bars"><span></span><span></span><span></span></span> Menu
+  <!-- TOP BAR: Menu left, wordmark centre, count pills right. Solid once the hero tabs scroll under it -->
+  <header class="topbar" data-topbar>
+    <button class="topbar__menu" data-menu-toggle aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      Menu
     </button>
-    <a class="cine-brand" href="index.html" aria-label="Timbr Built home"><img width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built"></a>
-    <nav class="cine-hero__nav">
-      <a class="count-pill" href="services.html">Services <span class="n">4</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+    <a class="topbar__brand" href="index.html" aria-label="Timbr Built home">
+      <img width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built">
+    </a>
+    <nav class="topbar__nav" aria-label="Main">
+      <a href="services.html">Services <span class="topbar__n">4</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
-      <a class="count-pill" href="projects.html">Projects <span class="n">16</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+      <a href="projects.html">Projects <span class="topbar__n">16</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -198,83 +202,86 @@
     </div>
   </div>
 
-  <!-- CINEMATIC PAGE HERO -->
   <main id="main">
-  <section class="page-hero">
-    <div class="page-hero__media">
-      <img width="900" height="1600" src="Assets/hero-build.jpg" alt="New build home with vertical cladding and black-framed windows" fetchpriority="high" decoding="async">
-    </div>
-    <div class="container page-hero__inner">
-      <span class="eyebrow">Lockups &amp; New Builds</span>
-      <h1 class="page-hero__title">New-build carpentry to lockup.</h1>
-      <p class="page-hero__lead">New-build and extension carpentry taken through to lockup stage, weathertight and ready for the trades that follow.</p>
+  <!-- PAGE HERO: tab strip, intro on the night ground beside photo tiles -->
+  <section class="phero">
+    <nav class="phero__tabs" aria-label="Explore Timbr Built" data-hero-tabs>
+      <a href="index.html">Home</a>
+      <a href="carpentry.html">Carpentry</a>
+      <a href="bathroom-renovations.html">Bathroom renovations</a>
+      <a href="decks-pergolas.html">Decks &amp; pergolas</a>
+      <a href="lockups-new-builds.html" aria-current="page">Lockups &amp; new builds</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Free quote</a>
+    </nav>
+    <div class="phero__stage">
+      <div class="phero__intro">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/services.html">Services</a></li>
+            <li aria-current="page">Lockups & New Builds</li>
+          </ol>
+        </nav>
+        <h1 class="phero__title">New-build carpentry to lockup.</h1>
+        <p class="phero__lead">New-build and extension carpentry taken through to lockup stage, weathertight and ready for the trades that follow.</p>
+        <div class="phero__actions">
+          <a class="obtn" href="contact.html">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+          <a class="tlink" href="tel:+61484698553" data-conversion="call">or call 0484 698 553</a>
+        </div>
+      </div>
+      <div class="phero__cell phero__cell--wide"><img width="1242" height="2208" src="Assets/hero-newbuild.jpg" alt="New build home with vertical cladding and black-framed windows" fetchpriority="high" decoding="async"></div>
     </div>
   </section>
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li><a href="/services.html">Services</a></li>
-        <li aria-current="page">Lockups & New Builds</li>
-      </ol>
+
+  <!-- DETAIL: label on a hairline, serif title | photo | copy, list and button -->
+  <section class="band detail">
+    <div class="detail__row">
+      <p class="detail__label">What's included</p>
+      <h2 class="detail__title">Frame, clad, weathertight</h2>
+      <div class="detail__media"><img width="619" height="1100" src="Assets/build-cladding.jpg" alt="New build lockup with cladding, gable and windows installed" loading="lazy" decoding="async"></div>
+      <div class="detail__body">
+        <p>Frames, cladding, windows and doors taken to lockup stage, with extensions and second-storey additions built to spec and left ready for the following trades.</p>
+        <ul class="detail__list">
+          <li>Wall and roof framing</li>
+          <li>Cladding, including vertical and board-and-batten</li>
+          <li>Window and door installation</li>
+          <li>Extensions and second-storey additions</li>
+        </ul>
+        <a class="obtn" href="contact.html">Get a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+      </div>
     </div>
-  </nav>
+  </section>
 
+  <!-- PROJECT WALL: dimmed photo tiles on the night ground -->
+  <section class="band band--night works">
+    <p class="band__label">Recent work</p>
+    <div class="works__head">
+      <h2 class="band__title">New builds in progress.</h2>
+      <a class="works__all" href="projects.html">All projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+    </div>
+    <div class="works__grid">
+      <figure class="works__tile"><img width="787" height="1400" src="Assets/facade-brick-cladding.jpg" alt="New build facade in face brick with white cladding above" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Lockups &amp; New Builds</span><span class="works__title">Face brick &amp; cladding facade</span></figcaption></figure>
+      <figure class="works__tile"><img width="1050" height="1400" src="Assets/framing-arched-window.jpg" alt="Timber roof framing with an arched window opening framed out" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Lockups &amp; New Builds</span><span class="works__title">Roof framing &amp; window openings</span></figcaption></figure>
+      <figure class="works__tile"><img width="562" height="1000" src="Assets/build-2.jpg" alt="Structural carpentry on a new build" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Lockups &amp; New Builds</span><span class="works__title">New-build structure</span></figcaption></figure>
+    </div>
+  </section>
 
-  <!-- OVERVIEW + WHAT'S INCLUDED -->
-  <section class="section bg-surface">
-    <div class="container">
-      <div class="feature">
-        <div class="feature__media"><img width="619" height="1100" src="Assets/build-cladding.jpg" alt="New build lockup with cladding, gable and windows installed" loading="lazy" decoding="async"></div>
-        <div class="feature__body">
-          <span class="eyebrow">What's included</span>
-          <h2>Frame, clad, weathertight</h2>
-          <p>Frames, cladding, windows and doors taken to lockup stage, with extensions and second-storey additions built to spec and left ready for the following trades.</p>
-          <ul class="feature__list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Wall and roof framing</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Cladding, including vertical and board-and-batten</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Window and door installation</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Extensions and second-storey additions</li>
-          </ul>
-          <a href="contact.html" class="btn btn-primary mt-sm">Get a quote</a>
+  <!-- CTA: one wide dimmed photo tile on the night ground -->
+  <section class="cta-tile">
+    <div class="cta-tile__frame">
+      <img width="1400" height="750" src="Assets/pergola-framing.jpg" alt="" loading="lazy" decoding="async">
+      <div class="cta-tile__body">
+        <h2 class="cta-tile__title">Starting a new build or extension?</h2>
+        <p class="cta-tile__text">Tell us about the project and we'll book a free on-site measure, then come back with a fixed written quote.</p>
+        <div class="cta-tile__actions">
+          <a class="cta-tile__btn" href="contact.html">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+          <a class="cta-tile__call" href="tel:+61484698553" data-conversion="call">or call 0484 698 553</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- RELATED WORK -->
-  <section class="section bg-stone">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Recent work</span>
-        <h2 class="h-display">New builds in progress.</h2>
-      </div>
-      <div class="gallery">
-        <figure><img width="787" height="1400" src="Assets/facade-brick-cladding.jpg" alt="New build facade in face brick with white cladding above" loading="lazy" decoding="async"><figcaption><span>Lockups &amp; New Builds</span>Face brick &amp; cladding facade</figcaption></figure>
-        <figure><img width="1050" height="1400" src="Assets/framing-arched-window.jpg" alt="Timber roof framing with an arched window opening framed out" loading="lazy" decoding="async"><figcaption><span>Lockups &amp; New Builds</span>Roof framing &amp; window openings</figcaption></figure>
-        <figure><img width="562" height="1000" src="Assets/build-2.jpg" alt="Structural carpentry on a new build" loading="lazy" decoding="async"><figcaption><span>Lockups &amp; New Builds</span>New-build structure</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- IMAGE CTA -->
-  <section class="cta-feature-section">
-    <div class="container">
-      <div class="cta-feature">
-        <div class="cta-feature__media">
-          <img width="1400" height="750" src="Assets/pergola-framing.jpg" alt="" loading="lazy" decoding="async">
-        </div>
-        <div class="cta-feature__body">
-          <h2>Starting a new build or extension?</h2>
-          <p>Tell us about the project and we'll book a free on-site measure, then come back with a fixed written quote.</p>
-          <div class="cta-feature__actions">
-            <a href="contact.html" class="btn btn-light btn-lg">Get a free quote</a>
-            <a href="tel:+61484698553" data-conversion="call" class="btn cta-feature__ghost btn-lg">Talk to us</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   </main>
 
   <footer class="footer">

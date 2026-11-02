@@ -110,6 +110,7 @@
   ]
 }
   </script>
+  <link rel="preload" as="font" href="Assets/fonts/inter-tight-latin.woff2" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DX5560F0FC"></script>
@@ -140,18 +141,21 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- PERSISTENT CINEMATIC NAVBAR -->
-  <header class="cine-hero__bar">
-    <button class="cine-menu" data-menu-toggle aria-label="Open menu">
-      <span class="bars"><span></span><span></span><span></span></span> Menu
+  <!-- TOP BAR: Menu left, wordmark centre, count pills right. Solid once the hero tabs scroll under it -->
+  <header class="topbar" data-topbar>
+    <button class="topbar__menu" data-menu-toggle aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      Menu
     </button>
-    <a class="cine-brand" href="index.html" aria-label="Timbr Built home"><img width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built"></a>
-    <nav class="cine-hero__nav">
-      <a class="count-pill" href="services.html">Services <span class="n">4</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+    <a class="topbar__brand" href="index.html" aria-label="Timbr Built home">
+      <img width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built">
+    </a>
+    <nav class="topbar__nav" aria-label="Main">
+      <a href="services.html">Services <span class="topbar__n">4</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
-      <a class="count-pill" href="projects.html">Projects <span class="n">16</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+      <a href="projects.html">Projects <span class="topbar__n">16</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -194,113 +198,112 @@
     </div>
   </div>
 
-  <!-- CINEMATIC PAGE HERO -->
   <main id="main">
-  <section class="page-hero">
-    <div class="page-hero__media">
-      <img width="1400" height="750" src="Assets/pergola-framing.jpg" alt="Timber pergola frame and deck joists under construction" fetchpriority="high" decoding="async">
-    </div>
-    <div class="container page-hero__inner">
-      <span class="eyebrow">Services</span>
-      <h1 class="page-hero__title">What we build.</h1>
-      <p class="page-hero__lead">From the frame to the final coat, Timbr Built covers the trades that matter to a home. One qualified carpenter running the job, coordinating every trade, and standing behind the finish.</p>
-    </div>
-  </section>
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li aria-current="page">Services</li>
-      </ol>
-    </div>
-  </nav>
-
-
-  <!-- SERVICES -->
-  <section class="section bg-surface">
-    <div class="container">
-
-      <div class="feature" id="carpentry">
-        <div class="feature__media"><a href="carpentry.html"><img width="562" height="1000" src="Assets/build-2.jpg" alt="Structural carpentry and framing on a new build" loading="lazy" decoding="async"></a></div>
-        <div class="feature__body">
-          <span class="eyebrow">Carpentry</span>
-          <h2><a href="carpentry.html">Carpentry across Melbourne's inner west</a></h2>
-          <p>The craft the whole business is built on. Framing, structural work, finish carpentry and the everyday repairs and alterations that keep a home solid and looking sharp.</p>
-          <ul class="feature__list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Wall, floor and roof framing</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Finish carpentry, doors, skirting and architraves</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Custom joinery and built-in storage</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Repairs, alterations and renovations</li>
-          </ul>
-          <a href="carpentry.html" class="btn btn-primary mt-sm">See carpentry</a>
+  <!-- PAGE HERO: tab strip, intro on the night ground beside photo tiles -->
+  <section class="phero">
+    <nav class="phero__tabs" aria-label="Explore Timbr Built" data-hero-tabs>
+      <a href="index.html">Home</a>
+      <a href="carpentry.html">Carpentry</a>
+      <a href="bathroom-renovations.html">Bathroom renovations</a>
+      <a href="decks-pergolas.html">Decks &amp; pergolas</a>
+      <a href="lockups-new-builds.html">Lockups &amp; new builds</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Free quote</a>
+    </nav>
+    <div class="phero__stage">
+      <div class="phero__intro">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li aria-current="page">Services</li>
+          </ol>
+        </nav>
+        <h1 class="phero__title">What we build.</h1>
+        <p class="phero__lead">From the frame to the final coat, Timbr Built covers the trades that matter to a home. One qualified carpenter running the job, coordinating every trade, and standing behind the finish.</p>
+        <div class="phero__actions">
+          <a class="obtn" href="contact.html">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+          <a class="tlink" href="tel:+61484698553" data-conversion="call">or call 0484 698 553</a>
         </div>
       </div>
-
-      <div class="feature feature--rev" id="bathrooms">
-        <div class="feature__media"><a href="bathroom-renovations.html"><img width="1050" height="1400" src="Assets/bathroom-featured.jpg" alt="Renovated bathroom with walk-in shower, brass tapware and freestanding bath" loading="lazy" decoding="async"></a></div>
-        <div class="feature__body">
-          <span class="eyebrow">Bathroom Renovations</span>
-          <h2><a href="bathroom-renovations.html">Bathrooms, managed start to finish</a></h2>
-          <p>A full bathroom renovation with one point of contact. We coordinate the plumber, waterproofer, tiler and electrician, and build the joinery ourselves, for a result that lasts.</p>
-          <ul class="feature__list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Full renovations, strip-out to fit-off</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Waterproofing and tiling coordinated</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Custom vanities, mirror units and storage</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Laundries, powder rooms and small makeovers</li>
-          </ul>
-          <a href="bathroom-renovations.html" class="btn btn-primary mt-sm">See bathroom renovations</a>
-        </div>
-      </div>
-
-      <div class="feature" id="decks">
-        <div class="feature__media"><a href="decks-pergolas.html"><img width="618" height="1100" src="Assets/deck.jpg" alt="Freshly oiled hardwood deck with pergola post" loading="lazy" decoding="async"></a></div>
-        <div class="feature__body">
-          <span class="eyebrow">Decks &amp; Pergolas</span>
-          <h2><a href="decks-pergolas.html">Outdoor timber, built to last</a></h2>
-          <p>Hardwood decks, pergolas and outdoor structures designed for Melbourne weather and finished properly, so they still look the part years down the track.</p>
-          <ul class="feature__list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Hardwood and merbau decking</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Pergolas, patios and verandahs</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Timber screens and privacy structures</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Oiling and finishing</li>
-          </ul>
-          <a href="decks-pergolas.html" class="btn btn-primary mt-sm">See decks &amp; pergolas</a>
-        </div>
-      </div>
-
-      <div class="feature feature--rev" id="lockups">
-        <div class="feature__media"><a href="lockups-new-builds.html"><img width="619" height="1100" src="Assets/build-cladding.jpg" alt="New build lockup with cladding, gable and windows installed" loading="lazy" decoding="async"></a></div>
-        <div class="feature__body">
-          <span class="eyebrow">Lockups &amp; New Builds</span>
-          <h2><a href="lockups-new-builds.html">New-build carpentry to lockup</a></h2>
-          <p>New-build and extension carpentry taken through to lockup stage. Frames, cladding, windows and doors, weathertight and ready for the trades that follow.</p>
-          <ul class="feature__list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Wall and roof framing</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Cladding, including vertical and board-and-batten</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Window and door installation</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Extensions and second-storey additions</li>
-          </ul>
-          <a href="lockups-new-builds.html" class="btn btn-primary mt-sm">See lockups &amp; new builds</a>
-        </div>
-      </div>
-
+      <div class="phero__cell"><img width="1400" height="750" src="Assets/pergola-framing.jpg" alt="Timber pergola frame and deck joists under construction" fetchpriority="high" decoding="async"></div>
+      <div class="phero__cell"><img width="1050" height="1400" src="Assets/bathroom-dual-vanity.jpg" alt="Renovated bathroom with freestanding bath and a floating timber double vanity" loading="lazy" decoding="async"></div>
     </div>
   </section>
 
-  <!-- IMAGE CTA -->
-  <section class="cta-feature-section">
-    <div class="container">
-      <div class="cta-feature">
-        <div class="cta-feature__media">
-          <img width="787" height="1400" src="Assets/facade-brick-cladding.jpg" alt="" loading="lazy" decoding="async">
-        </div>
-        <div class="cta-feature__body">
-          <h2>Not sure where your job fits?</h2>
-          <p>Give Luca a call and talk it through. If it's timber and it's a home, chances are we can help, or point you to the right trade.</p>
-          <div class="cta-feature__actions">
-            <a href="contact.html" class="btn btn-light btn-lg">Get a free quote</a>
-            <a href="tel:+61484698553" data-conversion="call" class="btn cta-feature__ghost btn-lg">Talk to us</a>
-          </div>
+  <!-- DETAIL: label on a hairline, serif title | photo | copy, list and button -->
+  <section class="band detail">
+    <div class="detail__row" id="carpentry">
+      <p class="detail__label"><span class="detail__n">01</span>Carpentry</p>
+      <h2 class="detail__title"><a href="carpentry.html">Carpentry across Melbourne's inner west</a></h2>
+      <a class="detail__media" href="carpentry.html" tabindex="-1" aria-hidden="true"><img width="562" height="1000" src="Assets/build-2.jpg" alt="Structural carpentry and framing on a new build" loading="lazy" decoding="async"></a>
+      <div class="detail__body">
+        <p>The craft the whole business is built on. Framing, structural work, finish carpentry and the everyday repairs and alterations that keep a home solid and looking sharp.</p>
+        <ul class="detail__list">
+          <li>Wall, floor and roof framing</li>
+          <li>Finish carpentry, doors, skirting and architraves</li>
+          <li>Custom joinery and built-in storage</li>
+          <li>Repairs, alterations and renovations</li>
+        </ul>
+        <a class="obtn" href="carpentry.html">See carpentry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+    <div class="detail__row" id="bathrooms">
+      <p class="detail__label"><span class="detail__n">02</span>Bathroom Renovations</p>
+      <h2 class="detail__title"><a href="bathroom-renovations.html">Bathrooms, managed start to finish</a></h2>
+      <a class="detail__media" href="bathroom-renovations.html" tabindex="-1" aria-hidden="true"><img width="1050" height="1400" src="Assets/bathroom-featured.jpg" alt="Renovated bathroom with walk-in shower, brass tapware and freestanding bath" loading="lazy" decoding="async"></a>
+      <div class="detail__body">
+        <p>A full bathroom renovation with one point of contact. We coordinate the plumber, waterproofer, tiler and electrician, and build the joinery ourselves, for a result that lasts.</p>
+        <ul class="detail__list">
+          <li>Full renovations, strip-out to fit-off</li>
+          <li>Waterproofing and tiling coordinated</li>
+          <li>Custom vanities, mirror units and storage</li>
+          <li>Laundries, powder rooms and small makeovers</li>
+        </ul>
+        <a class="obtn" href="bathroom-renovations.html">See bathroom renovations <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+    <div class="detail__row" id="decks">
+      <p class="detail__label"><span class="detail__n">03</span>Decks &amp; Pergolas</p>
+      <h2 class="detail__title"><a href="decks-pergolas.html">Outdoor timber, built to last</a></h2>
+      <a class="detail__media" href="decks-pergolas.html" tabindex="-1" aria-hidden="true"><img width="618" height="1100" src="Assets/deck.jpg" alt="Freshly oiled hardwood deck with pergola post" loading="lazy" decoding="async"></a>
+      <div class="detail__body">
+        <p>Hardwood decks, pergolas and outdoor structures designed for Melbourne weather and finished properly, so they still look the part years down the track.</p>
+        <ul class="detail__list">
+          <li>Hardwood and merbau decking</li>
+          <li>Pergolas, patios and verandahs</li>
+          <li>Timber screens and privacy structures</li>
+          <li>Oiling and finishing</li>
+        </ul>
+        <a class="obtn" href="decks-pergolas.html">See decks &amp; pergolas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+    <div class="detail__row" id="lockups">
+      <p class="detail__label"><span class="detail__n">04</span>Lockups &amp; New Builds</p>
+      <h2 class="detail__title"><a href="lockups-new-builds.html">New-build carpentry to lockup</a></h2>
+      <a class="detail__media" href="lockups-new-builds.html" tabindex="-1" aria-hidden="true"><img width="619" height="1100" src="Assets/build-cladding.jpg" alt="New build lockup with cladding, gable and windows installed" loading="lazy" decoding="async"></a>
+      <div class="detail__body">
+        <p>New-build and extension carpentry taken through to lockup stage. Frames, cladding, windows and doors, weathertight and ready for the trades that follow.</p>
+        <ul class="detail__list">
+          <li>Wall and roof framing</li>
+          <li>Cladding, including vertical and board-and-batten</li>
+          <li>Window and door installation</li>
+          <li>Extensions and second-storey additions</li>
+        </ul>
+        <a class="obtn" href="lockups-new-builds.html">See lockups &amp; new builds <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA: one wide dimmed photo tile on the night ground -->
+  <section class="cta-tile">
+    <div class="cta-tile__frame">
+      <img width="787" height="1400" src="Assets/facade-brick-cladding.jpg" alt="" loading="lazy" decoding="async">
+      <div class="cta-tile__body">
+        <h2 class="cta-tile__title">Not sure where your job fits?</h2>
+        <p class="cta-tile__text">Give Luca a call and talk it through. If it's timber and it's a home, chances are we can help, or point you to the right trade.</p>
+        <div class="cta-tile__actions">
+          <a class="cta-tile__btn" href="contact.html">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+          <a class="cta-tile__call" href="tel:+61484698553" data-conversion="call">or call 0484 698 553</a>
         </div>
       </div>
     </div>

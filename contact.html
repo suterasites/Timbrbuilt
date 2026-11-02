@@ -110,6 +110,7 @@
   ]
 }
   </script>
+  <link rel="preload" as="font" href="Assets/fonts/inter-tight-latin.woff2" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DX5560F0FC"></script>
@@ -140,18 +141,21 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- PERSISTENT CINEMATIC NAVBAR -->
-  <header class="cine-hero__bar">
-    <button class="cine-menu" data-menu-toggle aria-label="Open menu">
-      <span class="bars"><span></span><span></span><span></span></span> Menu
+  <!-- TOP BAR: Menu left, wordmark centre, count pills right. Solid once the hero tabs scroll under it -->
+  <header class="topbar" data-topbar>
+    <button class="topbar__menu" data-menu-toggle aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      Menu
     </button>
-    <a class="cine-brand" href="index.html" aria-label="Timbr Built home"><img width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built"></a>
-    <nav class="cine-hero__nav">
-      <a class="count-pill" href="services.html">Services <span class="n">4</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+    <a class="topbar__brand" href="index.html" aria-label="Timbr Built home">
+      <img width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built">
+    </a>
+    <nav class="topbar__nav" aria-label="Main">
+      <a href="services.html">Services <span class="topbar__n">4</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
-      <a class="count-pill" href="projects.html">Projects <span class="n">16</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+      <a href="projects.html">Projects <span class="topbar__n">16</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -194,106 +198,98 @@
     </div>
   </div>
 
-  <!-- CINEMATIC PAGE HERO -->
   <main id="main">
-  <section class="page-hero page-hero--short">
-    <div class="page-hero__media">
-      <img width="1050" height="1400" src="Assets/deck-weatherboard.jpg" alt="Freshly oiled hardwood deck beside a weatherboard home" fetchpriority="high" decoding="async">
-    </div>
-    <div class="container page-hero__inner">
-      <span class="eyebrow">Contact</span>
-      <h1 class="page-hero__title">Get a free quote.</h1>
-      <p class="page-hero__lead">Tell us about your project and we'll book a free on-site measure, then come back with a fixed written price. Prefer to talk? Call Luca directly on 0484 698 553.</p>
-    </div>
-  </section>
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li aria-current="page">Contact</li>
-      </ol>
-    </div>
-  </nav>
-
-
-  <!-- CONTACT DETAILS + FORM -->
-  <section class="section bg-surface">
-    <div class="container">
-      <div class="split" style="align-items:flex-start">
-        <div>
-          <span class="eyebrow">Get in touch</span>
-          <h2 style="font-size:clamp(1.6rem,3vw,2.1rem);margin-bottom:1.5rem">One local carpenter, one point of contact.</h2>
-          <ul class="contact-list">
-            <li>
-              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.95.68l1.5 4.5a1 1 0 01-.27 1.06L7.91 10.91a12.05 12.05 0 005.18 5.18l1.67-1.55a1 1 0 011.06-.27l4.5 1.5a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z"/></svg></span>
-              <div><div class="lbl">Phone</div><a class="val" href="tel:+61484698553" data-conversion="call">0484 698 553</a></div>
-            </li>
-            <li>
-              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v16H4z"/><path stroke-linecap="round" stroke-linejoin="round" d="M4 6l8 6 8-6"/></svg></span>
-              <div><div class="lbl">Email</div><a class="val" href="mailto:timbrbuilt@gmail.com">timbrbuilt@gmail.com</a></div>
-            </li>
-            <li>
-              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6-7-11a7 7 0 1114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-              <div><div class="lbl">Service area</div><span class="val">Melbourne's inner west &amp; Hobsons Bay</span></div>
-            </li>
-            <li>
-              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-              <div><div class="lbl">Quotes</div><span class="val">Free on-site measure, fixed price</span></div>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <form class="form-card" action="https://formspree.io/f/mpqgvdlj" method="POST" data-track-gclid>
-            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
-            <input type="hidden" name="_next" value="https://timbrbuilt.com.au/thank-you">
-            <input type="hidden" name="_source" value="contact">
-            <input type="hidden" name="gclid" value="">
-            <input type="hidden" name="landing_url" value="">
-            <input type="hidden" name="referrer" value="">
-            <div class="field-row">
-              <div class="field">
-                <label for="name">Name <span class="req">*</span></label>
-                <input class="input" id="name" name="name" type="text" required autocomplete="name" placeholder="Your name">
-              </div>
-              <div class="field">
-                <label for="phone">Phone <span class="req">*</span></label>
-                <input class="input" id="phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" placeholder="04XX XXX XXX">
-              </div>
-            </div>
-            <div class="field-row">
-              <div class="field">
-                <label for="email">Email <span class="opt">(optional)</span></label>
-                <input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com">
-              </div>
-              <div class="field">
-                <label for="suburb">Suburb <span class="req">*</span></label>
-                <input class="input" id="suburb" name="suburb" type="text" required placeholder="e.g. Williamstown">
-              </div>
-            </div>
-            <div class="field">
-              <label for="service">What do you need? <span class="req">*</span></label>
-              <select class="input" id="service" name="service" required>
-                <option value="" selected disabled>Select a service</option>
-                <option>Carpentry</option>
-                <option>Bathroom renovation</option>
-                <option>Deck or pergola</option>
-                <option>New build or lockup</option>
-                <option>Something else</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="message">Project details <span class="opt">(optional)</span></label>
-              <textarea class="input" id="message" name="message" rows="3" placeholder="Tell us a bit about the job, the site and your timing..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Request My Free Quote</button>
-            <p class="form-note">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.6-4A12 12 0 0112 2.9 12 12 0 013.4 6 12 12 0 003 9c0 5.6 3.8 10.3 9 11.6 5.2-1.3 9-6 9-11.6 0-1-.1-2.1-.4-3z"/></svg>
-              Free, no-obligation quote. Your details stay private.
-            </p>
-          </form>
+  <!-- PAGE HERO: tab strip, intro on the night ground beside photo tiles -->
+  <section class="phero phero--short">
+    <nav class="phero__tabs" aria-label="Explore Timbr Built" data-hero-tabs>
+      <a href="index.html">Home</a>
+      <a href="carpentry.html">Carpentry</a>
+      <a href="bathroom-renovations.html">Bathroom renovations</a>
+      <a href="decks-pergolas.html">Decks &amp; pergolas</a>
+      <a href="lockups-new-builds.html">Lockups &amp; new builds</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html" aria-current="page">Free quote</a>
+    </nav>
+    <div class="phero__stage">
+      <div class="phero__intro">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li aria-current="page">Contact</li>
+          </ol>
+        </nav>
+        <h1 class="phero__title">Get a free quote.</h1>
+        <p class="phero__lead">Tell us about your project and we'll book a free on-site measure, then come back with a fixed written price. Prefer to talk? Call Luca directly on 0484 698 553.</p>
+        <div class="phero__actions">
+          <a class="obtn" href="#quote">Request a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+          <a class="tlink" href="tel:+61484698553" data-conversion="call">or call 0484 698 553</a>
         </div>
       </div>
+      <div class="phero__cell"><img width="1050" height="1400" src="Assets/deck-weatherboard.jpg" alt="Freshly oiled hardwood deck beside a weatherboard home" fetchpriority="high" decoding="async"></div>
+      <div class="phero__cell"><img width="1050" height="1400" src="Assets/bathroom-vanity-window.jpg" alt="Bathroom with timber vanity, mirror and white-framed window" loading="lazy" decoding="async"></div>
+    </div>
+  </section>
+
+  <!-- QUOTE: details left, service-area map centre, cream quote form right -->
+  <section class="reach" id="quote">
+    <div class="reach__grid">
+      <div class="reach__info">
+        <div class="reach__group">
+          <h2 class="reach__h">Contact us</h2>
+          <p class="reach__p">Timbr Built<br>Melbourne's inner west &amp; Hobsons Bay, VIC</p>
+          <ul class="reach__list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linejoin="round" d="M3.5 5.5h17v13h-17z"/><path stroke-linecap="round" stroke-linejoin="round" d="M4 6l8 6.5L20 6"/></svg><a href="mailto:timbrbuilt@gmail.com">timbrbuilt@gmail.com</a></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="1.5"/><path stroke-linecap="round" d="M11 18.5h2"/></svg><a href="tel:+61484698553" data-conversion="call">0484 698 553</a></li>
+          </ul>
+        </div>
+        <div class="reach__group">
+          <h3 class="reach__h">Quotes</h3>
+          <ul class="reach__list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg>Free on-site measure</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg>Fixed written price, no obligation</li>
+          </ul>
+        </div>
+        <div class="reach__group">
+          <h3 class="reach__h">Prefer to talk?</h3>
+          <p class="reach__p">Call Luca directly on <a href="tel:+61484698553" data-conversion="call">0484 698 553</a>.</p>
+        </div>
+      </div>
+      <figure class="reach__map">
+        <img width="700" height="900" src="Assets/service-area.svg" alt="Map of the inner-west suburbs Timbr Built works in: Williamstown, Newport, Spotswood, Yarraville, Seddon, Footscray, West Footscray, Maribyrnong, Altona and Altona North" loading="lazy" decoding="async">
+        <figcaption class="reach__pop">
+          <span class="reach__pop-h">Where we work</span>
+          <span class="reach__pop-t">Melbourne's inner west and Hobsons Bay, plus Point Cook, Werribee, Tarneit and Hoppers Crossing.</span>
+        </figcaption>
+      </figure>
+      <form class="reach__form" action="https://formspree.io/f/mpqgvdlj" method="POST" data-track-gclid>
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+        <input type="hidden" name="_next" value="https://timbrbuilt.com.au/thank-you">
+        <input type="hidden" name="_source" value="contact">
+        <input type="hidden" name="gclid" value="">
+        <input type="hidden" name="landing_url" value="">
+        <input type="hidden" name="referrer" value="">
+        <div class="reach__form-head">
+          <h3 class="reach__form-title">Get a free quote</h3>
+          <p class="reach__form-note">Tell us about the job and we'll book a free on-site measure.</p>
+        </div>
+        <label class="reach__field"><span class="sr-only">Name (required)</span><input name="name" type="text" required autocomplete="name" placeholder="Name *"></label>
+        <label class="reach__field"><span class="sr-only">Phone (required)</span><input name="phone" type="tel" required inputmode="tel" autocomplete="tel" placeholder="Phone *"></label>
+        <label class="reach__field"><span class="sr-only">Email (optional)</span><input name="email" type="email" autocomplete="email" placeholder="Email address"></label>
+        <label class="reach__field"><span class="sr-only">Suburb (required)</span><input name="suburb" type="text" required placeholder="Suburb *"></label>
+        <label class="reach__field reach__field--select"><span class="sr-only">What do you need? (required)</span>
+          <select name="service" required>
+            <option value="" selected disabled>What do you need? *</option>
+            <option>Carpentry</option>
+            <option>Bathroom renovation</option>
+            <option>Deck or pergola</option>
+            <option>New build or lockup</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label class="reach__field reach__field--grow"><span class="sr-only">Project details (optional)</span><textarea name="message" rows="4" placeholder="Tell us a bit about the job, the site and your timing"></textarea></label>
+        <p class="reach__fine">Free, no-obligation quote. Your details stay private.</p>
+        <button class="reach__submit" type="submit">Request my free quote</button>
+      </form>
     </div>
   </section>
 

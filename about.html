@@ -110,6 +110,7 @@
   ]
 }
   </script>
+  <link rel="preload" as="font" href="Assets/fonts/inter-tight-latin.woff2" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DX5560F0FC"></script>
@@ -140,18 +141,21 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- PERSISTENT CINEMATIC NAVBAR -->
-  <header class="cine-hero__bar">
-    <button class="cine-menu" data-menu-toggle aria-label="Open menu">
-      <span class="bars"><span></span><span></span><span></span></span> Menu
+  <!-- TOP BAR: Menu left, wordmark centre, count pills right. Solid once the hero tabs scroll under it -->
+  <header class="topbar" data-topbar>
+    <button class="topbar__menu" data-menu-toggle aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      Menu
     </button>
-    <a class="cine-brand" href="index.html" aria-label="Timbr Built home"><img width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built"></a>
-    <nav class="cine-hero__nav">
-      <a class="count-pill" href="services.html">Services <span class="n">4</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+    <a class="topbar__brand" href="index.html" aria-label="Timbr Built home">
+      <img width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built">
+    </a>
+    <nav class="topbar__nav" aria-label="Main">
+      <a href="services.html">Services <span class="topbar__n">4</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
-      <a class="count-pill" href="projects.html">Projects <span class="n">16</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+      <a href="projects.html">Projects <span class="topbar__n">16</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -194,104 +198,110 @@
     </div>
   </div>
 
-  <!-- CINEMATIC PAGE HERO -->
   <main id="main">
-  <section class="page-hero">
-    <div class="page-hero__media">
-      <img width="787" height="1400" src="Assets/facade-brick-cladding.jpg" alt="Completed townhouse facade in face brick and cladding by Timbr Built" fetchpriority="high" decoding="async">
-    </div>
-    <div class="container page-hero__inner">
-      <span class="eyebrow">About Timbr Built</span>
-      <h1 class="page-hero__title">A local carpenter who backs the work.</h1>
-      <p class="page-hero__lead">Timbr Built is a qualified carpenter based in Melbourne's inner west, taking on the jobs that make a house feel like home, from framing and new builds to bathrooms, decks and everyday carpentry.</p>
-    </div>
-  </section>
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li aria-current="page">About</li>
-      </ol>
-    </div>
-  </nav>
-
-
-  <!-- APPROACH -->
-  <section class="section bg-surface">
-    <div class="container">
-      <div class="feature">
-        <div class="feature__media"><img width="1050" height="1400" src="Assets/framing-arched-window.jpg" alt="Timber roof framing with an arched window opening framed out" loading="lazy" decoding="async"></div>
-        <div class="feature__body">
-          <span class="eyebrow">Our approach</span>
-          <h2>Trade-trained, hands-on, and easy to deal with.</h2>
-          <p>Timbr Built is a hands-on business, so the person quoting your job is the person doing it. That means straight answers, a price that holds, and a standard of work a carpenter is happy to put a name to.</p>
-          <p class="mt-sm">Whether it's a full bathroom renovation, a new deck for summer, or framing a new build through to lockup, the job is planned properly, communicated clearly, and finished clean.</p>
+  <!-- PAGE HERO: tab strip, intro on the night ground beside photo tiles -->
+  <section class="phero">
+    <nav class="phero__tabs" aria-label="Explore Timbr Built" data-hero-tabs>
+      <a href="index.html">Home</a>
+      <a href="carpentry.html">Carpentry</a>
+      <a href="bathroom-renovations.html">Bathroom renovations</a>
+      <a href="decks-pergolas.html">Decks &amp; pergolas</a>
+      <a href="lockups-new-builds.html">Lockups &amp; new builds</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Free quote</a>
+    </nav>
+    <div class="phero__stage">
+      <div class="phero__intro">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li aria-current="page">About</li>
+          </ol>
+        </nav>
+        <h1 class="phero__title">A local carpenter who backs the work.</h1>
+        <p class="phero__lead">Timbr Built is a qualified carpenter based in Melbourne's inner west, taking on the jobs that make a house feel like home, from framing and new builds to bathrooms, decks and everyday carpentry.</p>
+        <div class="phero__actions">
+          <a class="obtn" href="contact.html">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+          <a class="tlink" href="tel:+61484698553" data-conversion="call">or call 0484 698 553</a>
         </div>
       </div>
+      <div class="phero__cell"><img width="787" height="1400" src="Assets/facade-brick-cladding.jpg" alt="Completed townhouse facade in face brick and cladding by Timbr Built" fetchpriority="high" decoding="async"></div>
+      <div class="phero__cell"><img width="1050" height="1400" src="Assets/laundry-walnut-joinery.jpg" alt="Laundry with walnut timber joinery and a stone benchtop" loading="lazy" decoding="async"></div>
     </div>
   </section>
 
-  <!-- VALUES / PRINCIPLES -->
-  <section class="section bg-navy">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">What we stand for</span>
-        <h2 class="h-display">Values on every job.</h2>
-      </div>
-      <div class="stances">
-        <div class="stance">
-          <h3>Do it once, right</h3>
-          <p>Quality carpentry that lasts, not a quick patch. The frame gets the same care as the finish, because both decide how long the work holds up.</p>
-        </div>
-        <div class="stance">
-          <h3>Straight talk, fixed price</h3>
-          <p>A clear scope and a fixed written price before we start, so you always know where things stand and there are no mid-job surprises.</p>
-        </div>
-        <div class="stance">
-          <h3>One team, managed</h3>
-          <p>The person who quotes your job is the one on the tools, coordinating every trade so you have a single point of contact from start to finish.</p>
-        </div>
-        <div class="stance">
-          <h3>Local and reliable</h3>
-          <p>Based in the inner west, turning up when we say we will and leaving the site swept clean at the end of every day.</p>
-        </div>
+  <!-- DETAIL: label on a hairline, serif title | photo | copy, list and button -->
+  <section class="band detail">
+    <div class="detail__row">
+      <p class="detail__label">Our approach</p>
+      <h2 class="detail__title">Trade-trained, hands-on, and easy to deal with.</h2>
+      <div class="detail__media"><img width="1050" height="1400" src="Assets/framing-arched-window.jpg" alt="Timber roof framing with an arched window opening framed out" loading="lazy" decoding="async"></div>
+      <div class="detail__body">
+        <p>Timbr Built is a hands-on business, so the person quoting your job is the person doing it. That means straight answers, a price that holds, and a standard of work a carpenter is happy to put a name to.</p>
+        <p>Whether it's a full bathroom renovation, a new deck for summer, or framing a new build through to lockup, the job is planned properly, communicated clearly, and finished clean.</p>
       </div>
     </div>
   </section>
 
-  <!-- SERVICE AREAS -->
-  <section class="section bg-surface">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Where we work</span>
-        <h2 class="h-display">Melbourne's inner west &amp; Hobsons Bay.</h2>
-        <p class="lead">Based locally and working across the inner west and bayside suburbs. If yours isn't listed, get in touch and we'll let you know.</p>
-      </div>
-      <div class="areas">
-        <p>Williamstown</p><p>Williamstown North</p><p>Newport</p><p>Spotswood</p>
-        <p>South Kingsville</p><p>Kingsville</p><p>Seddon</p><p>Yarraville</p>
-        <p>Footscray</p><p>West Footscray</p><p>Maidstone</p><p>Maribyrnong</p>
-        <p>Seaholme</p><p>Altona</p><p>Altona North</p><p>Altona Meadows</p>
-        <p>Laverton</p><p>Brooklyn</p><p>Point Cook</p><p>Williams Landing</p>
-        <p>Werribee</p><p>Hoppers Crossing</p><p>Sunshine</p><p>Wyndham Vale</p>
-      </div>
+  <!-- VALUES: numbered serif rows on hairlines -->
+  <section class="band band--night values">
+    <p class="band__label">What we stand for</p>
+    <div class="band__head">
+      <h2 class="band__title">Values on every job.</h2>
     </div>
+    <ol class="values__list">
+      <li class="values__row"><h3 class="values__name"><span class="values__n">01</span>Do it once, right</h3><p>Quality carpentry that lasts, not a quick patch. The frame gets the same care as the finish, because both decide how long the work holds up.</p></li>
+      <li class="values__row"><h3 class="values__name"><span class="values__n">02</span>Straight talk, fixed price</h3><p>A clear scope and a fixed written price before we start, so you always know where things stand and there are no mid-job surprises.</p></li>
+      <li class="values__row"><h3 class="values__name"><span class="values__n">03</span>One team, managed</h3><p>The person who quotes your job is the one on the tools, coordinating every trade so you have a single point of contact from start to finish.</p></li>
+      <li class="values__row"><h3 class="values__name"><span class="values__n">04</span>Local and reliable</h3><p>Based in the inner west, turning up when we say we will and leaving the site swept clean at the end of every day.</p></li>
+    </ol>
   </section>
 
-  <!-- IMAGE CTA -->
-  <section class="cta-feature-section">
-    <div class="container">
-      <div class="cta-feature">
-        <div class="cta-feature__media">
-          <img width="619" height="1100" src="Assets/build-cladding.jpg" alt="" loading="lazy" decoding="async">
-        </div>
-        <div class="cta-feature__body">
-          <h2>Let's build something that lasts.</h2>
-          <p>Tell us about your project and get a free on-site measure with a fixed written price, no obligation. One local carpenter, start to finish.</p>
-          <div class="cta-feature__actions">
-            <a href="contact.html" class="btn btn-light btn-lg">Get a free quote</a>
-            <a href="tel:+61484698553" data-conversion="call" class="btn cta-feature__ghost btn-lg">Talk to us</a>
-          </div>
+  <!-- WHERE WE WORK: hairline suburb rows -->
+  <section class="band">
+    <p class="band__label">Where we work</p>
+    <div class="band__head">
+      <h2 class="band__title">Melbourne's inner west &amp; Hobsons Bay.</h2>
+      <p class="band__lead">Based locally and working across the inner west and bayside suburbs. If yours isn't listed, get in touch and we'll let you know.</p>
+    </div>
+    <ul class="suburbs">
+      <li><span>Williamstown</span></li>
+      <li><span>Williamstown North</span></li>
+      <li><span>Newport</span></li>
+      <li><span>Spotswood</span></li>
+      <li><span>South Kingsville</span></li>
+      <li><span>Kingsville</span></li>
+      <li><span>Seddon</span></li>
+      <li><span>Yarraville</span></li>
+      <li><span>Footscray</span></li>
+      <li><span>West Footscray</span></li>
+      <li><span>Maidstone</span></li>
+      <li><span>Maribyrnong</span></li>
+      <li><span>Seaholme</span></li>
+      <li><span>Altona</span></li>
+      <li><span>Altona North</span></li>
+      <li><span>Altona Meadows</span></li>
+      <li><span>Laverton</span></li>
+      <li><span>Brooklyn</span></li>
+      <li><span>Point Cook</span></li>
+      <li><span>Williams Landing</span></li>
+      <li><span>Werribee</span></li>
+      <li><span>Hoppers Crossing</span></li>
+      <li><span>Sunshine</span></li>
+      <li><span>Wyndham Vale</span></li>
+    </ul>
+  </section>
+
+  <!-- CTA: one wide dimmed photo tile on the night ground -->
+  <section class="cta-tile">
+    <div class="cta-tile__frame">
+      <img width="619" height="1100" src="Assets/build-cladding.jpg" alt="" loading="lazy" decoding="async">
+      <div class="cta-tile__body">
+        <h2 class="cta-tile__title">Let's build something that lasts.</h2>
+        <p class="cta-tile__text">Tell us about your project and get a free on-site measure with a fixed written price, no obligation. One local carpenter, start to finish.</p>
+        <div class="cta-tile__actions">
+          <a class="cta-tile__btn" href="contact.html">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+          <a class="cta-tile__call" href="tel:+61484698553" data-conversion="call">or call 0484 698 553</a>
         </div>
       </div>
     </div>

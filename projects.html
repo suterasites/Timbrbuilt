@@ -110,6 +110,7 @@
   ]
 }
   </script>
+  <link rel="preload" as="font" href="Assets/fonts/inter-tight-latin.woff2" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DX5560F0FC"></script>
@@ -140,18 +141,21 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- PERSISTENT CINEMATIC NAVBAR -->
-  <header class="cine-hero__bar">
-    <button class="cine-menu" data-menu-toggle aria-label="Open menu">
-      <span class="bars"><span></span><span></span><span></span></span> Menu
+  <!-- TOP BAR: Menu left, wordmark centre, count pills right. Solid once the hero tabs scroll under it -->
+  <header class="topbar" data-topbar>
+    <button class="topbar__menu" data-menu-toggle aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      Menu
     </button>
-    <a class="cine-brand" href="index.html" aria-label="Timbr Built home"><img width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built"></a>
-    <nav class="cine-hero__nav">
-      <a class="count-pill" href="services.html">Services <span class="n">4</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+    <a class="topbar__brand" href="index.html" aria-label="Timbr Built home">
+      <img width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built">
+    </a>
+    <nav class="topbar__nav" aria-label="Main">
+      <a href="services.html">Services <span class="topbar__n">4</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
-      <a class="count-pill" href="projects.html">Projects <span class="n">16</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+      <a href="projects.html">Projects <span class="topbar__n">16</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -194,66 +198,70 @@
     </div>
   </div>
 
-  <!-- CINEMATIC PAGE HERO -->
   <main id="main">
-  <section class="page-hero">
-    <div class="page-hero__media">
-      <img width="619" height="1100" src="Assets/build-cladding.jpg" alt="New build lockup with cladding, gable and windows installed by Timbr Built" fetchpriority="high" decoding="async">
-    </div>
-    <div class="container page-hero__inner">
-      <span class="eyebrow">Projects</span>
-      <h1 class="page-hero__title">Recent work.</h1>
-      <p class="page-hero__lead">A snapshot of jobs off the tools, from finished bathrooms to new-build cladding and freshly oiled decks. More photos are always on the way as jobs wrap up.</p>
-    </div>
-  </section>
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li aria-current="page">Projects</li>
-      </ol>
-    </div>
-  </nav>
-
-
-  <!-- GALLERY -->
-  <section class="section bg-surface">
-    <div class="container">
-      <div class="gallery">
-        <figure><img width="1050" height="1400" src="Assets/bathroom-dual-vanity.jpg" alt="Renovated main bathroom with freestanding bath, floating timber double vanity, twin arched mirrors and brass tapware" loading="lazy" decoding="async"><figcaption><span>Bathroom renovation</span>Freestanding bath &amp; double vanity</figcaption></figure>
-        <figure><img width="1050" height="1400" src="Assets/bathroom-brass-shower.jpg" alt="Bathroom walk-in shower with brass rail shower, glass screen and freestanding bath" loading="lazy" decoding="async"><figcaption><span>Bathroom renovation</span>Walk-in shower &amp; brass tapware</figcaption></figure>
-        <figure><img width="1050" height="1400" src="Assets/laundry-walnut-joinery.jpg" alt="Laundry with walnut timber joinery, terrazzo splashback, stone benchtop and undermount sink" loading="lazy" decoding="async"><figcaption><span>Carpentry</span>Walnut laundry joinery</figcaption></figure>
-        <figure><img width="1050" height="1400" src="Assets/bathroom-sage-shower.jpg" alt="Bathroom shower fully tiled in stone with a sage-green feature wall and recessed niche" loading="lazy" decoding="async"><figcaption><span>Bathroom renovation</span>Tiled shower &amp; recessed niche</figcaption></figure>
-        <figure><img width="1050" height="1400" src="Assets/bathroom-featured.jpg" alt="Renovated bathroom with walk-in shower, brass tapware and freestanding bath" loading="lazy" decoding="async"><figcaption><span>Bathroom renovation</span>Walk-in shower &amp; freestanding bath</figcaption></figure>
-        <figure><img width="787" height="1400" src="Assets/facade-brick-cladding.jpg" alt="New build facade in face brick with white cladding above" loading="lazy" decoding="async"><figcaption><span>Lockup &amp; new build</span>Face brick &amp; cladding facade</figcaption></figure>
-        <figure><img width="618" height="1100" src="Assets/deck.jpg" alt="Freshly oiled hardwood deck with pergola" loading="lazy" decoding="async"><figcaption><span>Decks &amp; pergolas</span>Oiled hardwood deck</figcaption></figure>
-        <figure><img width="1050" height="1400" src="Assets/bathroom-timber-vanity.jpg" alt="Bathroom with timber vanity, round vessel basin and tiled bath" loading="lazy" decoding="async"><figcaption><span>Bathroom renovation</span>Timber vanity &amp; vessel basin</figcaption></figure>
-        <figure><img width="1050" height="1400" src="Assets/framing-arched-window.jpg" alt="Timber roof framing with an arched window opening framed out" loading="lazy" decoding="async"><figcaption><span>Carpentry</span>Roof framing &amp; window openings</figcaption></figure>
-        <figure><img width="750" height="1000" src="Assets/bathroom-2.jpg" alt="Bathroom and laundry renovation with vanity, tiling and terrazzo floor" loading="lazy" decoding="async"><figcaption><span>Bathroom &amp; laundry</span>Vanity, tiling &amp; terrazzo</figcaption></figure>
-        <figure><img width="1050" height="1400" src="Assets/deck-weatherboard.jpg" alt="Oiled hardwood deck beside a weatherboard home" loading="lazy" decoding="async"><figcaption><span>Decks &amp; pergolas</span>Hardwood deck, oiled finish</figcaption></figure>
-        <figure><img width="645" height="1400" src="Assets/bathroom-led-mirror.jpg" alt="Bathroom with a large backlit LED mirror and vessel basin" loading="lazy" decoding="async"><figcaption><span>Bathroom renovation</span>Backlit mirror &amp; vessel basin</figcaption></figure>
-        <figure><img width="562" height="1000" src="Assets/build-2.jpg" alt="Structural carpentry on a new build" loading="lazy" decoding="async"><figcaption><span>Carpentry</span>New-build structure</figcaption></figure>
-        <figure><img width="1050" height="1400" src="Assets/bathroom-vanity-window.jpg" alt="Bathroom with timber vanity, mirror and white-framed window" loading="lazy" decoding="async"><figcaption><span>Bathroom renovation</span>Timber vanity, tiled walls</figcaption></figure>
-        <figure><img width="1400" height="750" src="Assets/pergola-framing.jpg" alt="Timber pergola frame and deck subframe under construction" loading="lazy" decoding="async"><figcaption><span>Decks &amp; pergolas</span>Pergola frame &amp; deck subframe</figcaption></figure>
-        <figure><img width="1050" height="1400" src="Assets/bathroom-terrazzo.jpg" alt="Powder room with terrazzo tiling, oval mirror and timber vanity" loading="lazy" decoding="async"><figcaption><span>Bathroom renovation</span>Terrazzo tiling &amp; oval mirror</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- IMAGE CTA -->
-  <section class="cta-feature-section">
-    <div class="container">
-      <div class="cta-feature">
-        <div class="cta-feature__media">
-          <img width="900" height="1600" src="Assets/hero-build.jpg" alt="" loading="lazy" decoding="async">
+  <!-- PAGE HERO: tab strip, intro on the night ground beside photo tiles -->
+  <section class="phero">
+    <nav class="phero__tabs" aria-label="Explore Timbr Built" data-hero-tabs>
+      <a href="index.html">Home</a>
+      <a href="carpentry.html">Carpentry</a>
+      <a href="bathroom-renovations.html">Bathroom renovations</a>
+      <a href="decks-pergolas.html">Decks &amp; pergolas</a>
+      <a href="lockups-new-builds.html">Lockups &amp; new builds</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="contact.html">Free quote</a>
+    </nav>
+    <div class="phero__stage">
+      <div class="phero__intro">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li aria-current="page">Projects</li>
+          </ol>
+        </nav>
+        <h1 class="phero__title">Recent work.</h1>
+        <p class="phero__lead">A snapshot of jobs off the tools, from finished bathrooms to new-build cladding and freshly oiled decks. More photos are always on the way as jobs wrap up.</p>
+        <div class="phero__actions">
+          <a class="obtn" href="contact.html">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+          <a class="tlink" href="tel:+61484698553" data-conversion="call">or call 0484 698 553</a>
         </div>
-        <div class="cta-feature__body">
-          <h2>Like what you see?</h2>
-          <p>Tell us about your project and we'll book a free on-site measure and come back with a fixed written quote. One local carpenter, start to finish.</p>
-          <div class="cta-feature__actions">
-            <a href="contact.html" class="btn btn-light btn-lg">Get a free quote</a>
-            <a href="tel:+61484698553" data-conversion="call" class="btn cta-feature__ghost btn-lg">Talk to us</a>
-          </div>
+      </div>
+      <div class="phero__cell"><img width="619" height="1100" src="Assets/build-cladding.jpg" alt="New build lockup with cladding, gable and windows installed by Timbr Built" fetchpriority="high" decoding="async"></div>
+      <div class="phero__cell"><img width="1050" height="1400" src="Assets/bathroom-brass-shower.jpg" alt="Walk-in shower with a brass rail shower and glass screen" loading="lazy" decoding="async"></div>
+    </div>
+  </section>
+
+  <!-- PROJECT WALL: dimmed photo tiles on the night ground -->
+  <section class="band band--night works">
+    <div class="works__grid">
+      <figure class="works__tile"><img width="1050" height="1400" src="Assets/bathroom-dual-vanity.jpg" alt="Renovated main bathroom with freestanding bath, floating timber double vanity, twin arched mirrors and brass tapware" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Bathroom renovation</span><span class="works__title">Freestanding bath &amp; double vanity</span></figcaption></figure>
+      <figure class="works__tile"><img width="1050" height="1400" src="Assets/bathroom-brass-shower.jpg" alt="Bathroom walk-in shower with brass rail shower, glass screen and freestanding bath" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Bathroom renovation</span><span class="works__title">Walk-in shower &amp; brass tapware</span></figcaption></figure>
+      <figure class="works__tile"><img width="1050" height="1400" src="Assets/laundry-walnut-joinery.jpg" alt="Laundry with walnut timber joinery, terrazzo splashback, stone benchtop and undermount sink" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Carpentry</span><span class="works__title">Walnut laundry joinery</span></figcaption></figure>
+      <figure class="works__tile"><img width="1050" height="1400" src="Assets/bathroom-sage-shower.jpg" alt="Bathroom shower fully tiled in stone with a sage-green feature wall and recessed niche" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Bathroom renovation</span><span class="works__title">Tiled shower &amp; recessed niche</span></figcaption></figure>
+      <figure class="works__tile"><img width="1050" height="1400" src="Assets/bathroom-featured.jpg" alt="Renovated bathroom with walk-in shower, brass tapware and freestanding bath" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Bathroom renovation</span><span class="works__title">Walk-in shower &amp; freestanding bath</span></figcaption></figure>
+      <figure class="works__tile"><img width="787" height="1400" src="Assets/facade-brick-cladding.jpg" alt="New build facade in face brick with white cladding above" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Lockup &amp; new build</span><span class="works__title">Face brick &amp; cladding facade</span></figcaption></figure>
+      <figure class="works__tile"><img width="618" height="1100" src="Assets/deck.jpg" alt="Freshly oiled hardwood deck with pergola" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Decks &amp; pergolas</span><span class="works__title">Oiled hardwood deck</span></figcaption></figure>
+      <figure class="works__tile"><img width="1050" height="1400" src="Assets/bathroom-timber-vanity.jpg" alt="Bathroom with timber vanity, round vessel basin and tiled bath" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Bathroom renovation</span><span class="works__title">Timber vanity &amp; vessel basin</span></figcaption></figure>
+      <figure class="works__tile"><img width="1050" height="1400" src="Assets/framing-arched-window.jpg" alt="Timber roof framing with an arched window opening framed out" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Carpentry</span><span class="works__title">Roof framing &amp; window openings</span></figcaption></figure>
+      <figure class="works__tile"><img width="750" height="1000" src="Assets/bathroom-2.jpg" alt="Bathroom and laundry renovation with vanity, tiling and terrazzo floor" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Bathroom &amp; laundry</span><span class="works__title">Vanity, tiling &amp; terrazzo</span></figcaption></figure>
+      <figure class="works__tile"><img width="1050" height="1400" src="Assets/deck-weatherboard.jpg" alt="Oiled hardwood deck beside a weatherboard home" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Decks &amp; pergolas</span><span class="works__title">Hardwood deck, oiled finish</span></figcaption></figure>
+      <figure class="works__tile"><img width="645" height="1400" src="Assets/bathroom-led-mirror.jpg" alt="Bathroom with a large backlit LED mirror and vessel basin" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Bathroom renovation</span><span class="works__title">Backlit mirror &amp; vessel basin</span></figcaption></figure>
+      <figure class="works__tile"><img width="562" height="1000" src="Assets/build-2.jpg" alt="Structural carpentry on a new build" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Carpentry</span><span class="works__title">New-build structure</span></figcaption></figure>
+      <figure class="works__tile"><img width="1050" height="1400" src="Assets/bathroom-vanity-window.jpg" alt="Bathroom with timber vanity, mirror and white-framed window" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Bathroom renovation</span><span class="works__title">Timber vanity, tiled walls</span></figcaption></figure>
+      <figure class="works__tile"><img width="1050" height="1400" src="Assets/bathroom-terrazzo.jpg" alt="Powder room with terrazzo tiling, oval mirror and timber vanity" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Bathroom renovation</span><span class="works__title">Terrazzo tiling &amp; oval mirror</span></figcaption></figure>
+      <figure class="works__tile"><img width="1400" height="750" src="Assets/pergola-framing.jpg" alt="Timber pergola frame and deck subframe under construction" loading="lazy" decoding="async"><figcaption class="works__cap"><span class="works__kicker">Decks &amp; pergolas</span><span class="works__title">Pergola frame &amp; deck subframe</span></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- CTA: one wide dimmed photo tile on the night ground -->
+  <section class="cta-tile">
+    <div class="cta-tile__frame">
+      <img width="900" height="1600" src="Assets/hero-build.jpg" alt="" loading="lazy" decoding="async">
+      <div class="cta-tile__body">
+        <h2 class="cta-tile__title">Like what you see?</h2>
+        <p class="cta-tile__text">Tell us about your project and we'll book a free on-site measure and come back with a fixed written quote. One local carpenter, start to finish.</p>
+        <div class="cta-tile__actions">
+          <a class="cta-tile__btn" href="contact.html">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+          <a class="cta-tile__call" href="tel:+61484698553" data-conversion="call">or call 0484 698 553</a>
         </div>
       </div>
     </div>

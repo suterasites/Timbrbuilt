@@ -7,6 +7,7 @@
   <title>Privacy Policy | Timbr Built</title>
   <link rel="icon" href="Assets/icon-navy.png">
   <link rel="apple-touch-icon" href="Assets/icon-navy.png">
+  <link rel="preload" as="font" href="Assets/fonts/inter-tight-latin.woff2" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DX5560F0FC"></script>
@@ -37,18 +38,21 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- PERSISTENT CINEMATIC NAVBAR -->
-  <header class="cine-hero__bar">
-    <button class="cine-menu" data-menu-toggle aria-label="Open menu">
-      <span class="bars"><span></span><span></span><span></span></span> Menu
+  <!-- TOP BAR: Menu left, wordmark centre, count pills right. Solid once the hero tabs scroll under it -->
+  <header class="topbar" data-topbar>
+    <button class="topbar__menu" data-menu-toggle aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      Menu
     </button>
-    <a class="cine-brand" href="index.html" aria-label="Timbr Built home"><img width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built"></a>
-    <nav class="cine-hero__nav">
-      <a class="count-pill" href="services.html">Services <span class="n">4</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+    <a class="topbar__brand" href="index.html" aria-label="Timbr Built home">
+      <img width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built">
+    </a>
+    <nav class="topbar__nav" aria-label="Main">
+      <a href="services.html">Services <span class="topbar__n">4</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
-      <a class="count-pill" href="projects.html">Projects <span class="n">16</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+      <a href="projects.html">Projects <span class="topbar__n">16</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
       </a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -91,40 +95,55 @@
     </div>
   </div>
 
-  <!-- DARK TITLE BAND -->
   <main id="main">
-  <section class="page-hero" style="background:var(--navy-900);min-height:40vh">
-    <div class="container page-hero__inner">
-      <span class="eyebrow">Privacy</span>
-      <h1 class="page-hero__title">Privacy Policy</h1>
+  <!-- PAGE HERO: tab strip and the title on the night ground -->
+  <section class="phero phero--plain">
+    <nav class="phero__tabs" aria-label="Explore Timbr Built" data-hero-tabs>
+      <a href="index.html">Home</a>
+      <a href="carpentry.html">Carpentry</a>
+      <a href="bathroom-renovations.html">Bathroom renovations</a>
+      <a href="decks-pergolas.html">Decks &amp; pergolas</a>
+      <a href="lockups-new-builds.html">Lockups &amp; new builds</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Free quote</a>
+    </nav>
+    <div class="phero__stage">
+      <div class="phero__intro">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li aria-current="page">Privacy Policy</li>
+          </ol>
+        </nav>
+        <h1 class="phero__title">Privacy Policy</h1>
+        <p class="phero__lead">Timbr Built (ABN 35 667 385 734). Last updated 2026-07-09.</p>
+      </div>
     </div>
   </section>
 
-  <section class="section bg-surface">
-    <div class="container" style="max-width:46rem">
-      <p style="font-size:.88rem;margin-bottom:2rem">Timbr Built (ABN 35 667 385 734). Last updated 2026-07-09.</p>
-
+  <!-- POLICY -->
+  <section class="band">
+    <p class="band__label">How we handle your information</p>
+    <div class="prose">
       <p>This policy explains how Timbr Built collects, uses and protects the personal information you provide through this website. We handle your information in line with the Australian Privacy Principles under the Privacy Act 1988 (Cth).</p>
 
-      <h3 style="margin:2rem 0 .5rem">What we collect</h3>
+      <h2>What we collect</h2>
       <p>When you submit an enquiry or quote request, we collect the details you provide, which may include your name, phone number, email, suburb, and any information you share about your project.</p>
 
-      <h3 style="margin:2rem 0 .5rem">How we use it</h3>
+      <h2>How we use it</h2>
       <p>We use your information to respond to your enquiry, arrange a free on-site measure, prepare and send a quote, and contact you about your project. We do not sell your personal information, and we do not use it for unrelated marketing without your consent.</p>
 
-      <h3 style="margin:2rem 0 .5rem">Who we share it with</h3>
+      <h2>Who we share it with</h2>
       <p>Form submissions on this site are processed by Formspree, our form-handling provider, and delivered to us by email. We may also use Google services (such as Google Ads and analytics) to measure and improve our advertising; these services may set cookies and collect usage data as described in Google's own privacy policy. We only share your information where it is necessary to deliver our service or where required by law.</p>
 
-      <h3 style="margin:2rem 0 .5rem">Cookies and advertising</h3>
+      <h2>Cookies and advertising</h2>
       <p>This site may use cookies to understand how visitors arrive from our Google Ads and to measure enquiries. You can disable cookies in your browser settings, though some features may not work as intended.</p>
 
-      <h3 style="margin:2rem 0 .5rem">Access and contact</h3>
-      <p>You can ask us to access, correct or delete the personal information we hold about you at any time. To make a request, or if you have any questions about this policy, email <a href="mailto:timbrbuilt@gmail.com" style="color:var(--timber-600);font-weight:600">timbrbuilt@gmail.com</a> or call <a href="tel:+61484698553" data-conversion="call" style="color:var(--timber-600);font-weight:600">0484 698 553</a>.</p>
-
-      <p style="margin-top:2.5rem"><a href="index.html" class="btn btn-ghost">&larr; Back to home</a></p>
+      <h2>Access and contact</h2>
+      <p>You can ask us to access, correct or delete the personal information we hold about you at any time. To make a request, or if you have any questions about this policy, email <a href="mailto:timbrbuilt@gmail.com">timbrbuilt@gmail.com</a> or call <a href="tel:+61484698553" data-conversion="call">0484 698 553</a>.</p>
+      <p><a class="obtn" href="index.html">Back to home <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a></p>
     </div>
   </section>
-
   </main>
 
   <footer class="footer">
