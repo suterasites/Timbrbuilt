@@ -314,21 +314,37 @@
     </div>
   </section>
 
-  <!-- WORK TEASER -->
-  <section class="section bg-stone" id="projects">
-    <div class="container">
-      <div class="section-head" style="display:flex;justify-content:space-between;align-items:flex-end;max-width:none;flex-wrap:wrap;gap:1rem">
-        <div style="max-width:40rem">
-          <span class="eyebrow">Recent Work</span>
-          <h2 class="h-display">A look at the tools down.</h2>
-        </div>
-        <a href="projects.html" class="btn btn-ghost">View all projects</a>
-      </div>
-      <div class="gallery">
-        <figure><img width="1050" height="1400" src="Assets/bathroom-timber-vanity.jpg" alt="Renovated bathroom with timber vanity and vessel basin" loading="lazy" decoding="async"><figcaption><span>Bathroom renovation</span>Timber vanity &amp; tiled bath</figcaption></figure>
-        <figure><img width="1050" height="1400" src="Assets/deck-weatherboard.jpg" alt="Freshly oiled hardwood deck beside a weatherboard home" loading="lazy" decoding="async"><figcaption><span>Decks &amp; pergolas</span>Oiled hardwood deck</figcaption></figure>
-        <figure><img width="562" height="1000" src="Assets/build-2.jpg" alt="Structural carpentry on a clad new build" loading="lazy" decoding="async"><figcaption><span>Lockup &amp; new build</span>Clad new build</figcaption></figure>
-      </div>
+  <!-- RECENT WORK: one wide project tile over two halves, dimmed photos with a serif title + link bottom left -->
+  <section class="recent" id="projects">
+    <div class="recent__head">
+      <h2 class="recent__label">Recent work</h2>
+      <a class="recent__all" href="projects.html">View all projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+    </div>
+    <div class="recent__grid">
+      <a class="recent__tile recent__tile--wide" href="decks-pergolas.html">
+        <img width="1400" height="750" src="Assets/pergola-framing.jpg" alt="Timber pergola frame and deck subframe under construction" loading="lazy" decoding="async">
+        <span class="recent__body">
+          <h3 class="recent__title">Pergola frame &amp; deck subframe</h3>
+          <span class="recent__text">Posts, beams and rafters up, with the deck subframe set out underneath.</span>
+          <span class="recent__more">See decks &amp; pergolas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
+        </span>
+      </a>
+      <a class="recent__tile" href="bathroom-renovations.html">
+        <img width="1050" height="1400" src="Assets/bathroom-timber-vanity.jpg" alt="Bathroom with timber vanity, round vessel basin and tiled bath" loading="lazy" decoding="async">
+        <span class="recent__body">
+          <h3 class="recent__title">Timber vanity &amp; vessel basin</h3>
+          <span class="recent__text">A bathroom renovation with a timber vanity, round vessel basin and tiled bath.</span>
+          <span class="recent__more">See bathroom renovations <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
+        </span>
+      </a>
+      <a class="recent__tile" href="lockups-new-builds.html">
+        <img width="787" height="1400" src="Assets/facade-brick-cladding.jpg" alt="New build facade in face brick with white cladding above" loading="lazy" decoding="async">
+        <span class="recent__body">
+          <h3 class="recent__title">Face brick &amp; cladding facade</h3>
+          <span class="recent__text">New-build carpentry taken to lockup, with cladding above a face brick base.</span>
+          <span class="recent__more">See lockups &amp; new builds <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
+        </span>
+      </a>
     </div>
   </section>
 

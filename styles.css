@@ -792,6 +792,43 @@ a.swall__tile:focus-visible { outline: 2px solid var(--timber); outline-offset: 
 }
 
 /* ==========================================================================
+   Recent work (redesign): one wide project tile over two halves on the night
+   ground, dimmed photos with a serif title, line and link bottom left
+   ========================================================================== */
+.recent { padding: clamp(3.5rem, 5.5vw, 5rem) 29px 29px; background: var(--night); color: #fff; font-family: var(--font-sans); }
+.recent__head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
+.recent__label { color: #8C8C8A; font-family: var(--font-sans); font-size: 18px; font-weight: 400; line-height: 1.2; letter-spacing: 0; }
+.recent__all,
+.recent__more { display: inline-flex; align-items: center; gap: 4px; font-size: 15px; font-weight: 600; line-height: 1; }
+.recent__all { color: #fff; }
+.recent__all svg,
+.recent__more svg { width: 15px; height: 15px; transition: transform .2s var(--ease); }
+.recent__all:hover svg,
+.recent__tile:hover .recent__more svg { transform: translateX(3px); }
+.recent__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
+.recent__tile { position: relative; display: block; height: clamp(340px, 37.4vw, 560px); overflow: hidden; border-radius: 6px; background: #1c2023; color: #fff; }
+.recent__tile--wide { grid-column: 1 / -1; }
+.recent__tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
+.recent__tile:hover img { transform: scale(1.03); }
+.recent__tile::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(0deg, rgba(13,13,13,.8) 0%, rgba(13,13,13,.38) 45%, rgba(13,13,13,.3) 100%);
+}
+.recent__body { position: absolute; z-index: 1; left: 22px; right: 22px; bottom: 30px; max-width: 22rem; }
+.recent__title {
+  margin-bottom: 14px; color: #fff; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.35rem, 1.75vw, 1.6rem);
+  font-weight: 400; line-height: 1.08; letter-spacing: -.01em;
+}
+.recent__text { display: block; margin-bottom: 12px; color: rgba(255,255,255,.9); font-size: 14.5px; line-height: 1.2; }
+.recent a:focus-visible { outline: 2px solid var(--timber-light); outline-offset: 3px; }
+
+@media (max-width: 760px){
+  .recent { padding: 3.5rem 1rem 1rem; }
+  .recent__grid { grid-template-columns: minmax(0, 1fr); }
+  .recent__tile { height: 440px; }
+}
+
+/* ==========================================================================
    Inner-page cinematic hero + editorial bits (about / services / projects)
    ========================================================================== */
 /* centred wordmark in the persistent bar, for pages without the giant hero wordmark */
