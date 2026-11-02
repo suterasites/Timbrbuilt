@@ -12,7 +12,8 @@
   <meta name="geo.placename" content="Melbourne">
   <link rel="icon" href="Assets/icon-navy.png">
   <link rel="apple-touch-icon" href="Assets/icon-navy.png">
-  <link rel="preload" as="image" href="Assets/hero-newbuild.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="Assets/hero-newbuild.jpg" media="(max-width: 900px)">
+  <link rel="preload" as="image" href="Assets/grid-newbuild.jpg" media="(min-width: 901px)">
   <link rel="preload" as="font" href="Assets/fonts/inter-tight-latin.woff2" type="font/woff2" crossorigin>
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_AU">
@@ -82,23 +83,24 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- TOP BAR: transparent over the hero, solid once scrolled past it -->
+  <!-- TOP BAR: Menu left, wordmark centre, count pills right. Solid once the hero tabs scroll under it -->
   <header class="topbar" data-topbar>
+    <button class="topbar__menu" data-menu-toggle aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      Menu
+    </button>
     <a class="topbar__brand" href="index.html" aria-label="Timbr Built home">
-      <img class="topbar__logo" width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built">
-      <img class="topbar__logo topbar__logo--dark" width="2342" height="380" src="Assets/wordmark-black-trim.png" alt="" aria-hidden="true">
+      <img width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built">
     </a>
     <nav class="topbar__nav" aria-label="Main">
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
+      <a href="services.html">Services <span class="topbar__n">4</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+      </a>
+      <a href="projects.html">Projects <span class="topbar__n">16</span>
+        <svg class="topbar__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
+      </a>
+      <a href="contact.html">Contact</a>
     </nav>
-    <a class="topbar__cta" href="contact.html">Contact
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8"/></svg>
-    </a>
-    <button class="topbar__menu" data-menu-toggle aria-label="Open menu">Menu
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" d="M4 8h16M4 16h16"/></svg>
-    </button>
   </header>
 
   <!-- FULL-SCREEN MENU OVERLAY -->
@@ -133,30 +135,59 @@
     </div>
   </div>
 
-  <!-- HERO: full-bleed photo slideshow, statement + button bottom left -->
+  <!-- HERO: outlined tab strip over a 3x2 grid of dimmed project photos; intro left, quote card right -->
   <main id="main">
-  <section class="home-hero" data-hero>
-    <div class="home-hero__slides">
-      <img class="home-hero__slide is-active" style="--y: 50%" width="1242" height="2208" src="Assets/hero-newbuild.jpg"
-           alt="New-build home with vertical cladding and black window frames" fetchpriority="high" decoding="async">
-      <img class="home-hero__slide" style="--y: 55%" width="1242" height="2208" data-src="Assets/hero-deck.jpg"
-           alt="Freshly oiled hardwood deck" decoding="async">
-      <img class="home-hero__slide" style="--y: 42%" width="878" height="1560" data-src="Assets/hero-gable.jpg"
-           alt="Gable-roof build at lockup with vertical cladding" decoding="async">
-      <img class="home-hero__slide" style="--y: 46%" width="787" height="1400" data-src="Assets/facade-brick-cladding.jpg"
-           alt="Townhouse facade with brick, render and timber-look screens" decoding="async">
-    </div>
-    <div class="home-hero__foot">
-      <div class="home-hero__progress" data-hero-dots>
-        <button type="button" class="is-active" aria-label="Show photo 1" aria-current="true"></button>
-        <button type="button" aria-label="Show photo 2"></button>
-        <button type="button" aria-label="Show photo 3"></button>
-        <button type="button" aria-label="Show photo 4"></button>
+  <section class="ghero">
+    <nav class="ghero__tabs" aria-label="Explore Timbr Built" data-hero-tabs>
+      <a href="#main" aria-current="page">Overview</a>
+      <a href="carpentry.html">Carpentry</a>
+      <a href="bathroom-renovations.html">Bathroom renovations</a>
+      <a href="decks-pergolas.html">Decks &amp; pergolas</a>
+      <a href="lockups-new-builds.html">Lockups &amp; new builds</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Free quote</a>
+    </nav>
+    <div class="ghero__stage">
+      <div class="ghero__grid">
+        <picture class="ghero__cell">
+          <source media="(max-width: 900px)" srcset="Assets/hero-newbuild.jpg">
+          <img width="900" height="900" src="Assets/grid-newbuild.jpg" alt="New-build home with vertical cladding and black window frames" fetchpriority="high" decoding="async">
+        </picture>
+        <div class="ghero__cell"><img width="900" height="900" src="Assets/grid-bathroom.jpg" alt="Renovated bathroom with freestanding bath and brushed brass tapware" loading="lazy" decoding="async"></div>
+        <div class="ghero__cell"><img width="900" height="900" src="Assets/grid-deck.jpg" alt="Freshly oiled hardwood deck" loading="lazy" decoding="async"></div>
+        <div class="ghero__cell"><img width="787" height="787" src="Assets/grid-townhouse.jpg" alt="Townhouse facade with brick, render and timber-look screens" loading="lazy" decoding="async"></div>
+        <div class="ghero__cell"><img width="878" height="878" src="Assets/grid-gable.jpg" alt="Gable-roof build at lockup with vertical cladding" loading="lazy" decoding="async"></div>
+        <div class="ghero__cell"><img width="900" height="900" src="Assets/grid-laundry.jpg" alt="Laundry with walnut joinery and stone benchtop" loading="lazy" decoding="async"></div>
       </div>
-      <h1 class="home-hero__statement">Timbr Built is a carpentry and building company in Melbourne's inner west, delivering decks, bathrooms and new builds shaped by honest timber, clean lines and a simple standard: built right.</h1>
-      <a class="home-hero__btn" href="projects.html">View projects
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8"/></svg>
-      </a>
+      <div class="ghero__content">
+        <div class="ghero__intro">
+          <p class="ghero__eyebrow">Carpentry &amp; building, Melbourne's inner west</p>
+          <h1 class="ghero__title">Carpentry, renovations and new builds, built right.</h1>
+          <p class="ghero__lead">A qualified carpenter on the tools from quote to handover. Decks, pergolas, bathrooms, framing and lockups across Williamstown, Newport, Yarraville, Altona and the rest of the inner west, all on a fixed written quote.</p>
+          <a class="ghero__btn" href="services.html">Explore
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg>
+          </a>
+        </div>
+        <aside class="ghero__aside">
+          <a class="ghero__card" href="contact.html">
+            <span class="ghero__card-body">
+              <span class="ghero__card-label">Free quote</span>
+              <span class="ghero__card-title">Fixed written quotes</span>
+              <span class="ghero__card-text">Tell us about the job and we'll come out, measure up and put a fixed written price in your hands. It holds, with no mid-job surprises, and the on-site measure is free.</span>
+              <span class="ghero__card-link">Get a free quote
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg>
+              </span>
+            </span>
+            <img class="ghero__card-img" width="300" height="600" src="Assets/card-framing.jpg" alt="Arched window framed in timber" decoding="async">
+          </a>
+          <p class="ghero__contact-label">To contact us</p>
+          <a class="ghero__contact" href="tel:+61484698553" data-conversion="call">
+            <span class="ghero__avatar"><img width="950" height="894" src="Assets/icon-white-mark.png" alt=""></span>
+            <span class="ghero__who"><strong>0484 698 553</strong><span>Call for a free on-site measure</span></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </aside>
+      </div>
     </div>
   </section>
 
