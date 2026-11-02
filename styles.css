@@ -4,7 +4,14 @@
    vertical battens). Hand-authored; shared across all pages.
    ========================================================================== */
 
+/* Inter Tight (OFL), self-hosted latin subset. Used by the redesign. */
+@font-face {
+  font-family: "Inter Tight"; font-style: normal; font-weight: 400 600; font-display: swap;
+  src: url("Assets/fonts/inter-tight-latin.woff2") format("woff2");
+}
+
 :root {
+  --font-sans:   "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --navy:        #1A1A1A;
   --navy-900:    #000000;
   --navy-800:    #121212;
@@ -313,18 +320,8 @@ textarea.input { resize: vertical; min-height: 96px; }
 [id] { scroll-margin-top: 96px; }
 
 /* ==========================================================================
-   Cinematic full-bleed hero (home) - big centered wordmark
+   Cinematic navbar (inner pages) - Menu button + count pills
    ========================================================================== */
-.cine-hero {
-  position: relative; height: 100vh; height: 100svh; min-height: 620px; overflow: hidden; background: #2b2f33;
-}
-.cine-hero__media { position: absolute; inset: 0; }
-.cine-hero__media img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.6) contrast(.95) brightness(.9); }
-.cine-hero__media::after {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.40) 0%, rgba(0,0,0,.16) 34%, rgba(0,0,0,.20) 62%, rgba(0,0,0,.55) 100%);
-}
-
 .cine-hero__bar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
@@ -341,22 +338,10 @@ textarea.input { resize: vertical; min-height: 96px; }
 .count-pill .n { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28); border-radius: 0; padding: .06rem .55rem; font-size: .8rem; font-weight: 600; }
 .count-pill .chev { width: 12px; height: 12px; opacity: .65; }
 
-.cine-hero__center { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 2; padding: 1rem; }
-.cine-wordmark {
-  font-family: Georgia, "Times New Roman", "Iowan Old Style", serif;
-  color: #EFEADD; font-weight: 600; letter-spacing: .015em; line-height: .95; text-align: center;
-  font-size: clamp(3rem, 13vw, 9.5rem); text-shadow: 0 2px 40px rgba(0,0,0,.22);
-}
-.cine-hero__tagline { position: absolute; left: 0; right: 0; bottom: 2.4rem; z-index: 2; text-align: center; color: rgba(255,255,255,.9); font-size: 1.02rem; padding: 0 2rem; }
-.cine-hero__mark { position: absolute; left: 2.2rem; bottom: 2rem; z-index: 4; display: inline-flex; }
-.cine-hero__mark img { width: auto; height: 124px; filter: drop-shadow(0 2px 14px rgba(0,0,0,.35)); }
-
 @media (max-width: 760px){
   .cine-hero__bar { padding: 1.2rem 1.4rem; }
   .menu-overlay { padding: 1.2rem 1.4rem 2.4rem; }
   .cine-hero__nav { display: none; }
-  .cine-hero__tagline { bottom: 5rem; font-size: .95rem; padding: 0 1.6rem; }
-  .cine-hero__mark { display: none; }
 }
 
 /* full-screen menu overlay */
@@ -418,6 +403,105 @@ body.menu-open .menu-overlay { transform: translateY(0); visibility: visible; }
 /* header reveal-on-scroll (home page only) */
 .site-header--reveal { position: fixed; top: 0; left: 0; right: 0; transform: translateY(-100%); transition: transform .32s var(--ease); }
 .site-header--reveal.show { transform: translateY(0); }
+
+/* ==========================================================================
+   Home top bar + photo hero (redesign). Bar is transparent over the hero
+   and turns solid once the hero scrolls away (main.js adds .is-solid).
+   ========================================================================== */
+.topbar, .home-hero { font-family: var(--font-sans); }
+
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 22px 20px; color: #fff;
+  transition: background-color .3s var(--ease), color .3s var(--ease), padding .3s var(--ease), box-shadow .3s var(--ease);
+}
+.topbar__brand { position: relative; display: inline-flex; }
+.topbar__logo { width: auto; height: 28px; transition: opacity .3s var(--ease); }
+.topbar__logo--dark { position: absolute; left: 0; top: 0; opacity: 0; }
+.topbar__nav { position: absolute; left: 50%; top: 50%; transform: translateY(-50%); display: flex; gap: 14px; }
+.topbar__nav a { font-size: 1rem; line-height: 1; letter-spacing: -.01em; transition: opacity .2s var(--ease); }
+.topbar__nav a:hover { opacity: .6; }
+.topbar__cta,
+.topbar__menu {
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 1.6rem;
+  min-width: 132px; height: 41px; padding: 0 12px 0 14px;
+  background: var(--navy-900); color: #fff; border: 0; border-radius: 0; cursor: pointer;
+  font: inherit; font-size: 1rem; line-height: 1; letter-spacing: -.01em;
+  transition: background-color .2s var(--ease);
+}
+.topbar__cta:hover,
+.topbar__menu:hover { background: var(--navy-600); }
+.topbar__cta svg,
+.topbar__menu svg { flex: none; width: 20px; height: 20px; }
+.topbar__menu { display: none; }
+.topbar a:focus-visible,
+.topbar button:focus-visible,
+.home-hero a:focus-visible,
+.home-hero button:focus-visible { outline: 2px solid var(--timber); outline-offset: 3px; }
+
+.topbar.is-solid { background: var(--white); color: var(--ink); padding-top: 14px; padding-bottom: 14px; box-shadow: 0 1px 0 var(--line); }
+.topbar.is-solid .topbar__logo:not(.topbar__logo--dark) { opacity: 0; }
+.topbar.is-solid .topbar__logo--dark { opacity: 1; }
+
+.home-hero { position: relative; height: 100vh; height: 100svh; min-height: 620px; overflow: hidden; background: #2b2f33; color: #fff; }
+.home-hero__slides,
+.home-hero__slide { position: absolute; inset: 0; }
+.home-hero__slide {
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% var(--y, 50%);
+  opacity: 0; transition: opacity 1.2s var(--ease);
+}
+.home-hero__slide.is-active { opacity: 1; }
+/* top scrim keeps the bar readable on pale skies, bottom one carries the statement */
+.home-hero::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.34) 0%, rgba(0,0,0,0) 22%),
+    linear-gradient(0deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.24) 32%, rgba(0,0,0,0) 55%);
+}
+.home-hero__foot {
+  position: absolute; left: 20px; right: 20px; bottom: 22px; z-index: 2;
+  display: grid; grid-template-columns: max(calc(33.333vw - 20px), 20rem) auto; justify-content: start; align-items: end;
+  row-gap: 24px;
+}
+.home-hero__progress { grid-column: 1 / -1; display: flex; }
+.home-hero__progress button { position: relative; flex: 1; height: 14px; padding: 0; border: 0; background: none; cursor: pointer; }
+.home-hero__progress button::before,
+.home-hero__progress button::after { content: ""; position: absolute; left: 0; top: 6px; height: 2px; }
+.home-hero__progress button::before { right: 0; background: rgba(255,255,255,.3); }
+.home-hero__progress button::after { width: 0; background: #fff; }
+.home-hero__progress button.is-active::after { width: 100%; }
+.home-hero__progress.is-playing button.is-active::after { animation: hero-fill var(--hero-dur, 6s) linear both; }
+@keyframes hero-fill { from { width: 0; } to { width: 100%; } }
+.home-hero__statement {
+  grid-column: 1; max-width: 13.5em; color: #fff; text-wrap: pretty;
+  font-size: clamp(1.25rem, 1.75vw, 1.6rem); font-weight: 400; line-height: 1.08; letter-spacing: -.025em;
+}
+.home-hero__btn {
+  grid-column: 2; display: inline-flex; align-items: center; justify-content: space-between; gap: 2rem;
+  min-width: 232px; height: 52px; padding: 0 14px 0 18px;
+  background: #fff; color: var(--ink); font-size: 1rem; line-height: 1; letter-spacing: -.01em;
+  transition: background-color .2s var(--ease);
+}
+.home-hero__btn:hover { background: var(--cream); }
+.home-hero__btn svg { flex: none; width: 22px; height: 22px; }
+
+@media (max-width: 760px){
+  .topbar { padding: 14px 16px; }
+  .topbar.is-solid { padding-top: 10px; padding-bottom: 10px; }
+  .topbar__logo { height: 22px; }
+  .topbar__nav, .topbar__cta { display: none; }
+  .topbar__menu { display: inline-flex; min-width: 0; height: 38px; gap: .9rem; }
+  .home-hero__foot { left: 16px; right: 16px; grid-template-columns: 1fr; row-gap: 20px; }
+  .home-hero__statement { font-size: 1.3rem; max-width: 19em; }
+  .home-hero__btn { grid-column: 1; justify-self: start; }
+}
+@media (max-width: 640px){
+  .home-hero__foot { bottom: calc(60px + 20px); } /* clear the fixed call bar */
+}
+@media (prefers-reduced-motion: reduce){
+  .home-hero__slide { transition: none; }
+}
 
 /* ==========================================================================
    Full-bleed image showcase (What We Do) - dark frame, overlaid serif titles

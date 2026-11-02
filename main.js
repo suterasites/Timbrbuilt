@@ -74,3 +74,60 @@
     if (e.key === 'Escape') document.body.classList.remove('menu-open');
   });
 })();
+
+/* Home top bar + hero slideshow */
+(function () {
+  var hero = document.querySelector('[data-hero]');
+  if (!hero) return;
+
+  // Bar turns solid once the hero has scrolled up under it
+  var bar = document.querySelector('[data-topbar]');
+  if (bar && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      bar.classList.toggle('is-solid', !entries[0].isIntersecting);
+    }, { rootMargin: '-' + bar.offsetHeight + 'px 0px 0px 0px' }).observe(hero);
+  }
+
+  // Slides after the first load once the page has, so they never compete with the LCP image
+  var slides = hero.querySelectorAll('.home-hero__slide');
+  var dotsWrap = hero.querySelector('[data-hero-dots]');
+  if (slides.length < 2 || !dotsWrap) return;
+  var dots = dotsWrap.querySelectorAll('button');
+  var DUR = 6000, current = 0, timer = null;
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function loadAll() {
+    slides.forEach(function (s) {
+      if (s.dataset.src) { s.src = s.dataset.src; s.removeAttribute('data-src'); }
+    });
+  }
+  function queueNext() {
+    if (still) return;
+    clearTimeout(timer);
+    timer = setTimeout(function () { show(current + 1); }, DUR);
+  }
+  function show(i) {
+    loadAll();
+    slides[current].classList.remove('is-active');
+    dots[current].classList.remove('is-active');
+    dots[current].removeAttribute('aria-current');
+    current = (i + slides.length) % slides.length;
+    slides[current].classList.add('is-active');
+    dots[current].classList.add('is-active');
+    dots[current].setAttribute('aria-current', 'true');
+    queueNext();
+  }
+  dots.forEach(function (d, i) {
+    d.addEventListener('click', function () { if (i !== current) show(i); });
+  });
+
+  function start() {
+    loadAll();
+    if (still) return;
+    dotsWrap.style.setProperty('--hero-dur', DUR + 'ms');
+    dotsWrap.classList.add('is-playing');
+    queueNext();
+  }
+  if (document.readyState === 'complete') start();
+  else window.addEventListener('load', start);
+})();

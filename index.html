@@ -12,8 +12,8 @@
   <meta name="geo.placename" content="Melbourne">
   <link rel="icon" href="Assets/icon-navy.png">
   <link rel="apple-touch-icon" href="Assets/icon-navy.png">
-  <link rel="preload" as="image" href="Assets/hero-build-sm.jpg" media="(max-width: 900px)">
-  <link rel="preload" as="image" href="Assets/hero-build.jpg" media="(min-width: 901px)">
+  <link rel="preload" as="image" href="Assets/hero-newbuild.jpg" fetchpriority="high">
+  <link rel="preload" as="font" href="Assets/fonts/inter-tight-latin.woff2" type="font/woff2" crossorigin>
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_AU">
   <meta property="og:title" content="Timbr Built | Carpentry & Building, Melbourne's Inner West">
@@ -82,20 +82,23 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- PERSISTENT CINEMATIC NAVBAR -->
-  <header class="cine-hero__bar">
-    <button class="cine-menu" data-menu-toggle aria-label="Open menu">
-      <span class="bars"><span></span><span></span><span></span></span> Menu
-    </button>
-    <nav class="cine-hero__nav">
-      <a class="count-pill" href="services.html">Services <span class="n">4</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
-      </a>
-      <a class="count-pill" href="projects.html">Projects <span class="n">16</span>
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l4-4 4 4M8 15l4 4 4-4"/></svg>
-      </a>
-      <a href="contact.html">Contact</a>
+  <!-- TOP BAR: transparent over the hero, solid once scrolled past it -->
+  <header class="topbar" data-topbar>
+    <a class="topbar__brand" href="index.html" aria-label="Timbr Built home">
+      <img class="topbar__logo" width="2342" height="379" src="Assets/wordmark-white-trim.png" alt="Timbr Built">
+      <img class="topbar__logo topbar__logo--dark" width="2342" height="380" src="Assets/wordmark-black-trim.png" alt="" aria-hidden="true">
+    </a>
+    <nav class="topbar__nav" aria-label="Main">
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
     </nav>
+    <a class="topbar__cta" href="contact.html">Contact
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8"/></svg>
+    </a>
+    <button class="topbar__menu" data-menu-toggle aria-label="Open menu">Menu
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" d="M4 8h16M4 16h16"/></svg>
+    </button>
   </header>
 
   <!-- FULL-SCREEN MENU OVERLAY -->
@@ -130,20 +133,31 @@
     </div>
   </div>
 
-  <!-- CINEMATIC HERO -->
+  <!-- HERO: full-bleed photo slideshow, statement + button bottom left -->
   <main id="main">
-  <section class="cine-hero">
-    <div class="cine-hero__media">
-      <img width="900" height="1600" src="Assets/hero-build.jpg"
-           srcset="Assets/hero-build-sm.jpg 820w, Assets/hero-build.jpg 1600w" sizes="100vw"
-           alt="New-build home with vertical cladding built by Timbr Built"
-           fetchpriority="high" decoding="async">
+  <section class="home-hero" data-hero>
+    <div class="home-hero__slides">
+      <img class="home-hero__slide is-active" style="--y: 50%" width="1242" height="2208" src="Assets/hero-newbuild.jpg"
+           alt="New-build home with vertical cladding and black window frames" fetchpriority="high" decoding="async">
+      <img class="home-hero__slide" style="--y: 55%" width="1242" height="2208" data-src="Assets/hero-deck.jpg"
+           alt="Freshly oiled hardwood deck" decoding="async">
+      <img class="home-hero__slide" style="--y: 42%" width="878" height="1560" data-src="Assets/hero-gable.jpg"
+           alt="Gable-roof build at lockup with vertical cladding" decoding="async">
+      <img class="home-hero__slide" style="--y: 46%" width="787" height="1400" data-src="Assets/facade-brick-cladding.jpg"
+           alt="Townhouse facade with brick, render and timber-look screens" decoding="async">
     </div>
-    <div class="cine-hero__center">
-      <h1 class="cine-wordmark">TIMBR BUILT</h1>
+    <div class="home-hero__foot">
+      <div class="home-hero__progress" data-hero-dots>
+        <button type="button" class="is-active" aria-label="Show photo 1" aria-current="true"></button>
+        <button type="button" aria-label="Show photo 2"></button>
+        <button type="button" aria-label="Show photo 3"></button>
+        <button type="button" aria-label="Show photo 4"></button>
+      </div>
+      <h1 class="home-hero__statement">Timbr Built is a carpentry and building company in Melbourne's inner west, delivering decks, bathrooms and new builds shaped by honest timber, clean lines and a simple standard: built right.</h1>
+      <a class="home-hero__btn" href="projects.html">View projects
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
     </div>
-    <p class="cine-hero__tagline">A carpentry and building company dedicated to quality craftsmanship</p>
-    <a class="cine-hero__mark" href="#" aria-label="Timbr Built"><img width="950" height="894" src="Assets/icon-white-mark.png" alt=""></a>
   </section>
 
   <!-- WHAT WE DO - showcase -->
