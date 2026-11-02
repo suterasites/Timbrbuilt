@@ -73,6 +73,10 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') document.body.classList.remove('menu-open');
   });
+  // the dim veil behind the panel is body::after, so a click on it lands on body itself
+  document.addEventListener('click', function (e) {
+    if (e.target === document.body) document.body.classList.remove('menu-open');
+  });
 })();
 
 /* Home top bar: solid once the hero tab strip scrolls up under it */
