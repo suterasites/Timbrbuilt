@@ -107,21 +107,3 @@
   update();
 })();
 
-/* How it works: the step crossing the middle of the screen lights up and the centre photo follows it */
-(function () {
-  var sec = document.querySelector('[data-process]');
-  if (!sec || !('IntersectionObserver' in window)) return;
-  var steps = sec.querySelectorAll('.process__step');
-  var shots = sec.querySelectorAll('.process__frame img');
-  function activate(i) {
-    steps.forEach(function (s, k) { s.classList.toggle('is-active', k === i); });
-    shots.forEach(function (s, k) { s.classList.toggle('is-active', k === i); });
-  }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) activate(Array.prototype.indexOf.call(steps, e.target));
-    });
-  }, { rootMargin: '-50% 0px -50% 0px' });
-  steps.forEach(function (s) { io.observe(s); });
-  sec.classList.add('is-live');
-})();
