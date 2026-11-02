@@ -742,6 +742,56 @@ a.swall__tile:focus-visible { outline: 2px solid var(--timber); outline-offset: 
 }
 
 /* ==========================================================================
+   How it works (redesign): numbered steps on hairlines in a three-column
+   frame; the centre photo is sticky and follows the step crossing the middle
+   of the screen, which is the only one shown at full strength (main.js)
+   ========================================================================== */
+.process { --h: min(41.5vw, 72vh); padding: clamp(4rem, 6.5vw, 6rem) 0 clamp(4rem, 7vw, 6.5rem); background: var(--white); color: var(--ink); font-family: var(--font-sans); }
+.process__label { margin: 0 29px 10px; color: #8A8983; font-family: var(--font-sans); font-size: 18px; font-weight: 400; line-height: 1.2; letter-spacing: 0; }
+.process__body { position: relative; }
+.process__media { position: absolute; top: 0; bottom: 0; z-index: 1; left: calc((100% - 56px) / 3 + 28px); width: calc((100% - 56px) / 3); pointer-events: none; }
+.process__frame { position: sticky; top: calc(50vh - var(--h) / 2); height: var(--h); overflow: hidden; background: var(--stone); }
+.process__frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .6s var(--ease); }
+.process__frame img.is-active { opacity: 1; }
+.process__steps { margin: 0; padding: 0; list-style: none; }
+.process__step {
+  position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 28px; align-items: start;
+  min-height: calc(var(--h) * .8); padding: 40px 0 3rem;
+}
+.process__step::before { content: ""; position: absolute; top: 0; left: 29px; right: 29px; border-top: 1px solid var(--line); }
+.process__head { grid-column: 1; display: flex; align-items: flex-start; gap: 22px; padding-left: 29px; }
+.process__n { flex: none; padding-top: .55em; font-size: 14px; line-height: 1; }
+.process__title {
+  color: inherit; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.9rem, 2.8vw, 2.6rem);
+  font-weight: 400; line-height: 1; letter-spacing: -.01em; text-wrap: balance;
+}
+.process__text { grid-column: 3; justify-self: end; width: min(270px, 100% - 29px); margin-right: 29px; }
+.process__text p { margin-bottom: 14px; color: inherit; font-size: 14.5px; line-height: 1.24; }
+.process__btn {
+  display: inline-flex; align-items: center; gap: .5rem; height: 41px; padding: 0 22px 0 29px;
+  border: 1px solid currentColor; border-radius: 6px; color: inherit; font-size: 16px; line-height: 1;
+  transition: background-color .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease);
+}
+.process__btn:hover { border-color: var(--ink); background: var(--ink); color: #fff; }
+.process__btn:focus-visible { outline: 2px solid var(--timber); outline-offset: 3px; }
+.process__btn svg { width: 16px; height: 16px; }
+.process__step { transition: color .4s var(--ease); }
+.process.is-live .process__step:not(.is-active) { color: #B5B3AC; }
+
+/* below tablet: no sticky photo, every step at full strength */
+@media (max-width: 900px){
+  .process__media { display: none; }
+  .process__label { margin: 0 1.5rem 10px; }
+  .process__step { display: block; min-height: 0; padding: 1.6rem 1.5rem 2rem; }
+  .process__step::before { left: 1.5rem; right: 1.5rem; }
+  .process__head { gap: 14px; padding-left: 0; margin-bottom: 1rem; }
+  .process__title { font-size: 1.9rem; }
+  .process__text { width: auto; max-width: 34rem; margin-right: 0; }
+  .process__text p { font-size: 15.5px; line-height: 1.4; }
+  .process.is-live .process__step:not(.is-active) { color: inherit; }
+}
+
+/* ==========================================================================
    Inner-page cinematic hero + editorial bits (about / services / projects)
    ========================================================================== */
 /* centred wordmark in the persistent bar, for pages without the giant hero wordmark */

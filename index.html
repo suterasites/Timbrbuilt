@@ -271,19 +271,46 @@
     </div>
   </section>
 
-  <!-- PROCESS -->
-  <section class="section bg-surface">
-    <div class="container">
-      <div class="section-head center">
-        <span class="eyebrow" style="justify-content:center">How It Works</span>
-        <h2 class="h-display">A simple, honest process.</h2>
+  <!-- PROCESS: numbered steps on hairlines; the centre photo stays put and follows the step in view -->
+  <section class="process" data-process>
+    <h2 class="process__label">How it works</h2>
+    <div class="process__body">
+      <div class="process__media" aria-hidden="true">
+        <div class="process__frame">
+          <img class="is-active" width="900" height="1167" src="Assets/process-1.jpg" alt="" loading="lazy" decoding="async">
+          <img width="900" height="1167" src="Assets/process-2.jpg" alt="" loading="lazy" decoding="async">
+          <img width="878" height="1138" src="Assets/process-3.jpg" alt="" loading="lazy" decoding="async">
+          <img width="750" height="972" src="Assets/process-4.jpg" alt="" loading="lazy" decoding="async">
+        </div>
       </div>
-      <div class="steps">
-        <div class="step"><div class="step__n">01</div><h3>Get in touch</h3><p>Tell us the job, the site and the timing.</p></div>
-        <div class="step"><div class="step__n">02</div><h3>Free on-site measure</h3><p>We visit, talk through options and confirm scope.</p></div>
-        <div class="step"><div class="step__n">03</div><h3>Fixed written quote</h3><p>A clear price and a booked start date.</p></div>
-        <div class="step"><div class="step__n">04</div><h3>Built &amp; finished</h3><p>One team through to handover, site left clean.</p></div>
-      </div>
+      <ol class="process__steps">
+        <li class="process__step is-active">
+          <div class="process__head"><span class="process__n">01</span><h3 class="process__title">Get in touch</h3></div>
+          <div class="process__text">
+            <p>Call, text or send the quote form with the job, the site and the timing you have in mind. Photos help if you have them. You will hear back from the carpenter who would do the work.</p>
+            <a class="process__btn" href="contact.html">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+          </div>
+        </li>
+        <li class="process__step">
+          <div class="process__head"><span class="process__n">02</span><h3 class="process__title">Free on-site measure</h3></div>
+          <div class="process__text">
+            <p>We come out to the site, measure up and talk through options, materials and access. The scope is confirmed on the spot, so nothing in the quote is a guess.</p>
+          </div>
+        </li>
+        <li class="process__step">
+          <div class="process__head"><span class="process__n">03</span><h3 class="process__title">Fixed written quote</h3></div>
+          <div class="process__text">
+            <p>A clear written price for the scope we agreed, and a booked start date. The price holds, with no mid-job surprises.</p>
+          </div>
+        </li>
+        <li class="process__step">
+          <div class="process__head"><span class="process__n">04</span><h3 class="process__title">Built &amp; finished</h3></div>
+          <div class="process__text">
+            <p>One team through to handover. The site is kept tidy and swept at the end of each day, and the job finishes on the dates we commit to.</p>
+            <a class="process__btn" href="projects.html">See recent work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
 
