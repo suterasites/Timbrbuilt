@@ -191,42 +191,46 @@
     </div>
   </section>
 
-  <!-- WHAT WE DO - showcase -->
-  <section class="showcase bg-navy" id="services">
-    <h2 class="sr-only">What we do</h2>
-    <div class="showcase__row">
-      <a class="showpanel" href="carpentry.html">
-        <img width="619" height="1100" src="Assets/build-cladding.jpg" alt="New build framed and clad by Timbr Built" loading="lazy" decoding="async">
-        <div class="showpanel__body">
-          <h3>Carpentry</h3>
-          <p>Framing, structural and finish carpentry, the craft the whole business is built on.</p>
-          <span class="showpanel__link">Explore carpentry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-      <a class="showpanel" href="bathroom-renovations.html">
-        <img width="1050" height="1400" src="Assets/bathroom-featured.jpg" alt="Renovated bathroom with walk-in shower and freestanding bath" loading="lazy" decoding="async">
-        <div class="showpanel__body">
-          <h3>Bathroom Renovations</h3>
-          <p>Full renovations managed start to finish, with custom joinery built in.</p>
-          <span class="showpanel__link">See bathroom renos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-      <a class="showpanel" href="decks-pergolas.html">
-        <img width="618" height="1100" src="Assets/deck.jpg" alt="Freshly oiled hardwood deck with pergola" loading="lazy" decoding="async">
-        <div class="showpanel__body">
-          <h3>Decks &amp; Pergolas</h3>
-          <p>Hardwood decks and pergolas, built to last through Melbourne weather.</p>
-          <span class="showpanel__link">See decks &amp; pergolas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
-      <a class="showpanel" href="lockups-new-builds.html">
-        <img width="787" height="1400" src="Assets/facade-brick-cladding.jpg" alt="New build facade in face brick with white cladding above" loading="lazy" decoding="async">
-        <div class="showpanel__body">
-          <h3>Lockups &amp; New Builds</h3>
-          <p>New-build carpentry to lockup: frames, cladding, windows and doors.</p>
-          <span class="showpanel__link">See new builds <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg></span>
-        </div>
-      </a>
+  <!-- WHAT WE DO: hairline + label + serif statement, then two offset rows of service tiles and project photos -->
+  <section class="swall" id="services">
+    <div class="container">
+      <div class="intro-head">
+        <h2 class="intro-head__label">What we do</h2>
+        <p class="intro-head__text">Timbr Built covers the work that turns a plan into a building: framing and structural carpentry, full bathroom renovations, hardwood decks and pergolas, and new builds taken through to lockup. Four kinds of work, one qualified carpenter on the tools, and the same standard on every job.</p>
+      </div>
+    </div>
+    <div class="swall__rows" data-swall>
+      <div class="swall__row">
+        <div class="swall__tile swall__tile--desk"><img width="579" height="750" src="Assets/svc-pergola.jpg" alt="Pergola frame going up over a new deck subfloor" loading="lazy" decoding="async"></div>
+        <a class="swall__tile swall__tile--flat swall__tile--cream" href="carpentry.html">
+          <span class="swall__kicker">Our services</span>
+          <h3 class="swall__title">N°1 Carpentry</h3>
+          <span class="swall__more">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
+        </a>
+        <div class="swall__tile"><img width="680" height="880" src="Assets/svc-dual-vanity.jpg" alt="Bathroom with freestanding bath, timber double vanity and arched mirrors" loading="lazy" decoding="async"></div>
+        <a class="swall__tile swall__tile--flat swall__tile--slate" href="bathroom-renovations.html">
+          <span class="swall__kicker">Our services</span>
+          <h3 class="swall__title">N°2 Bathroom renovations</h3>
+          <span class="swall__more">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
+        </a>
+        <div class="swall__tile"><img width="680" height="880" src="Assets/svc-brass-shower.jpg" alt="Walk-in shower with brushed brass fittings" loading="lazy" decoding="async"></div>
+      </div>
+      <div class="swall__row">
+        <div class="swall__tile swall__tile--desk swall__tile--flat swall__tile--slate" aria-hidden="true"></div>
+        <a class="swall__tile swall__tile--flat swall__tile--timber" href="decks-pergolas.html">
+          <span class="swall__kicker">Our services</span>
+          <h3 class="swall__title">N°3 Decks &amp; pergolas</h3>
+          <span class="swall__more">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
+        </a>
+        <div class="swall__tile"><img width="680" height="880" src="Assets/svc-deck.jpg" alt="New hardwood deck under a covered verandah" loading="lazy" decoding="async"></div>
+        <div class="swall__tile"><img width="680" height="880" src="Assets/svc-arched-cabinet.jpg" alt="Arched mirror cabinet over a timber vanity" loading="lazy" decoding="async"></div>
+        <a class="swall__tile swall__tile--flat swall__tile--night" href="lockups-new-builds.html">
+          <span class="swall__kicker">Our services</span>
+          <h3 class="swall__title">N°4 Lockups &amp; new builds</h3>
+          <span class="swall__more">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
+        </a>
+        <div class="swall__tile swall__tile--desk"><img width="680" height="880" src="Assets/svc-framing.jpg" alt="Arched window framed in timber" loading="lazy" decoding="async"></div>
+      </div>
     </div>
   </section>
 
