@@ -829,6 +829,137 @@ a.swall__tile:focus-visible { outline: 2px solid var(--timber); outline-offset: 
 }
 
 /* ==========================================================================
+   CTA (redesign): one wide dimmed photo tile on the night ground, carrying
+   on straight from the recent-work wall above it
+   ========================================================================== */
+.cta-tile { padding: 0 29px 29px; background: var(--night); font-family: var(--font-sans); }
+.cta-tile__frame { position: relative; display: flex; align-items: center; min-height: clamp(420px, 37.5vw, 560px); overflow: hidden; border-radius: 6px; background: #1c2023; }
+.cta-tile__frame > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cta-tile__frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(13,13,13,.74) 0%, rgba(13,13,13,.52) 50%, rgba(13,13,13,.38) 100%); }
+.cta-tile__body { position: relative; z-index: 1; max-width: 27rem; margin-left: clamp(1.5rem, 8vw, 116px); padding: 3rem 1.5rem 3rem 0; color: #fff; }
+.cta-tile__title {
+  margin-bottom: 14px; color: #fff; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.7rem, 2.1vw, 1.95rem);
+  font-weight: 400; line-height: 1.07; letter-spacing: -.01em;
+}
+.cta-tile__text { margin-bottom: 22px; color: rgba(255,255,255,.92); font-size: clamp(1rem, 1.25vw, 1.15rem); line-height: 1.38; }
+.cta-tile__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
+.cta-tile__btn {
+  display: inline-flex; align-items: center; gap: .5rem; height: 41px; padding: 0 22px 0 29px;
+  border: 1px solid rgba(255,255,255,.85); border-radius: 6px; color: #fff; font-size: 16px; line-height: 1;
+  transition: background-color .2s var(--ease), color .2s var(--ease);
+}
+.cta-tile__btn:hover { background: #fff; color: var(--night); }
+.cta-tile__btn svg { width: 16px; height: 16px; }
+.cta-tile__call { padding-bottom: 2px; border-bottom: 1px solid rgba(255,255,255,.35); color: rgba(255,255,255,.88); font-size: 15px; line-height: 1.2; }
+.cta-tile__call:hover { border-bottom-color: #fff; color: #fff; }
+.cta-tile a:focus-visible { outline: 2px solid var(--timber-light); outline-offset: 3px; }
+
+/* ==========================================================================
+   FAQ (redesign): sticky serif heading left, hairline accordion of serif
+   questions across the right two columns, plus turning to minus when open
+   ========================================================================== */
+.faqs { padding: clamp(4rem, 6.5vw, 6rem) 29px; background: var(--surface); color: var(--ink); font-family: var(--font-sans); }
+.faqs__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 28px; align-items: start; }
+.faqs__intro { position: sticky; top: 104px; }
+.faqs__label { margin-bottom: 14px; color: var(--ink); font-size: 13px; font-weight: 500; line-height: 1.2; }
+.faqs__title {
+  max-width: 12ch; margin-bottom: 18px; color: var(--ink); font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.9rem, 2.8vw, 2.6rem); font-weight: 400; line-height: 1; letter-spacing: -.01em;
+}
+.faqs__more { max-width: 18rem; color: #6B6A64; font-size: 14.5px; line-height: 1.4; }
+.faqs__more a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.faqs__list { grid-column: 2 / 4; border-bottom: 1px solid var(--line); }
+.faqs__item { border-top: 1px solid var(--line); }
+.faqs__item summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 24px 0; cursor: pointer; list-style: none;
+  color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.2rem, 1.6vw, 1.45rem); line-height: 1.2;
+}
+.faqs__item summary::-webkit-details-marker { display: none; }
+.faqs__item summary:focus-visible { outline: 2px solid var(--timber); outline-offset: 4px; }
+.faqs__icon { position: relative; flex: none; width: 16px; height: 16px; }
+.faqs__icon::before,
+.faqs__icon::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; margin-top: -.75px; border-top: 1.5px solid currentColor; transition: transform .25s var(--ease); }
+.faqs__icon::after { transform: rotate(90deg); }
+.faqs__item[open] .faqs__icon::after { transform: rotate(0deg); }
+.faqs__a { max-width: 40rem; padding: 0 0 26px; }
+.faqs__a p { color: #55544F; font-size: 15.5px; line-height: 1.55; }
+
+/* ==========================================================================
+   Contact (redesign): details in hairline groups, a service-area map with a
+   caption card (Assets/service-area.svg, .build/build_service_area_map.py),
+   and a cream quote form with underlined fields
+   ========================================================================== */
+.reach { padding: clamp(4rem, 6.5vw, 6rem) 29px; background: var(--white); color: var(--ink); font-family: var(--font-sans); }
+.reach__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; align-items: stretch; }
+.reach__info { padding-right: 2rem; }
+.reach__group { padding: 20px 0 30px; border-top: 1px solid var(--line); }
+.reach__h { margin-bottom: 14px; color: var(--ink); font-family: var(--font-sans); font-size: 15px; font-weight: 600; line-height: 1.2; letter-spacing: 0; }
+.reach__p { margin-bottom: 18px; color: var(--ink); font-size: 15px; line-height: 1.25; }
+.reach__group > :last-child { margin-bottom: 0; }
+.reach__p a,
+.reach__list a { color: var(--ink); text-decoration: underline; text-decoration-color: rgba(26,26,26,.3); text-underline-offset: 3px; }
+.reach__list { display: grid; gap: 12px; padding: 0; list-style: none; }
+.reach__list li { display: flex; align-items: center; gap: 10px; color: var(--ink); font-size: 15px; line-height: 1.2; }
+.reach__list svg { flex: none; width: 16px; height: 16px; }
+.reach__map { position: relative; min-height: 560px; margin: 0; overflow: hidden; border-radius: 6px; background: #DCE2E1; }
+.reach__map img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.reach__pop { position: absolute; left: 16px; top: 16px; width: min(240px, calc(100% - 32px)); padding: 14px 14px 16px; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+.reach__pop-h { display: block; margin-bottom: 8px; color: var(--ink); font-size: 15px; line-height: 1.2; }
+.reach__pop-t { display: block; color: #77756E; font-size: 14px; line-height: 1.25; }
+.reach__form { display: flex; flex-direction: column; padding: 22px; border-radius: 16px; background: var(--cream); }
+.reach__form-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; margin-bottom: 18px; }
+.reach__form-title { color: var(--ink); font-family: var(--font-sans); font-size: clamp(1.4rem, 1.7vw, 1.55rem); font-weight: 400; line-height: 1.05; letter-spacing: -.01em; }
+.reach__form-note { color: #77705F; font-size: 14px; line-height: 1.35; }
+.reach__field { position: relative; display: block; border-bottom: 1px solid rgba(26,26,26,.18); transition: border-color .2s var(--ease); }
+.reach__field:focus-within { border-bottom-color: var(--ink); }
+.reach__field input,
+.reach__field select,
+.reach__field textarea {
+  display: block; width: 100%; padding: 16px 0 14px; border: 0; border-radius: 0; outline: none; background: transparent;
+  color: var(--ink); font: inherit; font-size: 15px; line-height: 1.3; -webkit-appearance: none; appearance: none;
+}
+.reach__field ::placeholder { color: #77756E; opacity: 1; }
+.reach__field select { padding-right: 28px; cursor: pointer; }
+.reach__field select:invalid { color: #77756E; }
+.reach__field--select::after {
+  content: ""; position: absolute; right: 4px; top: 50%; width: 8px; height: 8px; margin-top: -6px;
+  border-right: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); transform: rotate(45deg); pointer-events: none;
+}
+.reach__field--grow { flex: 1; }
+.reach__field textarea { min-height: 120px; height: 100%; resize: vertical; }
+.reach__fine { padding-top: 22px; margin-bottom: 12px; color: #77705F; font-size: 12px; line-height: 1.3; }
+.reach__submit {
+  height: 46px; border: 1px solid var(--ink); border-radius: 8px; background: transparent; cursor: pointer;
+  color: var(--ink); font: inherit; font-size: 16px; transition: background-color .2s var(--ease), color .2s var(--ease);
+}
+.reach__submit:hover { background: var(--ink); color: #fff; }
+.reach a:focus-visible,
+.reach__submit:focus-visible { outline: 2px solid var(--timber); outline-offset: 3px; }
+
+@media (max-width: 1100px){
+  .reach__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .reach__map { grid-column: 1 / -1; grid-row: 2; min-height: 420px; }
+}
+/* below tablet: FAQ heading stops sticking; contact runs details, form, then map */
+@media (max-width: 900px){
+  .faqs { padding: 4rem 1.5rem; }
+  .faqs__grid { display: block; }
+  .faqs__intro { position: static; margin-bottom: 2rem; }
+}
+@media (max-width: 760px){
+  .cta-tile { padding: 0 1rem 1rem; }
+  .cta-tile__frame { min-height: 480px; }
+  .reach { padding: 4rem 1.5rem; }
+  .reach__grid { grid-template-columns: minmax(0, 1fr); }
+  .reach__info { padding-right: 0; }
+  .reach__form { grid-row: 2; }
+  .reach__map { grid-row: 3; min-height: 0; }
+  .reach__map img { position: static; height: auto; aspect-ratio: 700 / 900; }
+  .reach__pop { position: static; width: auto; border: 0; border-top: 1px solid var(--line); border-radius: 0; }
+  .reach__form-head { grid-template-columns: minmax(0, 1fr); gap: .5rem; }
+}
+
+/* ==========================================================================
    Inner-page cinematic hero + editorial bits (about / services / projects)
    ========================================================================== */
 /* centred wordmark in the persistent bar, for pages without the giant hero wordmark */
