@@ -24,6 +24,21 @@ Originals kept: `Black Logo.png`, `Black Wordmark.png`, `White Logo .png`, `Whit
 
 Originals kept: `IMG_8346..8350.JPG`.
 
+### Added 2026-11-08 (IMG_9893-9899, renamed in place, not re-encoded)
+| File | Source | Shown as |
+|------|--------|----------|
+| `bathroom-vessel-basin.jpg` | IMG_9896 | Home recent work, bathrooms wall, projects (finished) |
+| `bathroom-oak-vanity.jpg` | IMG_9897 | Bathrooms wall + projects (detail of the same vanity) |
+| `bathroom-oak-vanity-sm.jpg` | IMG_9897 square crop | Footer "Get a free quote" card thumb (every page) |
+| `framing-curved-stair.jpg` | IMG_9895 | Carpentry wall + projects |
+| `bathroom-round-mirror.jpg` | IMG_9898 | Bathrooms wall + projects (tap not fitted yet) |
+| `bathroom-pill-mirror.jpg` | IMG_9894 | Projects (mid-install, no drawers yet) |
+| `bathroom-travertine-vanity.jpg` | IMG_9893 | Projects (same job as pill mirror, mid-install) |
+| `bathroom-pink-tile.jpg` | IMG_9899 cropped | Projects (mid-install) |
+| `bathroom-pink-tile-original.jpg` | IMG_9899 | Original Instagram story screenshot with grey bars, kept, not used |
+
+`bathroom-arched-cabinet-sm.jpg` (film on the mirror) is no longer referenced; kept.
+
 ## Brand palette (see styles.css `:root`)
 - Navy `#16293A` (from the wordmark) - primary, headings, dark sections
 - Navy-900 `#0E1A26` - hero/footer/CTA backgrounds
