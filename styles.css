@@ -1,7 +1,7 @@
 /* ==========================================================================
    Timbr Built - site styles
    Montoni-led redesign: night grounds alternating with white and surface
-   bands, Inter Tight with Georgia display, 6px tiles, outlined buttons and
+   bands, Inter Tight throughout (no serif), 6px tiles, outlined buttons and
    flat colour cards. Hand-authored; shared across all pages.
    ========================================================================== */
 
@@ -195,18 +195,18 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 }
 
 /* ==========================================================================
-   Section intro (redesign): hairline, small label, large serif statement
+   Section intro (redesign): hairline, small label, large statement
    ========================================================================== */
 .intro-head { padding-top: 1rem; border-top: 1px solid var(--line); font-family: var(--font-sans); }
 .intro-head__label { margin-bottom: 1.15rem; color: var(--ink); font-family: var(--font-sans); font-size: 13px; font-weight: 500; line-height: 1.3; letter-spacing: 0; }
 .intro-head__text {
-  max-width: 1150px; color: var(--ink); font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.35rem, 2.05vw, 1.85rem); line-height: 1.16; letter-spacing: -.01em; text-wrap: pretty;
+  max-width: 1150px; color: var(--ink); font-family: var(--font-sans);
+  font-size: clamp(1.35rem, 2.05vw, 1.85rem); line-height: 1.16; letter-spacing: -.02em; text-wrap: pretty;
 }
 
 /* ==========================================================================
    What we do (redesign): hairline statement, then the four services as photo
-   cards with a number, serif name and chevron underneath
+   cards with a number, name and chevron underneath
    ========================================================================== */
 .services { padding: clamp(4rem, 6.5vw, 6rem) 29px; background: var(--white); color: var(--ink); font-family: var(--font-sans); }
 .services__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 16px; margin: clamp(3rem, 6vw, 5rem) 0 0; padding: 0; list-style: none; }
@@ -217,8 +217,8 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 .services__cap { display: flex; align-items: baseline; gap: .75rem; padding-top: 16px; }
 .services__n { flex: none; color: var(--muted); font-size: 13px; line-height: 1.2; }
 .services__name {
-  color: inherit; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.25rem, 1.6vw, 1.5rem);
-  font-weight: 400; line-height: 1.1; letter-spacing: -.01em;
+  color: inherit; font-family: var(--font-sans); font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  font-weight: 400; line-height: 1.1; letter-spacing: -.02em;
 }
 .services__cap svg { flex: none; align-self: center; width: 16px; height: 16px; margin-left: auto; transition: transform .2s var(--ease); }
 .services__card:hover .services__cap svg { transform: translateX(3px); }
@@ -268,7 +268,7 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 }
 
 /* ==========================================================================
-   Why Timbr Built (redesign): one photo on the left, serif title and three
+   Why Timbr Built (redesign): one photo on the left, title and three
    numbered hairline points on the right, all on the night ground
    ========================================================================== */
 .reasons { padding: 29px; background: var(--night); color: #fff; font-family: var(--font-sans); }
@@ -277,8 +277,8 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 .reasons__photo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .reasons__body { display: flex; flex-direction: column; padding: clamp(1rem, 2.5vw, 2.5rem) clamp(0rem, 2.5vw, 2.5rem) 1rem 0; }
 .reasons__title {
-  margin-bottom: auto; padding-bottom: 3rem; color: #fff; font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.2rem, 3.2vw, 2.9rem); font-weight: 400; line-height: 1; letter-spacing: -.015em;
+  margin-bottom: auto; padding-bottom: 3rem; color: #fff; font-family: var(--font-sans);
+  font-size: clamp(2.2rem, 3.2vw, 2.9rem); font-weight: 400; line-height: 1; letter-spacing: -.025em;
 }
 .reasons__list { margin: 0 0 2rem; padding: 0; list-style: none; counter-reset: why; border-bottom: 1px solid rgba(255,255,255,.16); }
 .reasons__list li {
@@ -287,8 +287,8 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 }
 .reasons__list li::before { content: "0" counter(why); grid-row: 1 / 3; padding-top: .4rem; color: rgba(255,255,255,.6); font-size: 13px; line-height: 1.2; }
 .reasons__list h3 {
-  margin-bottom: 8px; color: #fff; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.35rem, 1.9vw, 1.7rem);
-  font-weight: 400; line-height: 1.1; letter-spacing: -.01em;
+  margin-bottom: 8px; color: #fff; font-family: var(--font-sans); font-size: clamp(1.35rem, 1.9vw, 1.7rem);
+  font-weight: 400; line-height: 1.1; letter-spacing: -.02em;
 }
 .reasons__list p { max-width: 30rem; color: rgba(255,255,255,.7); font-size: 15.5px; line-height: 1.5; }
 .reasons__btn {
@@ -309,17 +309,17 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 }
 
 /* ==========================================================================
-   How it works (redesign): serif heading + intro, then four numbered steps,
-   each on a hairline with a serif name and one plain line
+   How it works (redesign): heading + intro, then four numbered steps,
+   each on a hairline with a name and one plain line
    ========================================================================== */
 .process { padding: clamp(4rem, 6.5vw, 6rem) 29px; background: var(--white); color: var(--ink); font-family: var(--font-sans); }
 .process__head { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 16px; align-items: start; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
 .process__title {
-  grid-column: 1 / 3; color: var(--ink); font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.2rem, 3.2vw, 2.9rem); font-weight: 400; line-height: 1; letter-spacing: -.015em;
+  grid-column: 1 / 3; color: var(--ink); font-family: var(--font-sans);
+  font-size: clamp(2.2rem, 3.2vw, 2.9rem); font-weight: 400; line-height: 1; letter-spacing: -.025em;
 }
 .process__intro { grid-column: 3 / 5; max-width: 28rem; }
-.process__intro p { margin-bottom: 16px; color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.15rem, 1.55vw, 1.4rem); line-height: 1.22; }
+.process__intro p { margin-bottom: 16px; color: var(--ink); font-family: var(--font-sans); font-size: clamp(1.15rem, 1.55vw, 1.4rem); line-height: 1.22; }
 .process__link { display: inline-flex; align-items: center; gap: 4px; padding-bottom: 2px; border-bottom: 1px solid rgba(26,26,26,.3); color: var(--ink); font-size: 15px; font-weight: 600; line-height: 1.2; }
 .process__link svg { width: 15px; height: 15px; transition: transform .2s var(--ease); }
 .process__link:hover svg { transform: translateX(3px); }
@@ -328,8 +328,8 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 .process__card { padding-top: 18px; border-top: 1px solid var(--line); }
 .process__n { display: block; margin-bottom: 2rem; color: var(--muted); font-size: 13px; line-height: 1.2; }
 .process__name {
-  margin-bottom: 10px; color: inherit; font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.3rem, 1.7vw, 1.55rem); font-weight: 400; line-height: 1.1; letter-spacing: -.01em;
+  margin-bottom: 10px; color: inherit; font-family: var(--font-sans);
+  font-size: clamp(1.3rem, 1.7vw, 1.55rem); font-weight: 400; line-height: 1.1; letter-spacing: -.02em;
 }
 .process__line { max-width: 20rem; color: var(--muted); font-size: 15.5px; line-height: 1.5; }
 
@@ -346,7 +346,7 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 
 /* ==========================================================================
    Recent work (redesign): three photos on the night ground, undimmed, with a
-   serif title and link underneath each
+   title and link underneath each
    ========================================================================== */
 .recent { padding: clamp(4rem, 6.5vw, 6rem) 29px; background: var(--night); color: #fff; font-family: var(--font-sans); }
 .recent__head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 1.75rem; }
@@ -365,8 +365,8 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 .recent__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
 .recent__tile:hover .recent__media img { transform: scale(1.03); }
 .recent__title {
-  margin: 16px 0 10px; color: #fff; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.3rem, 1.7vw, 1.55rem);
-  font-weight: 400; line-height: 1.1; letter-spacing: -.01em;
+  margin: 16px 0 10px; color: #fff; font-family: var(--font-sans); font-size: clamp(1.3rem, 1.7vw, 1.55rem);
+  font-weight: 400; line-height: 1.1; letter-spacing: -.02em;
 }
 .recent a:focus-visible { outline: 2px solid var(--timber-light); outline-offset: 3px; }
 
@@ -385,8 +385,8 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 .cta-tile__frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(13,13,13,.74) 0%, rgba(13,13,13,.52) 50%, rgba(13,13,13,.38) 100%); }
 .cta-tile__body { position: relative; z-index: 1; max-width: 27rem; margin-left: clamp(1.5rem, 8vw, 116px); padding: 3rem 1.5rem 3rem 0; color: #fff; }
 .cta-tile__title {
-  margin-bottom: 14px; color: #fff; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.7rem, 2.1vw, 1.95rem);
-  font-weight: 400; line-height: 1.07; letter-spacing: -.01em;
+  margin-bottom: 14px; color: #fff; font-family: var(--font-sans); font-size: clamp(1.7rem, 2.1vw, 1.95rem);
+  font-weight: 400; line-height: 1.07; letter-spacing: -.02em;
 }
 .cta-tile__text { margin-bottom: 22px; color: rgba(255,255,255,.92); font-size: clamp(1rem, 1.25vw, 1.15rem); line-height: 1.38; }
 .cta-tile__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
@@ -402,7 +402,7 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 .cta-tile a:focus-visible { outline: 2px solid var(--timber-light); outline-offset: 3px; }
 
 /* ==========================================================================
-   FAQ (redesign): sticky serif heading left, hairline accordion of serif
+   FAQ (redesign): sticky heading left, hairline accordion of
    questions across the right two columns, plus turning to minus when open
    ========================================================================== */
 .faqs { padding: clamp(4rem, 6.5vw, 6rem) 29px; background: var(--surface); color: var(--ink); font-family: var(--font-sans); }
@@ -410,8 +410,8 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 .faqs__intro { position: sticky; top: 104px; }
 .faqs__label { margin-bottom: 14px; color: var(--ink); font-size: 13px; font-weight: 500; line-height: 1.2; }
 .faqs__title {
-  max-width: 12ch; margin-bottom: 18px; color: var(--ink); font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.9rem, 2.8vw, 2.6rem); font-weight: 400; line-height: 1; letter-spacing: -.01em;
+  max-width: 12ch; margin-bottom: 18px; color: var(--ink); font-family: var(--font-sans);
+  font-size: clamp(1.9rem, 2.8vw, 2.6rem); font-weight: 400; line-height: 1; letter-spacing: -.02em;
 }
 .faqs__more { max-width: 18rem; color: #6B6A64; font-size: 14.5px; line-height: 1.4; }
 .faqs__more a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
@@ -419,7 +419,7 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 .faqs__item { border-top: 1px solid var(--line); }
 .faqs__item summary {
   display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 24px 0; cursor: pointer; list-style: none;
-  color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.2rem, 1.6vw, 1.45rem); line-height: 1.2;
+  color: var(--ink); font-family: var(--font-sans); font-size: clamp(1.2rem, 1.6vw, 1.45rem); line-height: 1.2;
 }
 .faqs__item summary::-webkit-details-marker { display: none; }
 .faqs__item summary:focus-visible { outline: 2px solid var(--timber); outline-offset: 4px; }
@@ -483,12 +483,12 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 .reach a:focus-visible,
 .reach__submit:focus-visible { outline: 2px solid var(--timber); outline-offset: 3px; }
 
-/* home variant: no map. Label, serif title and details on the left, the form
+/* home variant: no map. Label, title and details on the left, the form
    across the right two columns under the FAQ list, short fields two-up */
 .reach__label { margin-bottom: 14px; color: var(--ink); font-size: 13px; font-weight: 500; line-height: 1.2; }
 .reach__title {
-  margin-bottom: 18px; color: var(--ink); font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.9rem, 2.8vw, 2.6rem); font-weight: 400; line-height: 1; letter-spacing: -.01em;
+  margin-bottom: 18px; color: var(--ink); font-family: var(--font-sans);
+  font-size: clamp(1.9rem, 2.8vw, 2.6rem); font-weight: 400; line-height: 1; letter-spacing: -.02em;
 }
 .reach__lead { max-width: 18rem; margin-bottom: 2rem; color: #6B6A64; font-size: 14.5px; line-height: 1.4; }
 .reach--simple .reach__info { padding-right: 0; }
@@ -540,8 +540,8 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 .phero__cell--wide { grid-column: 2 / 4; }
 .phero__label { margin-bottom: 18px; color: rgba(255,255,255,.6); font-size: 13px; line-height: 1.3; }
 .phero__title {
-  margin-bottom: 20px; color: #fff; font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 2.9vw, 2.65rem); font-weight: 400; line-height: 1.02; letter-spacing: -.01em; text-wrap: balance;
+  margin-bottom: 20px; color: #fff; font-family: var(--font-sans);
+  font-size: clamp(2rem, 2.9vw, 2.65rem); font-weight: 400; line-height: 1.02; letter-spacing: -.02em; text-wrap: balance;
 }
 .phero__lead { max-width: 30rem; margin-bottom: 26px; color: rgba(255,255,255,.85); font-size: clamp(1rem, 1.2vw, 1.1rem); line-height: 1.42; }
 .phero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
@@ -584,23 +584,23 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 .band__head { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 28px; align-items: start; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
 .band__head:last-child { margin-bottom: 0; }
 .band__title {
-  grid-column: 1 / 3; max-width: 17ch; color: inherit; font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.9rem, 2.8vw, 2.6rem); font-weight: 400; line-height: 1.02; letter-spacing: -.01em; text-wrap: balance;
+  grid-column: 1 / 3; max-width: 17ch; color: inherit; font-family: var(--font-sans);
+  font-size: clamp(1.9rem, 2.8vw, 2.6rem); font-weight: 400; line-height: 1.02; letter-spacing: -.02em; text-wrap: balance;
 }
 .band__lead { grid-column: 3; color: var(--soft); font-size: 15.5px; line-height: 1.5; }
 .band__lead a,
 .svc__text a,
 .statement p a { color: inherit; text-decoration: underline; text-decoration-color: rgba(140,140,138,.6); text-underline-offset: 3px; }
 
-/* detail rows: label on the hairline, then serif title | photo | copy, list, button
+/* detail rows: label on the hairline, then title | photo | copy, list, button
    (one row on a service page, four numbered rows on the services hub) */
 .detail__row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 28px; align-items: start; }
 .detail__row + .detail__row { margin-top: clamp(4.5rem, 8vw, 7rem); }
 .detail__label { grid-column: 1 / -1; margin-bottom: clamp(1.75rem, 3.5vw, 3rem); padding-top: 1rem; border-top: 1px solid var(--hair); font-size: 13px; font-weight: 500; line-height: 1.3; }
 .detail__n { display: inline-block; min-width: 2.6rem; color: var(--soft); }
 .detail__title {
-  padding-right: 1rem; color: inherit; font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.8rem, 2.6vw, 2.4rem); font-weight: 400; line-height: 1.04; letter-spacing: -.01em; text-wrap: balance;
+  padding-right: 1rem; color: inherit; font-family: var(--font-sans);
+  font-size: clamp(1.8rem, 2.6vw, 2.4rem); font-weight: 400; line-height: 1.04; letter-spacing: -.02em; text-wrap: balance;
 }
 .detail__title a { transition: opacity .2s var(--ease); }
 .detail__title a:hover { opacity: .65; }
@@ -617,10 +617,10 @@ a.detail__media:hover img { transform: scale(1.03); }
 .svc__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2.5rem 16px; margin: 0; padding: 0; list-style: none; }
 .svc__grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .svc__card { padding-top: 18px; border-top: 1px solid var(--hair); }
-.svc__name { margin-bottom: 10px; color: inherit; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.3rem, 1.7vw, 1.55rem); font-weight: 400; line-height: 1.1; letter-spacing: -.01em; }
+.svc__name { margin-bottom: 10px; color: inherit; font-family: var(--font-sans); font-size: clamp(1.3rem, 1.7vw, 1.55rem); font-weight: 400; line-height: 1.1; letter-spacing: -.02em; }
 .svc__text { max-width: 22rem; color: var(--soft); font-size: 15px; line-height: 1.5; }
 
-/* statement: serif title beside two columns of copy */
+/* statement: title beside two columns of copy */
 .statement__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 28px; align-items: start; }
 .statement__grid .band__title { grid-column: 1; padding-right: 1rem; }
 .statement__grid p { color: var(--soft); font-size: 15.5px; line-height: 1.55; }
@@ -653,20 +653,20 @@ a.detail__media:hover img { transform: scale(1.03); }
 .works__tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(13,13,13,.78) 0%, rgba(13,13,13,.25) 42%, rgba(13,13,13,.08) 100%); }
 .works__cap { position: absolute; z-index: 1; left: 22px; right: 22px; bottom: 24px; }
 .works__kicker { display: block; margin-bottom: 8px; color: rgba(255,255,255,.75); font-size: 13px; line-height: 1.2; }
-.works__title { display: block; color: #fff; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.25rem, 1.6vw, 1.5rem); line-height: 1.1; letter-spacing: -.01em; }
+.works__title { display: block; color: #fff; font-family: var(--font-sans); font-size: clamp(1.25rem, 1.6vw, 1.5rem); line-height: 1.1; letter-spacing: -.02em; }
 .phero + .works { padding-top: 29px; }
 .works:has(+ .cta-tile) { padding-bottom: 29px; }
 
-/* values (about): numbered serif rows on hairlines, copy on the right */
+/* values (about): numbered rows on hairlines, copy on the right */
 .values__list { margin: 0; padding: 0; list-style: none; border-bottom: 1px solid var(--hair); }
 .values__row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 28px; align-items: baseline; padding: 26px 0 34px; border-top: 1px solid var(--hair); }
-.values__name { grid-column: 1 / 3; display: flex; align-items: baseline; color: inherit; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.6rem, 2.4vw, 2.2rem); font-weight: 400; line-height: 1.05; letter-spacing: -.01em; }
+.values__name { grid-column: 1 / 3; display: flex; align-items: baseline; color: inherit; font-family: var(--font-sans); font-size: clamp(1.6rem, 2.4vw, 2.2rem); font-weight: 400; line-height: 1.05; letter-spacing: -.02em; }
 .values__n { flex: none; min-width: 2.6rem; color: var(--soft); font-family: var(--font-sans); font-size: 13px; letter-spacing: 0; }
 .values__row p { color: var(--soft); font-size: 15.5px; line-height: 1.5; }
 
 /* privacy policy copy */
 .prose { max-width: 44rem; }
-.prose h2 { margin: 2.6rem 0 .8rem; color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: 1.55rem; font-weight: 400; line-height: 1.15; letter-spacing: -.01em; }
+.prose h2 { margin: 2.6rem 0 .8rem; color: var(--ink); font-family: var(--font-sans); font-size: 1.55rem; font-weight: 400; line-height: 1.15; letter-spacing: -.02em; }
 .prose p { margin-bottom: 1rem; color: #3F3E3A; font-size: 16px; line-height: 1.6; }
 .prose a { color: var(--ink); text-decoration: underline; text-decoration-color: rgba(26,26,26,.3); text-underline-offset: 3px; }
 .prose .obtn { margin-top: 1.5rem; text-decoration: none; }
@@ -736,6 +736,9 @@ main { display: block; }
   position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
+
+/* keeps a hyphenated word on one line in a heading (Inter Tight has no U+2011) */
+.nowrap { white-space: nowrap; }
 
 /* Skip-to-content: off-screen until keyboard-focused */
 .skip-link {
