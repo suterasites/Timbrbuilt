@@ -17,7 +17,6 @@
   --navy-900:    #000000;
   --night:       #0D0D0D;
   --slate:       #16293A;
-  --taupe:       #6B6457;
   --sand:        #D3CBBA;
   --navy-800:    #121212;
   --navy-600:    #333333;
@@ -161,10 +160,10 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 }
 
 /* ==========================================================================
-   Home top bar + grid hero (redesign). Bar is transparent over the hero and
-   turns solid once the tab strip scrolls under it (main.js adds .is-solid).
+   Top bar (redesign, every page). Transparent over the night hero, solid
+   once the page scrolls (main.js adds .is-solid).
    ========================================================================== */
-.topbar, .ghero { font-family: var(--font-sans); }
+.topbar { font-family: var(--font-sans); }
 
 .topbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -184,121 +183,15 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 .topbar__nav { justify-self: end; display: flex; align-items: center; gap: 25px; font-size: 14px; }
 .topbar__nav a { display: inline-flex; align-items: center; gap: 8px; color: rgba(255,255,255,.92); transition: color .2s var(--ease); }
 .topbar__nav a:hover { color: #fff; }
-.topbar__n {
-  display: inline-grid; place-items: center; min-width: 32px; height: 18px; padding: 0 8px;
-  border-radius: 999px; background: #fff; color: var(--night); font-size: 11px; font-weight: 500; line-height: 1;
-}
-.topbar__chev { width: 14px; height: 14px; opacity: .8; }
 .topbar a:focus-visible,
-.topbar button:focus-visible,
-.ghero a:focus-visible { outline: 2px solid var(--timber-light); outline-offset: 3px; }
+.topbar button:focus-visible { outline: 2px solid var(--timber-light); outline-offset: 3px; }
 
-.ghero { padding-top: 97px; background: var(--night); color: #fff; }
-
-/* outlined tab strip (home hero and every inner-page hero): items share the
-   spare width so each divider sits midway */
-.ghero__tabs,
-.phero__tabs {
-  position: relative; z-index: 3; display: flex; align-items: center;
-  height: 42px; margin: 0 58px; border: 1px solid rgba(255,255,255,.5); border-radius: 12px;
-  font-size: 13.5px; line-height: 1;
-}
-.ghero__tabs a,
-.phero__tabs a {
-  position: relative; flex: 1 1 auto; padding: 0 1rem; text-align: center; white-space: nowrap;
-  color: rgba(255,255,255,.6); transition: color .2s var(--ease);
-}
-.ghero__tabs a + a::before,
-.phero__tabs a + a::before {
-  content: ""; position: absolute; left: 0; top: 50%; height: 18px; margin-top: -9px;
-  border-left: 1px solid rgba(255,255,255,.35);
-}
-.ghero__tabs a:hover,
-.ghero__tabs a[aria-current],
-.phero__tabs a:hover,
-.phero__tabs a[aria-current] { color: #fff; }
-
-.ghero__stage { position: relative; }
-.ghero__grid {
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px;
-  grid-auto-rows: clamp(300px, calc(50svh - 44px), 480px);
-}
-.ghero__cell { position: relative; overflow: hidden; background: #1c2023; }
-.ghero__cell img { width: 100%; height: 100%; object-fit: cover; }
-.ghero__cell::after { content: ""; position: absolute; inset: 0; background: rgba(13,13,13,.56); }
-/* the intro sits over the left column, so it is darker there */
-.ghero__cell:nth-child(3n+1)::after { background: linear-gradient(90deg, rgba(13,13,13,.76) 0%, rgba(13,13,13,.56) 100%); }
-
-/* content layer mirrors the grid so the intro and aside line up with its columns,
-   both centred on the gap between the two rows */
-.ghero__content {
-  position: absolute; inset: 0; z-index: 2;
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 28px; align-items: center;
-  pointer-events: none;
-}
-.ghero__content > * { pointer-events: auto; }
-.ghero__intro { grid-column: 1 / 3; max-width: 460px; padding-left: 29px; }
-.ghero__eyebrow { margin-bottom: 14px; color: #fff; font-size: 15px; font-weight: 500; line-height: 1.2; }
-.ghero__title {
-  margin-bottom: 20px; color: #fff; font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.75rem, 2.3vw, 2.1rem); font-weight: 400; line-height: 1; letter-spacing: -.01em;
-}
-.ghero__lead { margin-bottom: 17px; color: rgba(255,255,255,.92); font-size: clamp(1rem, 1.28vw, 1.16rem); line-height: 1.36; }
-.ghero__btn {
-  display: inline-flex; align-items: center; gap: .5rem; height: 41px; padding: 0 24px 0 29px;
-  border: 1px solid rgba(255,255,255,.85); border-radius: 6px; color: #fff; font-size: 16.5px; line-height: 1;
-  transition: background-color .2s var(--ease), color .2s var(--ease);
-}
-.ghero__btn:hover { background: #fff; color: var(--night); }
-.ghero__btn svg { width: 16px; height: 16px; }
-
-.ghero__aside { grid-column: 3; justify-self: end; width: min(345px, calc(100% - 29px)); margin-right: 29px; }
-.ghero__card {
-  display: grid; grid-template-columns: minmax(0, 1fr) 129px; min-height: 259px;
-  border-radius: 6px; overflow: hidden; background: var(--cream); color: var(--ink);
-}
-.ghero__card-body { display: flex; flex-direction: column; padding: 12px 12px 20px; }
-.ghero__card-label { margin-bottom: 9px; color: #77705f; font-size: 13px; line-height: 1.2; }
-.ghero__card-title { margin-bottom: 7px; font-family: Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.2; }
-.ghero__card-text { color: #5e584b; font-size: 12.5px; line-height: 1.32; }
-.ghero__card-link { display: inline-flex; align-items: center; gap: 4px; margin-top: auto; padding-top: 18px; font-size: 15px; font-weight: 600; line-height: 1; }
-.ghero__card-link svg { width: 16px; height: 16px; transition: transform .2s var(--ease); }
-.ghero__card:hover .ghero__card-link svg { transform: translateX(3px); }
-.ghero__card-img { width: 100%; height: 100%; object-fit: cover; }
-.ghero__contact-label { margin: 26px 0 8px; color: rgba(255,255,255,.6); font-size: 13px; line-height: 1.2; }
-.ghero__contact { display: flex; align-items: center; gap: 10px; color: #fff; }
-.ghero__avatar { display: grid; place-items: center; flex: none; width: 30px; height: 30px; border-radius: 50%; background: #2a2f33; }
-.ghero__avatar img { width: 16px; height: auto; }
-.ghero__who { display: flex; flex-direction: column; gap: 2px; line-height: 1.2; }
-.ghero__who strong { color: #fff; font-size: 12.5px; font-weight: 600; }
-.ghero__who span { color: rgba(255,255,255,.6); font-size: 11.5px; }
-.ghero__contact svg { width: 20px; height: 20px; margin-left: auto; transition: transform .2s var(--ease); }
-.ghero__contact:hover svg { transform: translateX(3px); }
-
-@media (max-width: 1100px){
-  .ghero__tabs, .phero__tabs { margin: 0 29px; font-size: 12.5px; }
-  .ghero__tabs a, .phero__tabs a { padding: 0 .6rem; }
-}
-
-/* below tablet: one photo behind everything, intro then aside stacked */
+/* phones and small tablets: shorter bar, nav links move into the menu */
 @media (max-width: 900px){
   .topbar { height: 64px; padding: 0 16px; }
   .topbar.is-solid { height: 56px; }
   .topbar__brand img { height: 22px; }
   .topbar__nav { display: none; }
-  .ghero { padding-top: 64px; }
-  .ghero__tabs, .phero__tabs { margin: 0 16px; overflow-x: auto; scrollbar-width: none; }
-  .ghero__tabs::-webkit-scrollbar, .phero__tabs::-webkit-scrollbar { display: none; }
-  .ghero__tabs a, .phero__tabs a { flex: none; padding: 0 1.1rem; }
-  .ghero__stage { margin-top: 16px; }
-  .ghero__grid { position: absolute; inset: 0; display: block; }
-  .ghero__cell { position: absolute; inset: 0; }
-  .ghero__cell:not(:first-child) { display: none; }
-  .ghero__cell:first-child::after { background: linear-gradient(180deg, rgba(13,13,13,.2) 0%, rgba(13,13,13,.6) 40%, rgba(13,13,13,.92) 100%); }
-  .ghero__content { position: relative; display: flex; flex-direction: column; gap: 40px; padding: 34vh 16px 32px; }
-  .ghero__intro { max-width: 34rem; padding-left: 0; }
-  .ghero__aside { width: 100%; max-width: 30rem; margin: 0; justify-self: auto; }
-  .ghero__card { grid-template-columns: minmax(0, 1fr) 34%; }
 }
 
 /* ==========================================================================
@@ -323,22 +216,17 @@ body.menu-open::after { opacity: 1; visibility: visible; cursor: pointer; }
 .swall__tile { position: relative; flex: none; width: var(--t); aspect-ratio: 334 / 432; overflow: hidden; border-radius: 4px; background: var(--stone); }
 .swall__tile img { width: 100%; height: 100%; object-fit: cover; }
 .swall__tile--flat {
-  display: flex; flex-direction: column; align-items: center; justify-content: space-between;
-  padding: 1.5rem 1.25rem; text-align: center;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 1.5rem 1.25rem; background: var(--slate); color: #fff; text-align: center;
 }
-.swall__kicker { font-size: 11.5px; font-weight: 500; line-height: 1.2; opacity: .85; }
 .swall__title {
-  color: inherit; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.25rem, 1.95vw, 1.85rem);
+  margin: auto 0; color: inherit; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.25rem, 1.95vw, 1.85rem);
   font-weight: 400; line-height: 1.1; letter-spacing: -.01em; text-wrap: balance;
 }
 .swall__more { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; line-height: 1; }
 .swall__more svg { width: 14px; height: 14px; transition: transform .2s var(--ease); }
 a.swall__tile:hover .swall__more svg { transform: translateX(3px); }
 a.swall__tile:focus-visible { outline: 2px solid var(--timber); outline-offset: 2px; }
-.swall__tile--cream  { background: var(--cream); color: var(--timber-600); }
-.swall__tile--slate  { background: var(--slate); color: #fff; }
-.swall__tile--timber { background: var(--timber-600); color: #fff; }
-.swall__tile--night  { background: var(--night); color: var(--cream); }
 
 /* phones: a plain two-column grid, the edge-only tiles dropped */
 @media (max-width: 760px){
@@ -416,73 +304,50 @@ a.swall__tile:focus-visible { outline: 2px solid var(--timber); outline-offset: 
 }
 
 /* ==========================================================================
-   Why Timbr Built (redesign): photo tile with a centred serif title, then
-   five flat colour cards in two columns whose middle row spans both
+   Why Timbr Built (redesign): one photo on the left, serif title and three
+   numbered hairline points on the right, all on the night ground
    ========================================================================== */
-.reasons { padding: 29px; background: var(--night); font-family: var(--font-sans); }
-.reasons__grid {
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px;
-  grid-template-rows: repeat(3, clamp(240px, 25.4vw, 366px));
-}
-.reasons__photo { position: relative; grid-column: 1 / 3; grid-row: 1 / 4; overflow: hidden; border-radius: 6px; background: #1c2023; }
+.reasons { padding: 29px; background: var(--night); color: #fff; font-family: var(--font-sans); }
+.reasons__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.reasons__photo { position: relative; min-height: clamp(480px, 46vw, 680px); overflow: hidden; border-radius: 6px; background: #1c2023; }
 .reasons__photo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.reasons__photo::after {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(13,13,13,.2) 0%, rgba(13,13,13,.12) 45%, rgba(13,13,13,.74) 100%);
-}
+.reasons__body { display: flex; flex-direction: column; padding: clamp(1rem, 2.5vw, 2.5rem) clamp(0rem, 2.5vw, 2.5rem) 1rem 0; }
 .reasons__title {
-  position: absolute; z-index: 1; left: 0; right: 0; top: 50%; transform: translateY(-50%); padding: 0 2rem;
-  color: var(--cream); font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.4rem, 4.35vw, 3.9rem);
-  font-weight: 400; line-height: 1; letter-spacing: -.01em; text-align: center; text-wrap: balance;
+  margin-bottom: auto; padding-bottom: 3rem; color: #fff; font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 3.2vw, 2.9rem); font-weight: 400; line-height: 1; letter-spacing: -.015em;
 }
-.reasons__foot { position: absolute; z-index: 1; left: 22px; bottom: 22px; max-width: 15.5rem; }
-.reasons__foot h3 { margin-bottom: 8px; color: #fff; font-size: 15px; font-weight: 600; line-height: 1.2; letter-spacing: 0; }
-.reasons__foot p { margin-bottom: 14px; color: rgba(255,255,255,.88); font-size: 15px; line-height: 1.2; }
+.reasons__list { margin: 0 0 2rem; padding: 0; list-style: none; counter-reset: why; border-bottom: 1px solid rgba(255,255,255,.16); }
+.reasons__list li {
+  display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); column-gap: .5rem; padding: 22px 0 26px;
+  border-top: 1px solid rgba(255,255,255,.16); counter-increment: why;
+}
+.reasons__list li::before { content: "0" counter(why); grid-row: 1 / 3; padding-top: .4rem; color: rgba(255,255,255,.6); font-size: 13px; line-height: 1.2; }
+.reasons__list h3 {
+  margin-bottom: 8px; color: #fff; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.35rem, 1.9vw, 1.7rem);
+  font-weight: 400; line-height: 1.1; letter-spacing: -.01em;
+}
+.reasons__list p { max-width: 30rem; color: rgba(255,255,255,.7); font-size: 15.5px; line-height: 1.5; }
 .reasons__btn {
-  display: inline-flex; align-items: center; height: 37px; padding: 0 29px;
-  border: 1px solid rgba(255,255,255,.75); border-radius: 6px; color: #fff; font-size: 15px; font-weight: 600; line-height: 1;
+  align-self: flex-start; display: inline-flex; align-items: center; height: 41px; padding: 0 27px;
+  border: 1px solid rgba(255,255,255,.75); border-radius: 6px; color: #fff; font-size: 16px; line-height: 1;
   transition: background-color .2s var(--ease), color .2s var(--ease);
 }
 .reasons__btn:hover { background: #fff; color: var(--night); }
 .reasons__btn:focus-visible { outline: 2px solid var(--timber-light); outline-offset: 3px; }
 
-.reasons__card { position: relative; display: flex; align-items: center; justify-content: center; padding: 3.25rem 1.6rem; border-radius: 6px; text-align: center; }
-.reasons__card--wide { grid-column: span 2; }
-.reasons__label { position: absolute; top: 26px; left: 1rem; right: 1rem; font-size: 13px; font-weight: 500; line-height: 1.2; }
-.reasons__note { position: absolute; bottom: 26px; left: 1rem; right: 1rem; font-size: 12.5px; font-weight: 600; line-height: 1.2; }
-.reasons__lead {
-  color: inherit; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.3rem, 2.1vw, 1.9rem);
-  line-height: 1.07; letter-spacing: -.01em; text-wrap: balance;
-}
-.reasons__card--list { align-items: flex-end; padding: 3.25rem 22px 14px; }
-.reasons__list { width: 100%; padding: 0; list-style: none; text-align: left; }
-.reasons__list li { position: relative; padding: 9px 0 9px 1.2rem; font-size: 12.5px; font-weight: 500; line-height: 1.3; }
-.reasons__list li + li { border-top: 1px solid rgba(255,255,255,.28); }
-.reasons__list li::before { content: "\2713"; position: absolute; left: 0; }
-.reasons__card--cream  { background: var(--cream); color: var(--timber-600); }
-.reasons__card--timber { background: var(--timber-600); color: #fff; }
-.reasons__card--slate  { background: var(--slate); color: #fff; }
-.reasons__card--taupe  { background: var(--taupe); color: #fff; }
-.reasons__card--sand   { background: var(--sand); color: #6E5A3A; }
-
-/* tablet: photo across the top, cards two-up beneath */
-@media (max-width: 1100px){
-  .reasons__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: minmax(250px, auto); }
-  .reasons__photo { grid-column: 1 / -1; grid-row: auto; min-height: 560px; }
-}
-/* phones: one column, title up top so it clears the foot */
-@media (max-width: 760px){
-  .reasons { padding: 1rem; }
-  .reasons__grid { grid-template-columns: minmax(0, 1fr); grid-auto-rows: minmax(220px, auto); }
-  .reasons__card--wide { grid-column: auto; }
-  .reasons__photo { min-height: 540px; }
-  .reasons__title { top: 2.2rem; transform: none; font-size: clamp(2.2rem, 10vw, 2.8rem); }
+/* below tablet: photo on top, points beneath */
+@media (max-width: 900px){
+  .reasons { padding: 1rem 1rem 3.5rem; }
+  .reasons__grid { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+  .reasons__photo { min-height: 0; aspect-ratio: 4 / 3; }
+  .reasons__body { padding: 0 .5rem; }
+  .reasons__title { margin-bottom: 0; padding-bottom: 2rem; }
 }
 
 /* ==========================================================================
-   How it works (redesign): serif heading + intro, then four tall flat cards
-   running light to dark as the job moves from enquiry to handover. Each has
-   its bottom-right corner cut on the diagonal, a nod to the roofline mark.
+   How it works (redesign): serif heading + intro, then four tall cream cards,
+   numbered from enquiry to handover. Each has its bottom-right corner cut on
+   the diagonal, a nod to the roofline mark.
    ========================================================================== */
 .process { padding: clamp(4rem, 6.5vw, 6rem) 29px; background: var(--white); color: var(--ink); font-family: var(--font-sans); }
 .process__head { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 16px; align-items: start; margin-bottom: clamp(2.5rem, 6vw, 5.5rem); }
@@ -499,7 +364,7 @@ a.swall__tile:focus-visible { outline: 2px solid var(--timber); outline-offset: 
 .process__cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
 .process__card {
   position: relative; display: flex; flex-direction: column; aspect-ratio: 4 / 5; min-height: 300px;
-  padding: 27px 27px 34px; border-radius: 6px;
+  padding: 27px 27px 34px; border-radius: 6px; background: var(--cream); color: var(--ink);
 }
 .process__card::after {
   content: ""; position: absolute; right: -1px; bottom: -1px; width: 42px; height: 42px;
@@ -511,10 +376,6 @@ a.swall__tile:focus-visible { outline: 2px solid var(--timber); outline-offset: 
   max-width: 15em; margin-top: auto; color: inherit; font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.2rem, 1.6vw, 1.5rem); line-height: 1.15; letter-spacing: -.005em;
 }
-.process__card--cream { background: var(--cream); color: var(--ink); }
-.process__card--sand  { background: var(--sand); color: #3F3424; }
-.process__card--taupe { background: var(--taupe); color: #fff; }
-.process__card--slate { background: var(--slate); color: #fff; }
 
 @media (max-width: 900px){
   .process { padding: 4rem 1.5rem; }
@@ -698,15 +559,15 @@ a.swall__tile:focus-visible { outline: 2px solid var(--timber); outline-offset: 
 }
 
 /* ==========================================================================
-   Inner pages (redesign): every page opens on .phero (the home tab strip,
-   then the intro on the night ground beside photo tiles), then .band
+   Inner pages (redesign): every page opens on .phero (the intro on the
+   night ground beside photo tiles, the home hero too), then .band
    sections that alternate white, surface and night grounds. Each band opens
    on a hairline with a small label, like the home sections.
    ========================================================================== */
 .phero { padding-top: 97px; background: var(--night); color: #fff; font-family: var(--font-sans); }
 .phero__stage {
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 28px;
-  height: clamp(460px, calc(100svh - 139px), 660px);
+  height: clamp(460px, calc(100svh - 97px), 700px);
 }
 .phero__intro { display: flex; flex-direction: column; justify-content: flex-end; min-width: 0; padding: 2.5rem 1rem 3.25rem 29px; }
 .phero__cell { position: relative; overflow: hidden; background: #1c2023; }
@@ -787,16 +648,12 @@ a.detail__media:hover img { transform: scale(1.03); }
 .detail__list li::before { content: "\2713"; position: absolute; left: 0; }
 .detail__body > :last-child { margin-bottom: 0; }
 
-/* flat colour cards (what we do / local work), light to dark like the home cards */
+/* flat cream cards (what we do / local work), like the home process cards */
 .svc__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; margin: 0; padding: 0; list-style: none; }
 .svc__grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.svc__card { display: flex; flex-direction: column; min-height: clamp(300px, 28vw, 400px); padding: 24px 24px 28px; border-radius: 6px; }
+.svc__card { display: flex; flex-direction: column; min-height: clamp(300px, 28vw, 400px); padding: 24px 24px 28px; border-radius: 6px; background: var(--cream); color: var(--ink); }
 .svc__name { margin-bottom: 1.5rem; color: inherit; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.35rem, 1.75vw, 1.6rem); font-weight: 400; line-height: 1.08; letter-spacing: -.01em; }
 .svc__text { margin-top: auto; color: inherit; font-size: 14.5px; line-height: 1.45; opacity: .88; }
-.svc__card:nth-child(4n+1) { background: var(--cream); color: var(--ink); }
-.svc__card:nth-child(4n+2) { background: var(--sand); color: #3F3424; }
-.svc__card:nth-child(4n+3) { background: var(--taupe); color: #fff; }
-.svc__card:nth-child(4n+4) { background: var(--slate); color: #fff; }
 
 /* statement: serif title beside two columns of copy */
 .statement__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 28px; align-items: start; }
@@ -868,7 +725,7 @@ a.detail__media:hover img { transform: scale(1.03); }
 @media (max-width: 900px){
   .phero { padding-top: 64px; }
   .phero__stage,
-  .phero--short .phero__stage { position: relative; display: block; height: auto; margin-top: 16px; }
+  .phero--short .phero__stage { position: relative; display: block; height: auto; }
   .phero__cell { position: absolute; inset: 0; }
   .phero__cell::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,13,13,.2) 0%, rgba(13,13,13,.6) 40%, rgba(13,13,13,.92) 100%); }
   .phero__intro { position: relative; z-index: 1; padding: 30vh 16px 32px; }

@@ -66,14 +66,13 @@
   });
 })();
 
-/* Top bar: solid once the hero tab strip (home or inner page) scrolls up under it */
+/* Top bar: solid once the page scrolls */
 (function () {
   var bar = document.querySelector('[data-topbar]');
-  var tabs = document.querySelector('[data-hero-tabs]');
-  if (!bar || !tabs || !('IntersectionObserver' in window)) return;
-  new IntersectionObserver(function (entries) {
-    bar.classList.toggle('is-solid', entries[0].intersectionRatio < 1);
-  }, { rootMargin: '-' + (bar.offsetHeight - 4) + 'px 0px 0px 0px', threshold: 1 }).observe(tabs);
+  if (!bar) return;
+  function update() { bar.classList.toggle('is-solid', window.scrollY > 8); }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
 })();
 
 /* What we do: the two tile rows drift in opposite directions as the section scrolls past */
@@ -96,12 +95,4 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   update();
-})();
-
-/* Hero tab strip: on phones it scrolls sideways, so bring the current page's tab into view */
-(function () {
-  var tabs = document.querySelector('.phero__tabs');
-  var cur = tabs && tabs.querySelector('[aria-current]');
-  if (!cur || tabs.scrollWidth <= tabs.clientWidth) return;
-  tabs.scrollLeft = cur.offsetLeft - (tabs.clientWidth - cur.offsetWidth) / 2;
 })();
