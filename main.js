@@ -74,25 +74,3 @@
   window.addEventListener('scroll', update, { passive: true });
   update();
 })();
-
-/* What we do: the two tile rows drift in opposite directions as the section scrolls past */
-(function () {
-  var wall = document.querySelector('[data-swall]');
-  if (!wall || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var rows = wall.querySelectorAll('.swall__row');
-  var wide = window.matchMedia('(min-width: 761px)');
-  var ticking = false;
-  function update() {
-    ticking = false;
-    if (!wide.matches) { rows.forEach(function (r) { r.style.transform = ''; }); return; }
-    var box = wall.getBoundingClientRect(), vh = window.innerHeight;
-    if (box.bottom < 0 || box.top > vh) return;
-    var x = ((vh - box.top) / (vh + box.height) - 0.5) * 64; // +-32px across the pass
-    rows[0].style.transform = 'translateX(' + x.toFixed(1) + 'px)';
-    rows[1].style.transform = 'translateX(' + (-x).toFixed(1) + 'px)';
-  }
-  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
-  update();
-})();

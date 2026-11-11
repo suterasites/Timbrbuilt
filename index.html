@@ -83,7 +83,7 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- TOP BAR: Menu left, wordmark centre, count pills right. Solid once the hero tabs scroll under it -->
+  <!-- TOP BAR: Menu left, wordmark centre, three links right. Solid once the page scrolls -->
   <header class="topbar" data-topbar>
     <button class="topbar__menu" data-menu-toggle aria-label="Open menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -153,43 +153,30 @@
     </div>
   </section>
 
-  <!-- WHAT WE DO: hairline + label + serif statement, then two offset rows of navy service tiles and project photos -->
-  <section class="swall" id="services">
-    <div class="container">
-      <div class="intro-head">
-        <h2 class="intro-head__label">What we do</h2>
-        <p class="intro-head__text">Timbr Built covers the work that turns a plan into a building: framing and structural carpentry, full bathroom renovations, hardwood decks and pergolas, and new builds taken through to lockup. Four kinds of work, one qualified carpenter on the tools, and the same standard on every job.</p>
-      </div>
+  <!-- WHAT WE DO: hairline + label + short serif statement, then the four services as photo cards -->
+  <section class="services" id="services">
+    <div class="intro-head">
+      <h2 class="intro-head__label">What we do</h2>
+      <p class="intro-head__text">Timbr Built covers the work that turns a plan into a building. Four kinds of work, one qualified carpenter on the tools, and the same standard on every job.</p>
     </div>
-    <div class="swall__rows" data-swall>
-      <div class="swall__row">
-        <div class="swall__tile swall__tile--desk"><img width="579" height="750" src="Assets/svc-pergola.jpg" alt="Pergola frame going up over a new deck subfloor" loading="lazy" decoding="async"></div>
-        <a class="swall__tile swall__tile--flat" href="carpentry.html">
-          <h3 class="swall__title">N°1 Carpentry</h3>
-          <span class="swall__more">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
-        </a>
-        <div class="swall__tile"><img width="680" height="880" src="Assets/svc-timber-vanity.jpg" alt="Bathroom with a timber wall-hung vanity, round basin and mirror cabinet" loading="lazy" decoding="async"></div>
-        <a class="swall__tile swall__tile--flat" href="bathroom-renovations.html">
-          <h3 class="swall__title">N°2 Bathroom renovations</h3>
-          <span class="swall__more">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
-        </a>
-        <div class="swall__tile"><img width="680" height="880" src="Assets/svc-brass-shower.jpg" alt="Walk-in shower with brushed brass fittings" loading="lazy" decoding="async"></div>
-      </div>
-      <div class="swall__row">
-        <div class="swall__tile swall__tile--desk"><img width="680" height="880" src="Assets/svc-laundry.jpg" alt="Laundry with walnut timber joinery and a stone benchtop" loading="lazy" decoding="async"></div>
-        <a class="swall__tile swall__tile--flat" href="decks-pergolas.html">
-          <h3 class="swall__title">N°3 Decks &amp; pergolas</h3>
-          <span class="swall__more">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
-        </a>
-        <div class="swall__tile"><img width="680" height="880" src="Assets/svc-deck.jpg" alt="New hardwood deck under a covered verandah" loading="lazy" decoding="async"></div>
-        <div class="swall__tile"><img width="680" height="880" src="Assets/svc-curved-stair.jpg" alt="Curved timber stair framing" loading="lazy" decoding="async"></div>
-        <a class="swall__tile swall__tile--flat" href="lockups-new-builds.html">
-          <h3 class="swall__title">N°4 Lockups &amp; new builds</h3>
-          <span class="swall__more">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
-        </a>
-        <div class="swall__tile swall__tile--desk"><img width="680" height="880" src="Assets/svc-newbuild.jpg" alt="New-build home with vertical cladding and black window frames" loading="lazy" decoding="async"></div>
-      </div>
-    </div>
+    <ol class="services__grid">
+      <li><a class="services__card" href="carpentry.html">
+        <span class="services__media"><img width="680" height="880" src="Assets/svc-curved-stair.jpg" alt="Curved timber stair framing" loading="lazy" decoding="async"></span>
+        <span class="services__cap"><span class="services__n">01</span><h3 class="services__name">Carpentry</h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
+      </a></li>
+      <li><a class="services__card" href="bathroom-renovations.html">
+        <span class="services__media"><img width="680" height="880" src="Assets/svc-timber-vanity.jpg" alt="Bathroom with a timber wall-hung vanity, round basin and mirror cabinet" loading="lazy" decoding="async"></span>
+        <span class="services__cap"><span class="services__n">02</span><h3 class="services__name">Bathroom renovations</h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
+      </a></li>
+      <li><a class="services__card" href="decks-pergolas.html">
+        <span class="services__media"><img width="680" height="880" src="Assets/svc-deck.jpg" alt="New hardwood deck under a covered verandah" loading="lazy" decoding="async"></span>
+        <span class="services__cap"><span class="services__n">03</span><h3 class="services__name">Decks &amp; pergolas</h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
+      </a></li>
+      <li><a class="services__card" href="lockups-new-builds.html">
+        <span class="services__media"><img width="680" height="880" src="Assets/svc-newbuild.jpg" alt="New-build home with vertical cladding and black window frames" loading="lazy" decoding="async"></span>
+        <span class="services__cap"><span class="services__n">04</span><h3 class="services__name">Lockups &amp; new builds</h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
+      </a></li>
+    </ol>
   </section>
 
   <!-- WHY: one photo left, serif title and three hairline points right, on the night ground -->
@@ -210,12 +197,12 @@
     </div>
   </section>
 
-  <!-- PROCESS: serif heading + intro, then four tall flat cards running light to dark, number + title top, one line bottom -->
+  <!-- PROCESS: serif heading + intro, then four numbered steps on hairlines -->
   <section class="process">
     <div class="process__head">
       <h2 class="process__title">How it works</h2>
       <div class="process__intro">
-        <p>Every job runs the same way: a free on-site measure, a fixed written price, and one qualified carpenter from the first call to handover.</p>
+        <p>Every job runs the same four steps, from the first call to handover.</p>
         <a class="process__link" href="contact.html">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
       </div>
     </div>
@@ -227,52 +214,28 @@
     </ol>
   </section>
 
-  <!-- RECENT WORK: one wide project tile over two halves, dimmed photos with a serif title + link bottom left -->
+  <!-- RECENT WORK: three photos on the night ground, serif title and link under each -->
   <section class="recent" id="projects">
     <div class="recent__head">
       <h2 class="recent__label">Recent work</h2>
       <a class="recent__all" href="projects.html">View all projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
     </div>
     <div class="recent__grid">
-      <a class="recent__tile recent__tile--wide" href="decks-pergolas.html">
-        <img width="1400" height="750" src="Assets/pergola-framing.jpg" alt="Timber pergola frame and deck subframe under construction" loading="lazy" decoding="async">
-        <span class="recent__body">
-          <h3 class="recent__title">Pergola frame &amp; deck subframe</h3>
-          <span class="recent__text">Posts, beams and rafters up, with the deck subframe set out underneath.</span>
-          <span class="recent__more">See decks &amp; pergolas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
-        </span>
+      <a class="recent__tile" href="decks-pergolas.html">
+        <span class="recent__media"><img width="900" height="900" src="Assets/grid-deck.jpg" alt="Freshly oiled hardwood deck" loading="lazy" decoding="async"></span>
+        <h3 class="recent__title">Oiled hardwood deck</h3>
+        <span class="recent__more">See decks &amp; pergolas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
       </a>
       <a class="recent__tile" href="bathroom-renovations.html">
-        <img width="1170" height="1560" src="Assets/bathroom-vessel-basin.jpg" alt="Bathroom vanity with an oval vessel basin, brushed brass mixer and white marble-look top over oak cabinetry, against terrazzo-look tiles" loading="lazy" decoding="async">
-        <span class="recent__body">
-          <h3 class="recent__title">Vessel basin &amp; brass tapware</h3>
-          <span class="recent__text">A bathroom finished with an oak vanity, marble-look top, oval vessel basin and brushed brass tapware.</span>
-          <span class="recent__more">See bathroom renovations <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
-        </span>
+        <span class="recent__media"><img width="1170" height="1560" src="Assets/bathroom-vessel-basin.jpg" alt="Bathroom vanity with an oval vessel basin, brushed brass mixer and white marble-look top over oak cabinetry, against terrazzo-look tiles" loading="lazy" decoding="async"></span>
+        <h3 class="recent__title">Vessel basin &amp; brass tapware</h3>
+        <span class="recent__more">See bathroom renovations <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
       </a>
       <a class="recent__tile" href="lockups-new-builds.html">
-        <img width="787" height="1400" src="Assets/facade-brick-cladding.jpg" alt="New build facade in face brick with white cladding above" loading="lazy" decoding="async">
-        <span class="recent__body">
-          <h3 class="recent__title">Face brick &amp; cladding facade</h3>
-          <span class="recent__text">New-build carpentry taken to lockup, with cladding above a face brick base.</span>
-          <span class="recent__more">See lockups &amp; new builds <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
-        </span>
+        <span class="recent__media"><img width="787" height="1400" src="Assets/facade-brick-cladding.jpg" alt="New build facade in face brick with white cladding above" loading="lazy" decoding="async"></span>
+        <h3 class="recent__title">Face brick &amp; cladding facade</h3>
+        <span class="recent__more">See lockups &amp; new builds <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></span>
       </a>
-    </div>
-  </section>
-
-  <!-- CTA: one wide dimmed photo tile on the night ground, serif title + line + actions left -->
-  <section class="cta-tile">
-    <div class="cta-tile__frame">
-      <img width="1242" height="800" src="Assets/cta-deck.jpg" alt="" loading="lazy" decoding="async">
-      <div class="cta-tile__body">
-        <h2 class="cta-tile__title">Let's build something that lasts.</h2>
-        <p class="cta-tile__text">Tell us about your project and get a free on-site measure with a fixed written price, no obligation. One local carpenter, start to finish.</p>
-        <div class="cta-tile__actions">
-          <a class="cta-tile__btn" href="contact.html">Get a free quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 7l5 5-5 5"/></svg></a>
-          <a class="cta-tile__call" href="tel:+61484698553" data-conversion="call">or call 0484 698 553</a>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -313,37 +276,19 @@
     </div>
   </section>
 
-  <!-- CONTACT: details left, service-area map centre, cream quote form right -->
-  <section class="reach" id="contact">
+  <!-- CONTACT: label, serif title and details left, cream quote form right, on the FAQ columns -->
+  <section class="reach reach--simple" id="contact">
     <div class="reach__grid">
       <div class="reach__info">
-        <div class="reach__group">
-          <h2 class="reach__h">Contact us</h2>
-          <p class="reach__p">Timbr Built<br>Melbourne's inner west &amp; Hobsons Bay, VIC</p>
-          <ul class="reach__list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linejoin="round" d="M3.5 5.5h17v13h-17z"/><path stroke-linecap="round" stroke-linejoin="round" d="M4 6l8 6.5L20 6"/></svg><a href="mailto:timbrbuilt@gmail.com">timbrbuilt@gmail.com</a></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="1.5"/><path stroke-linecap="round" d="M11 18.5h2"/></svg><a href="tel:+61484698553" data-conversion="call">0484 698 553</a></li>
-          </ul>
-        </div>
-        <div class="reach__group">
-          <h3 class="reach__h">Quotes</h3>
-          <ul class="reach__list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg>Free on-site measure</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg>Fixed written price, no obligation</li>
-          </ul>
-        </div>
-        <div class="reach__group">
-          <h3 class="reach__h">Prefer to talk?</h3>
-          <p class="reach__p">Call Luca directly on <a href="tel:+61484698553" data-conversion="call">0484 698 553</a>.</p>
-        </div>
+        <p class="reach__label">Contact</p>
+        <h2 class="reach__title">Get a free quote</h2>
+        <p class="reach__lead">Tell us about the job and we'll book a free on-site measure.</p>
+        <ul class="reach__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="1.5"/><path stroke-linecap="round" d="M11 18.5h2"/></svg><a href="tel:+61484698553" data-conversion="call">0484 698 553</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linejoin="round" d="M3.5 5.5h17v13h-17z"/><path stroke-linecap="round" stroke-linejoin="round" d="M4 6l8 6.5L20 6"/></svg><a href="mailto:timbrbuilt@gmail.com">timbrbuilt@gmail.com</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linejoin="round" d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0113 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>Melbourne's inner west &amp; Hobsons Bay</li>
+        </ul>
       </div>
-      <figure class="reach__map">
-        <img width="700" height="900" src="Assets/service-area.svg" alt="Map of the inner-west suburbs Timbr Built works in: Williamstown, Newport, Spotswood, Yarraville, Seddon, Footscray, West Footscray, Maribyrnong, Altona and Altona North" loading="lazy" decoding="async">
-        <figcaption class="reach__pop">
-          <span class="reach__pop-h">Where we work</span>
-          <span class="reach__pop-t">Melbourne's inner west and Hobsons Bay, plus Point Cook, Werribee, Tarneit and Hoppers Crossing.</span>
-        </figcaption>
-      </figure>
       <form class="reach__form" action="https://formspree.io/f/mpqgvdlj" method="POST" data-track-gclid>
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <input type="hidden" name="_next" value="https://timbrbuilt.com.au/thank-you">
@@ -351,10 +296,6 @@
         <input type="hidden" name="gclid" value="">
         <input type="hidden" name="landing_url" value="">
         <input type="hidden" name="referrer" value="">
-        <div class="reach__form-head">
-          <h3 class="reach__form-title">Get a free quote</h3>
-          <p class="reach__form-note">Tell us about the job and we'll book a free on-site measure.</p>
-        </div>
         <label class="reach__field"><span class="sr-only">Name (required)</span><input name="name" type="text" required autocomplete="name" placeholder="Name *"></label>
         <label class="reach__field"><span class="sr-only">Phone (required)</span><input name="phone" type="tel" required inputmode="tel" autocomplete="tel" placeholder="Phone *"></label>
         <label class="reach__field"><span class="sr-only">Email (optional)</span><input name="email" type="email" autocomplete="email" placeholder="Email address"></label>
@@ -411,20 +352,6 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="footer__cards">
-          <a class="fcard" href="contact.html">
-            <div class="fcard__thumb"><img width="320" height="320" src="Assets/bathroom-oak-vanity-sm.jpg" alt="" loading="lazy"></div>
-            <h3>Get a free quote</h3>
-            <p>Tell us about your project. Free on-site measure and a fixed written price, no obligation.</p>
-            <span class="fcard__btn">Request a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg></span>
-          </a>
-          <a class="fcard" href="projects.html">
-            <div class="fcard__thumb"><img width="390" height="520" src="Assets/bathroom-barn-door-sm.jpg" alt="" loading="lazy"></div>
-            <h3>Recent work</h3>
-            <p>See finished bathrooms, decks and new builds across Melbourne's inner west.</p>
-            <span class="fcard__btn">View projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg></span>
-          </a>
         </div>
       </div>
       <div class="footer__bottom">
