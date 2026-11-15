@@ -2,6 +2,10 @@
 """
 build_carpentry_lps.py - generate the Carpenter suburb landing pages for Timbr Built.
 
+DO NOT RUN (noted 2026-11-16): this emits the PRE-REDESIGN markup (.section / .cards / .steps),
+deleted from styles.css on 2026-11-02. The live pages were rebuilt by hand in the redesign, so a
+run would overwrite them with unstyled HTML. New carpenter pages: .build/gen_carpenter_suburbs.py.
+
 One page per suburb: carpenter-<slug>.html. Third sibling of build_suburb_lps.py (decks) and
 build_bathroom_lps.py. The chrome (head scripts, cinematic navbar, menu overlay, rich footer,
 callbar) is IDENTICAL to the hand-authored pages - the site's hard rule - and only the localised
