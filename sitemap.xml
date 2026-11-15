@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://timbrbuilt.com.au/</loc><lastmod>2026-07-10</lastmod><priority>1.0</priority></url>
   <url><loc>https://timbrbuilt.com.au/services</loc><lastmod>2026-07-10</lastmod><priority>0.9</priority></url>
-  <url><loc>https://timbrbuilt.com.au/carpentry</loc><lastmod>2026-10-17</lastmod><priority>0.8</priority></url>
-  <url><loc>https://timbrbuilt.com.au/carpenter-newport</loc><lastmod>2026-10-17</lastmod><priority>0.7</priority></url>
-  <url><loc>https://timbrbuilt.com.au/carpenter-williamstown</loc><lastmod>2026-10-17</lastmod><priority>0.7</priority></url>
-  <url><loc>https://timbrbuilt.com.au/carpenter-yarraville</loc><lastmod>2026-10-17</lastmod><priority>0.7</priority></url>
+  <url><loc>https://timbrbuilt.com.au/carpentry</loc><lastmod>2026-11-16</lastmod><priority>0.8</priority></url>
+  <url><loc>https://timbrbuilt.com.au/carpenter-newport</loc><lastmod>2026-11-16</lastmod><priority>0.7</priority></url>
+  <url><loc>https://timbrbuilt.com.au/carpenter-williamstown</loc><lastmod>2026-11-16</lastmod><priority>0.7</priority></url>
+  <url><loc>https://timbrbuilt.com.au/carpenter-yarraville</loc><lastmod>2026-11-16</lastmod><priority>0.7</priority></url>
+  <url><loc>https://timbrbuilt.com.au/carpenter-kingsville</loc><lastmod>2026-11-16</lastmod><priority>0.7</priority></url>
+  <url><loc>https://timbrbuilt.com.au/carpenter-footscray</loc><lastmod>2026-11-16</lastmod><priority>0.7</priority></url>
+  <url><loc>https://timbrbuilt.com.au/carpenter-altona</loc><lastmod>2026-11-16</lastmod><priority>0.7</priority></url>
   <url><loc>https://timbrbuilt.com.au/bathroom-renovations</loc><lastmod>2026-08-03</lastmod><priority>0.8</priority></url>
   <url><loc>https://timbrbuilt.com.au/bathroom-renovations-footscray</loc><lastmod>2026-08-03</lastmod><priority>0.7</priority></url>
   <url><loc>https://timbrbuilt.com.au/bathroom-renovations-yarraville</loc><lastmod>2026-08-03</lastmod><priority>0.7</priority></url>
@@ -20,14 +23,14 @@
   <url><loc>https://timbrbuilt.com.au/bathroom-renovations-point-cook</loc><lastmod>2026-08-03</lastmod><priority>0.7</priority></url>
   <url><loc>https://timbrbuilt.com.au/bathroom-renovations-tarneit</loc><lastmod>2026-08-03</lastmod><priority>0.7</priority></url>
   <url><loc>https://timbrbuilt.com.au/decks-pergolas</loc><lastmod>2026-08-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://timbrbuilt.com.au/decks-pergolas-footscray</loc><lastmod>2026-08-03</lastmod><priority>0.7</priority></url>
-  <url><loc>https://timbrbuilt.com.au/decks-pergolas-yarraville</loc><lastmod>2026-08-03</lastmod><priority>0.7</priority></url>
+  <url><loc>https://timbrbuilt.com.au/decks-pergolas-footscray</loc><lastmod>2026-11-16</lastmod><priority>0.7</priority></url>
+  <url><loc>https://timbrbuilt.com.au/decks-pergolas-yarraville</loc><lastmod>2026-11-16</lastmod><priority>0.7</priority></url>
   <url><loc>https://timbrbuilt.com.au/decks-pergolas-seddon</loc><lastmod>2026-08-03</lastmod><priority>0.7</priority></url>
   <url><loc>https://timbrbuilt.com.au/decks-pergolas-west-footscray</loc><lastmod>2026-08-03</lastmod><priority>0.7</priority></url>
   <url><loc>https://timbrbuilt.com.au/decks-pergolas-maribyrnong</loc><lastmod>2026-08-03</lastmod><priority>0.7</priority></url>
-  <url><loc>https://timbrbuilt.com.au/decks-pergolas-williamstown</loc><lastmod>2026-08-03</lastmod><priority>0.7</priority></url>
-  <url><loc>https://timbrbuilt.com.au/decks-pergolas-newport</loc><lastmod>2026-08-03</lastmod><priority>0.7</priority></url>
-  <url><loc>https://timbrbuilt.com.au/decks-pergolas-altona</loc><lastmod>2026-08-03</lastmod><priority>0.7</priority></url>
+  <url><loc>https://timbrbuilt.com.au/decks-pergolas-williamstown</loc><lastmod>2026-11-16</lastmod><priority>0.7</priority></url>
+  <url><loc>https://timbrbuilt.com.au/decks-pergolas-newport</loc><lastmod>2026-11-16</lastmod><priority>0.7</priority></url>
+  <url><loc>https://timbrbuilt.com.au/decks-pergolas-altona</loc><lastmod>2026-11-16</lastmod><priority>0.7</priority></url>
   <url><loc>https://timbrbuilt.com.au/decks-pergolas-werribee</loc><lastmod>2026-08-03</lastmod><priority>0.7</priority></url>
   <url><loc>https://timbrbuilt.com.au/decks-pergolas-hoppers-crossing</loc><lastmod>2026-08-03</lastmod><priority>0.7</priority></url>
   <url><loc>https://timbrbuilt.com.au/decks-pergolas-point-cook</loc><lastmod>2026-08-03</lastmod><priority>0.7</priority></url>
@@ -35,5 +38,5 @@
   <url><loc>https://timbrbuilt.com.au/lockups-new-builds</loc><lastmod>2026-07-10</lastmod><priority>0.8</priority></url>
   <url><loc>https://timbrbuilt.com.au/contact</loc><lastmod>2026-07-10</lastmod><priority>0.8</priority></url>
   <url><loc>https://timbrbuilt.com.au/projects</loc><lastmod>2026-07-10</lastmod><priority>0.7</priority></url>
-  <url><loc>https://timbrbuilt.com.au/about</loc><lastmod>2026-07-10</lastmod><priority>0.6</priority></url>
+  <url><loc>https://timbrbuilt.com.au/about</loc><lastmod>2026-11-16</lastmod><priority>0.6</priority></url>
 </urlset>

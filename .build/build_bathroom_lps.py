@@ -2,6 +2,10 @@
 """
 build_bathroom_lps.py - generate the Bathroom Renovation suburb landing pages for Timbr Built.
 
+DO NOT RUN (noted 2026-11-16): this emits the PRE-REDESIGN markup (.section / .cards / .steps),
+deleted from styles.css on 2026-11-02. The live pages were rebuilt by hand in the redesign, so a
+run would overwrite them with unstyled HTML. Clone a live redesigned page instead (see .build/gen_carpenter_suburbs.py for the pattern).
+
 One page per target suburb: bathroom-renovations-<slug>.html. The chrome (head scripts, cinematic
 navbar, menu overlay, rich footer, callbar) is IDENTICAL to the hand-authored pages - the site's
 hard rule - and only the localised copy + per-suburb schema vary. Copy is genuinely localised
